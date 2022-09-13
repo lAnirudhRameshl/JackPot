@@ -1,0 +1,44 @@
+[
+    {
+        "name": "LCID",
+        "last": 16.55,
+        "change": 9.75,
+        "volume": 24.13
+    },
+    {
+        "name": "SPLK",
+        "last": 99.64,
+        "change": 5.50,
+        "volume": 2.99
+    },
+    {
+        "name": "APA",
+        "last": 40.00,
+        "change": 5.01,
+        "volume": 9.00
+    },
+    {
+        "name": "FTNT",
+        "last": 55.84,
+        "change": 4.20,
+        "volume": 7.37
+    },
+    {
+        "name": "GILD",
+        "last": 68.01,
+        "change": 4.18,
+        "volume": 18.77
+    },
+    {
+        "name": "ZBH",
+        "last": 119.27,
+        "change": 4.17,
+        "volume": 2.37
+    },
+    {
+        "name": "DXC",
+        "last": 28.36,
+        "change": 5.98,
+        "volume": 4.27
+    }
+]

@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MarketMover } from 'src/app/models/market-movers.model';
+import { JackpotService } from 'src/app/services/jackpot.service';
 
 @Component({
   selector: 'app-market-movers-table',
   templateUrl: './market-movers-table.component.html',
-  styleUrls: ['./market-movers-table.component.css']
+  styleUrls: ['./market-movers-table.component.css'],
 })
 export class MarketMoversTableComponent implements OnInit {
+  @Input()
+  marketMovers: MarketMover[] = [];
 
-  constructor() { }
+  displayedColumns: string[] = ['name', 'lastPrice', 'priceChange', 'volume']
 
-  ngOnInit(): void {
-  }
+  constructor(private jackpotService: JackpotService) {}
 
+  ngOnInit(): void {}
 }
