@@ -1,0 +1,13 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.dollar {
+    font-weight: lighter;
+}
+
+.mat-toolbar.mat-primary {
+    /* background: #007bff; */
+    background-color: #1abc9c;
+    color: #fff;
+  }
