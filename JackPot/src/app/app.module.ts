@@ -14,13 +14,17 @@ import { AppComponent } from './app.component';
 import { TradeOptionsComponent } from './components/molecules/trade-options/trade-options.component';
 import { TabsComponent } from './components/organisms/tabs/tabs.component';
 import { MarketMoversTableComponent } from './components/molecules/market-movers-table/market-movers-table.component';
+import { ButtonTradeComponent } from './components/atoms/button-trade/button-trade.component';
+import { BuySellPanelComponent } from './components/molecules/buy-sell-panel/buy-sell-panel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TradeOptionsComponent,
     TabsComponent,
-    MarketMoversTableComponent
+    MarketMoversTableComponent,
+    ButtonTradeComponent,
+    BuySellPanelComponent
   ],
   imports: [
     BrowserModule,
