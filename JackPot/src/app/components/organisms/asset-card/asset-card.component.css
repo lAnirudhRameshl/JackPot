@@ -1,0 +1,22 @@
+.assets-card {
+  max-width: 400px;
+  margin: 1px;
+  font-family: Montserrat;
+  /* border: 1px solid #bbb; */
+}
+
+mat-card-title {
+  font-weight: bold;
+  padding-left: 5px;
+}
+
+mat-card-content {
+  font-size: larger;
+  margin-bottom: 3rem;
+}
+.greenvalue {
+  color: #44bd32;
+}
+.redvalue {
+  color: #f05959;
+}

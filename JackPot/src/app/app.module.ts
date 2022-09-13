@@ -27,6 +27,12 @@ import { ProfileContentComponent } from './components/organisms/profile-content/
 import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
 import { MarginSummaryComponent } from './components/organisms/margin-summary/margin-summary.component';
 
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import { AssetCardComponent } from './components/organisms/asset-card/asset-card.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +52,8 @@ import { MarginSummaryComponent } from './components/organisms/margin-summary/ma
     ButtonTradeComponent,
     BuySellPanelComponent,
     MarginSummaryComponent,
+    AssetCardComponent
+
   ],
   imports: [
     BrowserModule,
@@ -63,6 +71,9 @@ import { MarginSummaryComponent } from './components/organisms/margin-summary/ma
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
+    MatCardModule,
+    MatChipsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],
