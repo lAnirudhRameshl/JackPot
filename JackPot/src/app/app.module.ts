@@ -12,9 +12,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTableModule } from '@angular/material/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DownloadComponent } from './components/molecules/download/download.component';
 import { ThistoryTableComponent } from './components/organisms/thistory-table/thistory-table.component';
+import { TradeHistoryPageComponent } from './components/pages/trade-history-page/trade-history-page.component';
+import { TableOptionsComponent } from './components/organisms/table-options/table-options.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { ThistoryTableComponent } from './components/organisms/thistory-table/th
     DropdownComponent,
     SearchBarComponent,
     DownloadComponent,
-    ThistoryTableComponent
+    ThistoryTableComponent,
+    TradeHistoryPageComponent,
+    TableOptionsComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,8 @@ import { ThistoryTableComponent } from './components/organisms/thistory-table/th
     MatIconModule,
     MatGridListModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

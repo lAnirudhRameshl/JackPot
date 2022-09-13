@@ -12,6 +12,10 @@ export class ThistoryTableComponent implements OnInit {
   trades: ITrade[]=[];
   
   constructor(private tradeDataService: TradeDataService) { }
+   
+  ngOnInit(): void {
+    this.getAllStocks();
+  }
 
   getAllStocks()
   {
@@ -20,8 +24,5 @@ export class ThistoryTableComponent implements OnInit {
       this.trades=response;
     })
    }
-   
-  ngOnInit(): void {
-  }
 
 }

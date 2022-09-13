@@ -1,1 +1,20 @@
-<p>thistory-table works!</p>
+<table class="table table-sm table-dark table-hover" >
+    <thead>
+      <tr>
+        <th scope="col">Fund</th>
+        <th scope="col">Units</th>
+        <th scope="col">Price</th>
+        <th scope="col">Account</th>
+        <th scope="col">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let trade of trades">
+        <td>{{ trade.fund }}</td>
+        <td>{{ trade.units }}</td>
+        <td>{{ trade.price }}</td>
+        <td>{{ trade.account }}</td>
+        <td>{{ trade.date }}</td>
+      </tr>
+    </tbody>
+  </table>
