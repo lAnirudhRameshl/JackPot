@@ -1,0 +1,12 @@
+.panel{
+    display: flex;
+    justify-content: space-between;
+    padding: 1px;
+}
+
+.deleteafter{
+    background-color: #eee;
+    width: 25%;
+    padding: 3rem 3rem;
+
+}
