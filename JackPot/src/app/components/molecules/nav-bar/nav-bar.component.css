@@ -1,0 +1,30 @@
+nav {
+    background-color: #A5BECC;
+    padding: 0.5rem 1rem;
+}
+
+li {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: -1rem;
+}
+
+
+nav ul li:last-child {
+    margin-left: auto;
+}
+
+.icon {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+}
