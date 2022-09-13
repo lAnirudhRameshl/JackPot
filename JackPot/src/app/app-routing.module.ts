@@ -11,7 +11,7 @@ import { ProfilePageComponent } from './components/pages/profile-page/profile-pa
 
 const routes: Routes = [
 
-  { path: 'aadarsh', component: AssetCardComponent }
+  { path: 'aadarsh', component: AssetCardComponent },
 
   {
     path: 'anirudh',
