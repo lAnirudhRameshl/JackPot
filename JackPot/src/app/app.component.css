@@ -2,3 +2,9 @@
 .remove{
     height: 420px;
 }
+
+:host {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
