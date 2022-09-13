@@ -15,6 +15,9 @@ import { BuySellPanelComponent } from './components/molecules/buy-sell-panel/buy
 import { MarginSummaryComponent } from './components/organisms/margin-summary/margin-summary.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import { AssetCardComponent } from './components/organisms/asset-card/asset-card.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
 
 
 
@@ -27,7 +30,9 @@ import {MatIconModule} from '@angular/material/icon';
     NavBarComponent,
     ButtonTradeComponent,
     BuySellPanelComponent,
-    MarginSummaryComponent
+    MarginSummaryComponent,
+    AssetCardComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,9 @@ import {MatIconModule} from '@angular/material/icon';
     BrowserAnimationsModule,
     MatButtonModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
