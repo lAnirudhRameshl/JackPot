@@ -1,0 +1,44 @@
+[
+    {
+        "name": "AAPL",
+        "last": 163.43,
+        "change": 3.85,
+        "volume": 102.85
+    },
+    {
+        "name": "AMD",
+        "last": 84.64,
+        "change": -0.95,
+        "volume": 71.6
+    },
+    {
+        "name": "AMZN",
+        "last": 136.45,
+        "change": 2.39,
+        "volume": 50.95
+    },
+    {
+        "name": "NVDA",
+        "last": 145.05,
+        "change": 0.82,
+        "volume": 48.17
+    },
+    {
+        "name": "TSLA",
+        "last": 304.42,
+        "change": 1.58,
+        "volume": 48.16
+    },
+    {
+        "name": "META",
+        "last": 168.96,
+        "change": -0.11,
+        "volume": 23.13
+    },
+    {
+        "name": "MSFT",
+        "last": 266.65,
+        "change": 0.83,
+        "volume": 17.73
+    }
+]
