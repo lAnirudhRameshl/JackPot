@@ -16,6 +16,9 @@ import { TabsComponent } from './components/organisms/tabs/tabs.component';
 import { MarketMoversTableComponent } from './components/molecules/market-movers-table/market-movers-table.component';
 import { ButtonTradeComponent } from './components/atoms/button-trade/button-trade.component';
 import { BuySellPanelComponent } from './components/molecules/buy-sell-panel/buy-sell-panel.component';
+import { ProfileDetailComponent } from './components/molecules/profile-detail/profile-detail.component';
+import { ProfileContentComponent } from './components/organisms/profile-content/profile-content.component';
+import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { BuySellPanelComponent } from './components/molecules/buy-sell-panel/buy
     TabsComponent,
     MarketMoversTableComponent,
     ButtonTradeComponent,
-    BuySellPanelComponent
+    BuySellPanelComponent,
+    ProfileDetailComponent,
+    ProfileContentComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,

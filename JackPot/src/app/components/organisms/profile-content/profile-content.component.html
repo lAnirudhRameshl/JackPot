@@ -1,0 +1,5 @@
+<app-profile-detail [detailName]="'Name'" [detailValue]="userDetail.firstName + ' ' + userDetail.lastName"></app-profile-detail>
+<app-profile-detail [detailName]="'Email'" [detailValue]="userDetail.email"></app-profile-detail>
+<app-profile-detail [detailName]="'Date of Birth'" detailValue="{{userDetail.dateOfBirth | date:'shortDate'}}"></app-profile-detail>
+<app-profile-detail [detailName]="'Phone number'" [detailValue]="userDetail.phoneNumber"></app-profile-detail>
+<app-profile-detail [detailName]="'Investment risk (Range 0-5)'" [detailValue]="userDetail.investmentRisk.toString()"></app-profile-detail>
