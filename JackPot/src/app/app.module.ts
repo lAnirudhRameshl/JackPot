@@ -8,29 +8,24 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
-
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 
+import { AppComponent } from './app.component';
 import { TradeOptionsComponent } from './components/molecules/trade-options/trade-options.component';
 import { TabsComponent } from './components/organisms/tabs/tabs.component';
 import { MarketMoversTableComponent } from './components/molecules/market-movers-table/market-movers-table.component';
-
 import { HeaderComponent } from './components/atoms/header/header.component';
 import { FooterComponent } from './components/atoms/footer/footer.component';
 import { NavBarLinkComponent } from './components/atoms/nav-bar-link/nav-bar-link.component';
 import { NavBarComponent } from './components/molecules/nav-bar/nav-bar.component';
-
 import { ButtonTradeComponent } from './components/atoms/button-trade/button-trade.component';
 import { BuySellPanelComponent } from './components/molecules/buy-sell-panel/buy-sell-panel.component';
-
 import { ProfileDetailComponent } from './components/molecules/profile-detail/profile-detail.component';
 import { ProfileContentComponent } from './components/organisms/profile-content/profile-content.component';
 import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
-
 import { MarginSummaryComponent } from './components/organisms/margin-summary/margin-summary.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
