@@ -1,0 +1,16 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-grid-list cols="2" rowHeight="18px">
+      <mat-grid-tile ><input matInput placeholder="Search" name="fund" [(ngModel)]="fund"> </mat-grid-tile>
+      <mat-grid-tile 
+        >
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="search" (click)="onSearch()"
+          ></mat-icon>
+        
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-form-field>
+</form>

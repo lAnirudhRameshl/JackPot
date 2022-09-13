@@ -1,0 +1,30 @@
+[
+    {
+        "fund" : "XYZ",
+        "units" : "2",
+        "price" : "101",
+        "account" : "401K",
+        "date" : "12/02/2019"
+    },
+    {
+        "fund" : "ABC",
+        "units" : "2",
+        "price" : "101",
+        "account" : "401K",
+        "date" : "12/02/2019"
+    },
+    {
+        "fund" : "MAS",
+        "units" : "2",
+        "price" : "101",
+        "account" : "401K",
+        "date" : "12/02/2019"
+    },
+    {
+        "fund" : "BPM",
+        "units" : "2",
+        "price" : "101",
+        "account" : "401K",
+        "date" : "12/02/2019"
+    }
+]

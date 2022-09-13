@@ -1,0 +1,11 @@
+<div class="dropdown">
+    <mat-form-field appearance="fill">
+        <mat-label>Asset Class</mat-label>
+        <mat-select [(value)]="selected">
+          <mat-option *ngFor="let asset_class of asset_classes" [value]="asset_class.value">
+            {{ asset_class.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+</div>
+
