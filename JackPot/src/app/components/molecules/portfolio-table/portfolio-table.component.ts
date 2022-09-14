@@ -12,21 +12,15 @@ export class PortfolioTableComponent implements OnInit {
   
   data: Portfolio[]=[];
   dataSource!: MatTableDataSource<Portfolio>;
-  // dataSource = new MatTableDataSource(this.d);
-  // dataSource=new MatTableDataSource(this.data);
+  
   displayedColumns: string[] = ['fund','units','avgcost','ltp','currentval','netchg','daychg','pandl'];
   constructor(private ds:PortfolioDataService) { }
 
   ngOnInit(): void {
     this.ds.getPortfolioData().subscribe((data)=>{
       this.data=data;
-      console.log("Insiiiide");
-      console.log("DATAA:"+this.data);
       this.dataSource = new MatTableDataSource(this.data);
     })
-    // this.dataSource = new MatTableDataSource(this.d);
-    // this.dataSource= new MatTableDataSource(this.data);
-    console.log("OPPPPP:"+this.data);
     
   }
 
