@@ -1,3 +1,4 @@
+import { TradePopupComponent } from './components/organisms/trade-popup/trade-popup.component';
 import { AssetCardComponent } from './components/organisms/asset-card/asset-card.component';
 import { MarginSummaryComponent } from './components/organisms/margin-summary/margin-summary.component';
 import { BuySellPanelComponent } from './components/molecules/buy-sell-panel/buy-sell-panel.component';
@@ -13,6 +14,7 @@ import { TradePageComponent } from './components/pages/trade-page/trade-page.com
 const routes: Routes = [
 
   { path: 'trade', component: TradePageComponent },
+  { path: 'aad', component: TradePopupComponent },
 
   {
     path: 'profile',

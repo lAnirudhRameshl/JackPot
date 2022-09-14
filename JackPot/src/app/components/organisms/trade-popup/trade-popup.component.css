@@ -1,0 +1,39 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.popup {
+  /* margin: 10rem auto; */
+
+  /* border: 1px solid #eee; */
+  max-width: 100%;
+  padding: 0.5rem;
+  font-family: Montserrat;
+}
+
+mat-toolbar {
+  font-family: Montserrat;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+.sellpanel {
+  background: #e84118;
+}
+.buypanel {
+  background: #44bd32;
+}
+
+.form-inputs .mat-form-field + .mat-form-field {
+  margin-left: 3rem;
+}
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
