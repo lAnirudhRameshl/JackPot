@@ -1,0 +1,49 @@
+
+<div class="profile-edit">
+    <div class="page-head">
+        <h2 class="page-heading">Profile Edit</h2>
+        <div class="expanded"></div>
+        <a routerLink="/profile-edit">
+            <button mat-raised-button>
+                Edit
+            </button>
+        </a>
+    </div>
+    <form [formGroup]="profileEditForm">
+      <div class="form-control">
+        <label>First Name: </label>
+        <mat-form-field appearance="outline">
+          <input type="text" matInput formControlName="firstName" />
+        </mat-form-field>
+      </div>
+      <div class="form-control">
+        <label>Last Name: </label>
+        <mat-form-field appearance="outline">
+          <input type="text" matInput formControlName="lastName" />
+        </mat-form-field>
+      </div>
+      <div class="form-control">
+        <label>Email: </label>
+        <mat-form-field appearance="outline">
+          <input type="email" matInput formControlName="email" />
+        </mat-form-field>
+      </div>
+      <div class="form-control">
+        <label>Date of birth: </label>
+        <mat-form-field appearance="outline">
+          <input type="date" matInput formControlName="dateOfBirth" />
+        </mat-form-field>
+      </div>
+      <div class="form-control">
+        <label>Phone Number: </label>
+        <mat-form-field appearance="outline">
+          <input type="text" matInput formControlName="phoneNumber" />
+        </mat-form-field>
+      </div>
+      <div class="form-control">
+        <label>Investment Risk: </label>
+        <mat-slider thumbLabel step="1" min="0" max="5" formControlName="investmentRisk"></mat-slider>
+        <p>{{riskText()}}</p>
+      </div>
+    </form>
+</div>
