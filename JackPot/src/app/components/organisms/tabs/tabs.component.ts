@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MarketMover } from 'src/app/models/market-movers.model';
 import { JackpotService } from 'src/app/services/jackpot.service';
 
 @Component({
   selector: 'app-tabs',
   templateUrl: './tabs.component.html',
-  styleUrls: ['./tabs.component.css'],
+  styleUrls: ['./tabs.component.css']
 })
 export class TabsComponent implements OnInit {
   mostActiveMarketMovers: MarketMover[] = [];

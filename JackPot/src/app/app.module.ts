@@ -30,6 +30,7 @@ import { MarginSummaryComponent } from './components/organisms/margin-summary/ma
 import { AssetCardComponent } from './components/organisms/asset-card/asset-card.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
+import { TradePageComponent } from './components/pages/trade-page/trade-page.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {MatChipsModule} from '@angular/material/chips';
     ButtonTradeComponent,
     BuySellPanelComponent,
     MarginSummaryComponent,
-    AssetCardComponent
+    AssetCardComponent,
+    TradePageComponent
 
   ],
   imports: [
