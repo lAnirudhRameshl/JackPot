@@ -2,7 +2,7 @@
   <div class="dropdown">
     <label>Asset class: </label>
     <mat-form-field appearance="outline">
-      <mat-select [(ngModel)]="selectedAssetType">
+      <mat-select id="trade-options" [(ngModel)]="selectedAssetType">
         <mat-option [value]="assetType" *ngFor="let assetType of assetTypes">
           {{ assetType }}
         </mat-option>
@@ -13,6 +13,7 @@
     <label>Asset name: </label>
     <mat-form-field appearance="outline">
       <input
+        id="trade-ip"
         type="text"
         matInput
         [(ngModel)]="assetSearch"
