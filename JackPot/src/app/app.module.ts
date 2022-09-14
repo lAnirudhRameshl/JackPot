@@ -46,6 +46,7 @@ import { ProfileEditPageComponent } from './components/pages/profile-edit-page/p
 import { PorfolioComponent } from './components/pages/porfolio/porfolio.component';
 import { PortfolioTableComponent } from './components/molecules/portfolio-table/portfolio-table.component';
 import { TableHeaderComponent } from './components/molecules/table-header/table-header.component';
+import { NotFoundComponent } from './components/pages/not-found/not-found.component';
 
 
 @NgModule({
@@ -73,7 +74,8 @@ import { TableHeaderComponent } from './components/molecules/table-header/table-
     ProfileEditPageComponent,
     PorfolioComponent,
     PortfolioTableComponent,
-    TableHeaderComponent
+    TableHeaderComponent,
+    NotFoundComponent
 
 
   ],
