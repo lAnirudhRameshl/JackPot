@@ -1,0 +1,56 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    flex-grow: 1;
+}
+
+.register-form {
+    width: 50%;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid #bbbbbb;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 800px) {
+    .register-form {
+        width: 70%;
+    }
+    
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Montserrat' !important;
+    font-weight: 700;
+}
+
+mat-form-field {
+    font-family: 'Montserrat' !important;
+}
+
+.link {
+    align-self: flex-end;
+}
+
+.link a {
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    background-color: #2573BB;
+    color: white !important;
+    font-weight: bold;
+    font-family: 'Montserrat' !important;
+}

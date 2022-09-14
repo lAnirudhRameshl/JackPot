@@ -1,3 +1,7 @@
+:host {
+    flex-grow: 1;
+}
+
 .profile-edit {
     padding: 0.5rem 1rem;
     font-family: 'Montserrat' !important;
@@ -43,6 +47,7 @@ label {
 
 mat-form-field {
     flex-grow: 1;
+    font-family: 'Montserrat' !important;
 }
 
 mat-slider {
