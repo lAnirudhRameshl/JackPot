@@ -1,0 +1,19 @@
+mat-grid-list {
+  width: 11em;
+  font: Montserrat;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.download:hover {
+  color: rgb(23, 63, 194);
+}
+
+::ng-deep div.mat-grid-tile-content{
+  justify-content: left !important;
+}
+
+.material-symbols-outlined {
+ 
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}

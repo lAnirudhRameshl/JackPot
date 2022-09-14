@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
+import {MatIconModule} from '@angular/material/icon';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
@@ -23,7 +23,14 @@ import {MatChipsModule} from '@angular/material/chips';
 
 
 import { AppComponent } from './app.component';
-import { TradeOptionsComponent } from './components/molecules/trade-options/trade-options.component';
+import { ThistoryHoldingsComponent } from './components/molecules/thistory-holdings/thistory-holdings.component';
+import { DropdownComponent } from './components/molecules/dropdown/dropdown.component';
+import { SearchBarComponent } from './components/molecules/search-bar/search-bar.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { DownloadComponent } from './components/molecules/download/download.component';
+import { ThistoryTableComponent } from './components/organisms/thistory-table/thistory-table.component';
+import { TradeHistoryPageComponent } from './components/pages/trade-history-page/trade-history-page.component';
+import { TableOptionsComponent } from './components/organisms/table-options/table-options.component';
 import { TabsComponent } from './components/organisms/tabs/tabs.component';
 import { MarketMoversTableComponent } from './components/molecules/market-movers-table/market-movers-table.component';
 import { HeaderComponent } from './components/atoms/header/header.component';
@@ -45,13 +52,20 @@ import { ProfileEditContentComponent } from './components/organisms/profile-edit
 import { ProfileEditPageComponent } from './components/pages/profile-edit-page/profile-edit-page.component';
 import { PorfolioComponent } from './components/pages/porfolio/porfolio.component';
 import { PortfolioTableComponent } from './components/molecules/portfolio-table/portfolio-table.component';
+import { TradeOptionsComponent } from './components/molecules/trade-options/trade-options.component';
 import { TableHeaderComponent } from './components/molecules/table-header/table-header.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TradeOptionsComponent,
+    ThistoryHoldingsComponent,
+    DropdownComponent,
+    SearchBarComponent,
+    DownloadComponent,
+    ThistoryTableComponent,
+    TradeHistoryPageComponent,
+    TableOptionsComponent,
     TabsComponent,
     MarketMoversTableComponent,
     ButtonTradeComponent,
@@ -59,6 +73,7 @@ import { TableHeaderComponent } from './components/molecules/table-header/table-
     ProfileDetailComponent,
     ProfileContentComponent,
     ProfilePageComponent,
+    TradeOptionsComponent,
     HeaderComponent,
     FooterComponent,
     NavBarLinkComponent,
@@ -81,17 +96,23 @@ import { TableHeaderComponent } from './components/molecules/table-header/table-
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule,
-    FormsModule,
     HttpClientModule,
     MatSelectModule,
     MatInputModule,
+    MatIconModule,
+    MatGridListModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatTableModule,
+    FormsModule,
+    HttpClientModule,
+
     MatButtonModule,
     MatTabsModule,
-    MatTableModule,
-    MatButtonModule,
+
+
     MatToolbarModule,
-    MatIconModule,
+
     MatCardModule,
     MatChipsModule,
     MatFormFieldModule,
