@@ -14,7 +14,7 @@ export class ThistoryTableComponent implements OnInit {
   dataSource!: MatTableDataSource<ITrade>;
   searchText="";
   
-  displayedColumns: string[] = ['fund','units','price','account','date', 'type', 'loss_profit'];
+  displayedColumns: string[] = ['fund','units','price','account', 'loss_profit','date', 'type'];
   constructor(private tradeDataService: TradeDataService) { }
    
   ngOnInit(): void {

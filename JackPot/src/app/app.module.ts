@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
@@ -9,8 +10,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { AppRoutingModule } from './app-routing.module';
 import {MatIconModule} from '@angular/material/icon';
+
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatDialogModule} from '@angular/material/dialog';
+
+
+import { MatSliderModule } from '@angular/material/slider'
+import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
+
+
 import { AppComponent } from './app.component';
 import { ThistoryHoldingsComponent } from './components/molecules/thistory-holdings/thistory-holdings.component';
 import { DropdownComponent } from './components/molecules/dropdown/dropdown.component';
@@ -32,15 +43,17 @@ import { ProfileDetailComponent } from './components/molecules/profile-detail/pr
 import { ProfileContentComponent } from './components/organisms/profile-content/profile-content.component';
 import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
 import { MarginSummaryComponent } from './components/organisms/margin-summary/margin-summary.component';
-
 import { AssetCardComponent } from './components/organisms/asset-card/asset-card.component';
-import {MatCardModule} from '@angular/material/card';
-import {MatChipsModule} from '@angular/material/chips';
 import { TradePageComponent } from './components/pages/trade-page/trade-page.component';
-import { PorfolioComponent } from './components/pages/porfolio/porfolio.component';
 
+import { TradePopupComponent } from './components/organisms/trade-popup/trade-popup.component';
+
+import { ProfileEditContentComponent } from './components/organisms/profile-edit-content/profile-edit-content.component';
+import { ProfileEditPageComponent } from './components/pages/profile-edit-page/profile-edit-page.component';
+import { PorfolioComponent } from './components/pages/porfolio/porfolio.component';
 import { PortfolioTableComponent } from './components/molecules/portfolio-table/portfolio-table.component';
 import { TradeOptionsComponent } from './components/molecules/trade-options/trade-options.component';
+import { TableHeaderComponent } from './components/molecules/table-header/table-header.component';
 
 
 @NgModule({
@@ -70,8 +83,13 @@ import { TradeOptionsComponent } from './components/molecules/trade-options/trad
     MarginSummaryComponent,
     AssetCardComponent,
     TradePageComponent,
+    TradePopupComponent,
+    ProfileEditContentComponent,
+    ProfileEditPageComponent,
     PorfolioComponent,
-    PortfolioTableComponent
+    PortfolioTableComponent,
+    TableHeaderComponent
+
 
   ],
   imports: [
@@ -88,17 +106,19 @@ import { TradeOptionsComponent } from './components/molecules/trade-options/trad
     MatTableModule,
     FormsModule,
     HttpClientModule,
-    MatSelectModule,
-    MatInputModule,
+
     MatButtonModule,
     MatTabsModule,
-    MatTableModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatCardModule,
-    MatChipsModule
 
+
+    MatToolbarModule,
+
+    MatCardModule,
+    MatChipsModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent],

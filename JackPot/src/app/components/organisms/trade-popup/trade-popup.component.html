@@ -1,0 +1,56 @@
+<div class="popup">
+  <mat-toolbar [ngClass]="this.isBuyOrder ? 'buypanel' : 'sellpanel'">
+    <button mat-icon-button class="first-icon">
+      <mat-icon> sell </mat-icon>
+    </button>
+    <span>
+      {{ this.action }} {{ this.ticker }} &nbsp; x &nbsp; {{ model.qty }} Qty
+    </span>
+    <!-- <span> &nbsp; ${{'293.25'}} </span> -->
+
+    <span class="example-spacer"></span>
+  </mat-toolbar>
+
+  <div class="form-inputs">
+    <form #orderForm="ngForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Quantity</mat-label>
+        <input
+          matInput
+          placeholder="1"
+          type="number"
+          min="1"
+          value="1"
+          name="QTY"
+          required
+          [(ngModel)]="model.qty"
+        />
+        <mat-icon matSuffix>shopping_cart</mat-icon>
+        <mat-hint>Desired Trade Quantity</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Price</mat-label>
+        <mat-icon matPrefix>attach_money</mat-icon>
+        <input
+          matInput
+          placeholder="0"
+          type="number"
+          name="PRICE"
+          value="0"
+          min="0"
+          required
+          [(ngModel)]="model.price"
+        />
+        <mat-hint>Enter Price 0 For Market Order</mat-hint>
+      </mat-form-field>
+    </form>
+    <p></p>
+
+    <app-button-trade
+      [buysell]="this.isBuyOrder ? 'BUY' : 'SELL'"
+      [mat-dialog-close]="this.toastData"
+      (btnClick)="executeOrder66()"
+    ></app-button-trade>
+  </div>
+</div>
