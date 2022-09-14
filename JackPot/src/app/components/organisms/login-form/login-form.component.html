@@ -6,6 +6,7 @@
         <mat-placeholder>Email</mat-placeholder>
         <input type="email" matInput formControlName="email" />
         <mat-icon matSuffix>mail</mat-icon>
+        <mat-error *ngIf="loginForm.get('email')?.touched  && loginForm.get('email')?.invalid">{{getEmailErrorMessage()}}</mat-error>
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Password</mat-label>
@@ -14,6 +15,8 @@
         <mat-icon matSuffix (click)="toggleShowPassword()">{{
           showPassword ? "visibility" : "visibility_off"
         }}</mat-icon>
+        <mat-error *ngIf="loginForm.get('password')?.touched  && loginForm.get('password')?.invalid">{{getPasswordErrorMessage()}}</mat-error>
+
       </mat-form-field>
       <p class="link">Don't have an account? <span><a routerLink="/register">Register</a></span></p>
       <button mat-raised-button>Login</button>

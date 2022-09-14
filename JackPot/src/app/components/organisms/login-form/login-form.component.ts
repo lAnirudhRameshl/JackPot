@@ -23,4 +23,12 @@ export class LoginFormComponent implements OnInit {
     this.showPassword = !this.showPassword
   }
 
+  getEmailErrorMessage() {
+    return 'Please enter the email';
+  }
+
+  getPasswordErrorMessage() {
+    return 'Please enter the password';
+  }
+
 }
