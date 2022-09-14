@@ -12,6 +12,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSliderModule } from '@angular/material/slider'
+import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
 
 import { AppComponent } from './app.component';
 import { TradeOptionsComponent } from './components/molecules/trade-options/trade-options.component';
@@ -28,11 +30,12 @@ import { ProfileContentComponent } from './components/organisms/profile-content/
 import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
 import { MarginSummaryComponent } from './components/organisms/margin-summary/margin-summary.component';
 import { AssetCardComponent } from './components/organisms/asset-card/asset-card.component';
-import {MatCardModule} from '@angular/material/card';
-import {MatChipsModule} from '@angular/material/chips';
 import { TradePageComponent } from './components/pages/trade-page/trade-page.component';
 import { ProfileEditContentComponent } from './components/organisms/profile-edit-content/profile-edit-content.component';
 import { ProfileEditPageComponent } from './components/pages/profile-edit-page/profile-edit-page.component';
+import { PorfolioComponent } from './components/pages/porfolio/porfolio.component';
+import { PortfolioTableComponent } from './components/molecules/portfolio-table/portfolio-table.component';
+
 
 @NgModule({
   declarations: [
@@ -56,6 +59,8 @@ import { ProfileEditPageComponent } from './components/pages/profile-edit-page/p
     TradePageComponent,
     ProfileEditContentComponent,
     ProfileEditPageComponent,
+    PorfolioComponent,
+    PortfolioTableComponent
   ],
   imports: [
     BrowserModule,
