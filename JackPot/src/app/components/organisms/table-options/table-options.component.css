@@ -1,0 +1,12 @@
+.table-options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    column-gap: 7%;
+    font-family: 'Montserrat';
+}
+
+app-download{
+    margin-left: 5em;
+}

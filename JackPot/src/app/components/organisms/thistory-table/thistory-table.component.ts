@@ -13,7 +13,7 @@ export class ThistoryTableComponent implements OnInit {
   trades: ITrade[]=[];
   dataSource!: MatTableDataSource<ITrade>;
   
-  displayedColumns: string[] = ['fund','units','price','account','date'];
+  displayedColumns: string[] = ['fund','units','price','account','date', 'type'];
   constructor(private tradeDataService: TradeDataService) { }
    
   ngOnInit(): void {
