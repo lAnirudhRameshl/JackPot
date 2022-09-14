@@ -1,0 +1,22 @@
+<div class="register-form">
+    <h2 class="form-heading">Login</h2>
+    <form [formGroup]="loginForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <mat-placeholder>Email</mat-placeholder>
+        <input type="email" matInput formControlName="email" />
+        <mat-icon matSuffix>mail</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <mat-placeholder>Password</mat-placeholder>
+        <input [type]="showPassword?'text':'password'" matInput formControlName="password" />
+        <mat-icon matSuffix (click)="toggleShowPassword()">{{
+          showPassword ? "visibility" : "visibility_off"
+        }}</mat-icon>
+      </mat-form-field>
+      <p class="link">Don't have an account? <span><a routerLink="/register">Register</a></span></p>
+      <button mat-raised-button>Login</button>
+    </form>
+  </div>
+  

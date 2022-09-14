@@ -15,6 +15,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
 
 import { AppComponent } from './app.component';
 import { TradeOptionsComponent } from './components/molecules/trade-options/trade-options.component';
@@ -38,6 +39,7 @@ import { PorfolioComponent } from './components/pages/porfolio/porfolio.componen
 import { PortfolioTableComponent } from './components/molecules/portfolio-table/portfolio-table.component';
 import { RegisterFormComponent } from './components/organisms/register-form/register-form.component';
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { LoginFormComponent } from './components/organisms/login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +66,7 @@ import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
     PorfolioComponent,
     PortfolioTableComponent,
     RegisterFormComponent,
+    LoginFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -84,7 +87,7 @@ import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
     MatChipsModule,
     MatSliderModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatMomentDateModule
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'en'}

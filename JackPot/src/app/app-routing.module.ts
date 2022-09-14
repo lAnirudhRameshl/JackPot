@@ -5,6 +5,7 @@ import { TradePageComponent } from './components/pages/trade-page/trade-page.com
 import { ProfileEditPageComponent } from './components/pages/profile-edit-page/profile-edit-page.component';
 import { PorfolioComponent } from './components/pages/porfolio/porfolio.component';
 import { RegisterFormComponent } from './components/organisms/register-form/register-form.component';
+import { LoginFormComponent } from './components/organisms/login-form/login-form.component';
 
 //Let's add temporary routes with our names here for testing and not change app.component as it'll be easier to merge etc
 
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterFormComponent
+  },
+  {
+    path: 'login',
+    component: LoginFormComponent
   }
 ];
 

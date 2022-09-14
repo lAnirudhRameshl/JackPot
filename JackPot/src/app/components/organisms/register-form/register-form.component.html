@@ -6,34 +6,79 @@
       <mat-placeholder>First Name</mat-placeholder>
       <input type="text" matInput formControlName="firstName" />
       <mat-icon matSuffix>person</mat-icon>
+      <mat-error
+        *ngIf="
+          registerForm.get('firstName')?.touched &&
+          registerForm.get('firstName')?.invalid
+        "
+        >{{ getFirstNameErrorMessage() }}</mat-error
+      >
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Last Name</mat-label>
       <mat-placeholder>Last Name</mat-placeholder>
       <input type="text" matInput formControlName="lastName" />
       <mat-icon matSuffix>person</mat-icon>
+      <mat-error
+        *ngIf="
+          registerForm.get('lastName')?.touched &&
+          registerForm.get('lastName')?.invalid
+        "
+        >{{ getLastNameErrorMessage() }}</mat-error
+      >
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Email</mat-label>
       <mat-placeholder>Email</mat-placeholder>
       <input type="email" matInput formControlName="email" />
       <mat-icon matSuffix>mail</mat-icon>
+      <mat-error
+        *ngIf="
+          registerForm.get('email')?.touched &&
+          registerForm.get('email')?.invalid
+        "
+        >{{ getEmailErrorMessage() }}</mat-error
+      >
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Password</mat-label>
       <mat-placeholder>Password</mat-placeholder>
-      <input [type]="showPassword?'text':'password'" matInput formControlName="password" />
+      <input
+        [type]="showPassword ? 'text' : 'password'"
+        matInput
+        formControlName="password"
+      />
       <mat-icon matSuffix (click)="toggleShowPassword()">{{
         showPassword ? "visibility" : "visibility_off"
       }}</mat-icon>
+      <mat-error
+        *ngIf="
+          registerForm.get('password')?.touched &&
+          registerForm.get('password')?.invalid
+        "
+        >{{ getPasswordErrorMessage() }}</mat-error
+      >
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Confirm Pasword</mat-label>
       <mat-placeholder>Confirm Password</mat-placeholder>
-      <input [type]="showConfirmPassword?'text':'password'" matInput formControlName="confirmPassword" />
+      <input
+        [type]="showConfirmPassword ? 'text' : 'password'"
+        matInput
+        formControlName="confirmPassword"
+        [errorStateMatcher]="errorStateMatcher"
+      />
       <mat-icon matSuffix (click)="toggleShowConfirmPassword()">{{
         showConfirmPassword ? "visibility" : "visibility_off"
       }}</mat-icon>
+      <mat-error
+        *ngIf="
+          registerForm.get('confirmPassword')?.touched &&
+          registerForm.get('confirmPassword')?.invalid
+        "
+        >{{ getConfirmPasswordErrorMessage() }}</mat-error
+      >
+      <mat-error *ngIf="registerForm.hasError('match')">Password and confirm password do not match</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Date of Birth</mat-label>
@@ -46,12 +91,26 @@
       />
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
+      <mat-error
+        *ngIf="
+          registerForm.get('dateOfBirth')?.touched &&
+          registerForm.get('dateOfBirth')?.invalid
+        "
+        >{{ getDateOfBirthErrorMessage() }}</mat-error
+      >
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Phone Number</mat-label>
       <mat-placeholder>Phone Number</mat-placeholder>
       <input type="text" matInput formControlName="phoneNumber" />
       <mat-icon matSuffix>call</mat-icon>
+      <mat-error
+        *ngIf="
+          registerForm.get('phoneNumber')?.touched &&
+          registerForm.get('phoneNumber')?.invalid
+        "
+        >{{ getPhoneNumberErrorMessage() }}</mat-error
+      >
     </mat-form-field>
     <p>Investment risk - {{ riskType() }}</p>
     <mat-slider
@@ -61,5 +120,9 @@
       min="1"
       max="5"
     ></mat-slider>
+    <p class="link">
+      Have an account? <span><a routerLink="/login">Login</a></span>
+    </p>
+    <button mat-raised-button>Register</button>
   </form>
 </div>

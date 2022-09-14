@@ -54,25 +54,3 @@ button {
     font-weight: bold;
     font-family: 'Montserrat' !important;
 }
-
-input[type="date"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-    -webkit-appearance: none;
-}
-
-::ng-deep .mat-accent .mat-slider-track-fill {
-    background-color: black !important;
-}
-
-::ng-deep .mat-slider-thumb-label {
-    background-color: #243A73 !important;
-}
-
-::ng-deep .mat-slider-thumb-label-text {
-    color: white !important;
-}
-
-::ng-deep .mat-slider-thumb {
-    background-color: #243A73 !important;
-}
