@@ -12,8 +12,9 @@ export class ThistoryTableComponent implements OnInit {
 
   trades: ITrade[]=[];
   dataSource!: MatTableDataSource<ITrade>;
+  searchText="";
   
-  displayedColumns: string[] = ['fund','units','price','account','date', 'type'];
+  displayedColumns: string[] = ['fund','units','price','account','date', 'type', 'loss_profit'];
   constructor(private tradeDataService: TradeDataService) { }
    
   ngOnInit(): void {
@@ -34,6 +35,12 @@ export class ThistoryTableComponent implements OnInit {
     if(num>0){return true;}
     else
       return false;
+  }
+
+  search(e:any){
+    console.log("Insie parent..fuction search called..");
+    this.searchText = e;
+    this.dataSource.filter = e.trim().toLowerCase();
   }
 
 }

@@ -2,6 +2,7 @@ mat-grid-list {
   width: 11em;
   font: Montserrat;
   font-size: 17px;
+  font-weight: bold;
 }
 
 .download:hover {

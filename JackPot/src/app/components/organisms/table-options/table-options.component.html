@@ -8,6 +8,6 @@
 <div class="table-options">
   <app-thistory-holdings></app-thistory-holdings>
   <app-dropdown></app-dropdown>
-  <app-search-bar></app-search-bar>
+  <app-search-bar (childEmit)="search($event)"></app-search-bar>
   <app-download></app-download>
 </div>

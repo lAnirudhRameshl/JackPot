@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-search-bar',
@@ -7,14 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
+  @Output() childEmit = new EventEmitter();
+
   fund: string="";
+  assetSearch = "";
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onSearch(){
+  /*onSearch(){
     console.log(this.fund);
+  }*/
+
+  callParent(data:string){
+    console.log("Parent component called.."+ data);
+    this.childEmit.emit(data);
   }
 }
