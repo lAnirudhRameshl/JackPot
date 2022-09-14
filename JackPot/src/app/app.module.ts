@@ -51,6 +51,9 @@ import { RegisterFormComponent } from './components/organisms/register-form/regi
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { LoginFormComponent } from './components/organisms/login-form/login-form.component';
 import { TradeOptionsComponent } from './components/molecules/trade-options/trade-options.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TableHeaderComponent } from './components/molecules/table-header/table-header.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -86,6 +89,7 @@ import { TradeOptionsComponent } from './components/molecules/trade-options/trad
     PortfolioTableComponent,
     RegisterFormComponent,
     LoginFormComponent,
+    TableHeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -101,10 +105,10 @@ import { TradeOptionsComponent } from './components/molecules/trade-options/trad
     MatTableModule,
     FormsModule,
     HttpClientModule,
-
+    MatDialogModule,
     MatButtonModule,
     MatTabsModule,
-
+    MatSnackBarModule,
     MatToolbarModule,
 
     MatCardModule,

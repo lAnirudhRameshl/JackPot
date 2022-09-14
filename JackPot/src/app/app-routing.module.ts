@@ -15,7 +15,6 @@ import { LoginFormComponent } from './components/organisms/login-form/login-form
 const routes: Routes = [
 
   { path: 'trade', component: TradePageComponent },
-  { path: 'aad', component: TradePopupComponent },
 
   {
     path: 'profile',
