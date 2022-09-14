@@ -35,6 +35,7 @@ import { ProfileEditContentComponent } from './components/organisms/profile-edit
 import { ProfileEditPageComponent } from './components/pages/profile-edit-page/profile-edit-page.component';
 import { PorfolioComponent } from './components/pages/porfolio/porfolio.component';
 import { PortfolioTableComponent } from './components/molecules/portfolio-table/portfolio-table.component';
+import { TableHeaderComponent } from './components/molecules/table-header/table-header.component';
 
 
 @NgModule({
@@ -60,7 +61,9 @@ import { PortfolioTableComponent } from './components/molecules/portfolio-table/
     ProfileEditContentComponent,
     ProfileEditPageComponent,
     PorfolioComponent,
-    PortfolioTableComponent
+    PortfolioTableComponent,
+    TableHeaderComponent
+
   ],
   imports: [
     BrowserModule,
