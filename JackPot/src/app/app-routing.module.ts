@@ -1,3 +1,9 @@
+
+import { TradePopupComponent } from './components/organisms/trade-popup/trade-popup.component';
+import { AssetCardComponent } from './components/organisms/asset-card/asset-card.component';
+import { MarginSummaryComponent } from './components/organisms/margin-summary/margin-summary.component';
+import { BuySellPanelComponent } from './components/molecules/buy-sell-panel/buy-sell-panel.component';
+import { ButtonTradeComponent } from './components/atoms/button-trade/button-trade.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
@@ -10,6 +16,7 @@ import { PorfolioComponent } from './components/pages/porfolio/porfolio.componen
 const routes: Routes = [
 
   { path: 'trade', component: TradePageComponent },
+  { path: 'aad', component: TradePopupComponent },
 
   {
     path: 'profile',

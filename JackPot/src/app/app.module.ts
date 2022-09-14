@@ -11,9 +11,16 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatDialogModule} from '@angular/material/dialog';
+
+
 import { MatSliderModule } from '@angular/material/slider'
 import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
+
 
 import { AppComponent } from './app.component';
 import { TradeOptionsComponent } from './components/molecules/trade-options/trade-options.component';
@@ -31,6 +38,9 @@ import { ProfilePageComponent } from './components/pages/profile-page/profile-pa
 import { MarginSummaryComponent } from './components/organisms/margin-summary/margin-summary.component';
 import { AssetCardComponent } from './components/organisms/asset-card/asset-card.component';
 import { TradePageComponent } from './components/pages/trade-page/trade-page.component';
+
+import { TradePopupComponent } from './components/organisms/trade-popup/trade-popup.component';
+
 import { ProfileEditContentComponent } from './components/organisms/profile-edit-content/profile-edit-content.component';
 import { ProfileEditPageComponent } from './components/pages/profile-edit-page/profile-edit-page.component';
 import { PorfolioComponent } from './components/pages/porfolio/porfolio.component';
@@ -58,11 +68,13 @@ import { TableHeaderComponent } from './components/molecules/table-header/table-
     MarginSummaryComponent,
     AssetCardComponent,
     TradePageComponent,
+    TradePopupComponent,
     ProfileEditContentComponent,
     ProfileEditPageComponent,
     PorfolioComponent,
     PortfolioTableComponent,
     TableHeaderComponent
+
 
   ],
   imports: [
@@ -82,6 +94,9 @@ import { TableHeaderComponent } from './components/molecules/table-header/table-
     MatIconModule,
     MatCardModule,
     MatChipsModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    MatSnackBarModule,
     MatSliderModule
   ],
   providers: [],
