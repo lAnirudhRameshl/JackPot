@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col">
+        <h1>{{text}}</h1>
+        <mat-form-field appearance="outline">
+            <mat-select [(ngModel)]="selectedAssetType">
+              <mat-option [value]="assetType" *ngFor="let assetType of assetTypes">
+                {{ assetType }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+    <div class="col">
+        <div>
+            <mat-form-field appearance="outline">
+                <input
+                  type="text"
+                  (change)="callParent(searchText.value)"
+                  #searchText
+                  matInput
+                  [(ngModel)]="assetSearch"
+                  placeholder="e.g: AAPL"
+                />
+                <mat-icon matSuffix id="icon" aria-label="Example home icon">search</mat-icon>
+              </mat-form-field>
+              
+        </div>
+        
+        <p class="download">Download</p>
+    </div>
+</div>
