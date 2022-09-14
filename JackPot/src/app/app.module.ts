@@ -34,6 +34,7 @@ import { TradePageComponent } from './components/pages/trade-page/trade-page.com
 import { PorfolioComponent } from './components/pages/porfolio/porfolio.component';
 
 import { PortfolioTableComponent } from './components/molecules/portfolio-table/portfolio-table.component';
+import { TableHeaderComponent } from './components/molecules/table-header/table-header.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { PortfolioTableComponent } from './components/molecules/portfolio-table/
     AssetCardComponent,
     TradePageComponent,
     PorfolioComponent,
-    PortfolioTableComponent
+    PortfolioTableComponent,
+    TableHeaderComponent
 
   ],
   imports: [
