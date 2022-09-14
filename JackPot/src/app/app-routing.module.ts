@@ -7,6 +7,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { TabsComponent } from './components/organisms/tabs/tabs.component';
 import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
 import { TradePageComponent } from './components/pages/trade-page/trade-page.component';
+import { ProfileEditContentComponent } from './components/organisms/profile-edit-content/profile-edit-content.component';
+import { ProfileEditPageComponent } from './components/pages/profile-edit-page/profile-edit-page.component';
 
 //Let's add temporary routes with our names here for testing and not change app.component as it'll be easier to merge etc
 
@@ -18,6 +20,10 @@ const routes: Routes = [
     path: 'profile',
     component: ProfilePageComponent,
   },
+  {
+    path: 'profile-edit',
+    component: ProfileEditPageComponent
+  }
 
 ];
 

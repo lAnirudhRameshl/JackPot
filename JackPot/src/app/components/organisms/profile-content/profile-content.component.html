@@ -1,9 +1,11 @@
 <div class="page-head">
     <h2 class="page-heading">Profile</h2>
     <div class="expanded"></div>
-    <button mat-icon-button>
-        <mat-icon>edit</mat-icon>
-    </button>
+    <a routerLink="/profile-edit">
+        <button mat-icon-button>
+            <mat-icon>edit</mat-icon>
+        </button>
+    </a>
 </div>
 <div class="page-content">
     <app-profile-detail [detailName]="'Name'" [detailValue]="userDetail.firstName + ' ' + userDetail.lastName"></app-profile-detail>
