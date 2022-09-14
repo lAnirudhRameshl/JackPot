@@ -1,0 +1,11 @@
+.mat-tab-label .mat-tab-label-content {
+    font-family: 'Montserrat' !important;
+}
+
+::ng-deep .mat-tab-label {
+    font-family: 'Montserrat';
+}
+
+.mat-tab-group {
+    font-family: 'Montserrat' !important;
+}

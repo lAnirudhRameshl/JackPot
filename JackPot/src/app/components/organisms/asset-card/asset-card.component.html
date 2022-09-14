@@ -12,16 +12,17 @@
     </mat-chip>
   </mat-chip-list>
 
-  <br>
   <hr />
-  <br>
+  
 
   <mat-card-content>
     <p><b>Price:  <span class="greenvalue">${{ "158.5" }}</span></b></p>
     <p><b>Change:  <span class="redvalue">{{ "-0.2%" }}</span></b></p>
     <p><b>Sector: </b> {{ "Technology" }}</p>
   </mat-card-content>
-  <app-buy-sell-panel></app-buy-sell-panel>
+  <mat-card-actions>
+    <app-buy-sell-panel></app-buy-sell-panel>
+  </mat-card-actions>
   <!-- <mat-card-actions>
     <button mat-button>LIKE</button>
     <button mat-button>SHARE</button>

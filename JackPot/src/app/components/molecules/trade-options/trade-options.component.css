@@ -8,8 +8,9 @@ label {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 1rem 0.5rem;
-    column-gap: 10%;
+    padding: 0.5rem 1rem;
+    column-gap: 7%;
+    font-family: 'Montserrat';
 }
 
 .dropdown {
@@ -48,4 +49,13 @@ button {
     color: white;
     padding: 0.2rem 0;
     width: 13%;
+    font-family: 'Montserrat' !important;
+}
+
+.mat-select {
+    font-family: 'Montserrat' !important;
+}
+
+.mat-input-element {
+    font-family: 'Montserrat' !important;
 }
