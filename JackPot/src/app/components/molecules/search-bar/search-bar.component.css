@@ -1,0 +1,15 @@
+mat-icon{
+    transform: scale(0.8);
+}
+mat-icon:hover{ 
+    color:#999;
+}
+
+mat-form-field{
+    width: 20em;
+    
+}
+
+.search-bar{
+    margin-top: 0.5em;
+}
