@@ -25,24 +25,24 @@
         "units": 40,
         "avgcost": 48.90,
         "ltp": "75.50",
-        "currentval": 2030,
-        "pandl": 1064,
-        "netchg": "54.40",
-        "daychg":"-0.98"
-    },
-    {
-        "fund": "GAIL",
-        "units": 40,
-        "avgcost": 48.90,
-        "ltp": "75.50",
         "currentval": 3020,
         "pandl": 1064,
         "netchg": "54.40",
         "daychg":"-0.98"
     },
     {
-        "fund": "GLENMARK",
+        "fund": "GAIL",
         "units": 50,
+        "avgcost": 85.51,
+        "ltp": "87.40",
+        "currentval": 4370,
+        "pandl": 94.50,
+        "netchg": "2.21",
+        "daychg":"-1.24"
+    },
+    {
+        "fund": "GLENMARK",
+        "units": 10,
         "avgcost": 354.40,
         "ltp": "486",
         "currentval": 4860,
@@ -65,7 +65,7 @@
         "units": 10,
         "avgcost": 690,
         "ltp": "1038.90",
-        "currentval": 103890,
+        "currentval": 10389.0,
         "pandl": 3489,
         "netchg": "50.57",
         "daychg":"2.08"

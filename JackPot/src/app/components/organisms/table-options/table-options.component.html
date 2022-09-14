@@ -1,0 +1,13 @@
+<!--<mat-grid-list cols="4" rowHeight="10em">
+  <mat-grid-tile><app-thistory-holdings></app-thistory-holdings></mat-grid-tile>
+  <mat-grid-tile><app-dropdown></app-dropdown></mat-grid-tile>
+  <mat-grid-tile><app-search-bar></app-search-bar></mat-grid-tile>
+  <mat-grid-tile><app-download></app-download></mat-grid-tile>
+</mat-grid-list>-->
+
+<div class="table-options">
+  <app-thistory-holdings></app-thistory-holdings>
+  <app-dropdown></app-dropdown>
+  <app-search-bar (childEmit)="search($event)"></app-search-bar>
+  <app-download></app-download>
+</div>

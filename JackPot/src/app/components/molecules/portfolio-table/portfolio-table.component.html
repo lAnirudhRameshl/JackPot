@@ -1,4 +1,4 @@
-<!-- <p>{{dataSource}}</p> -->
+<app-table-header  text="Holdings" (childEmit)="search($event)"></app-table-header>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!-- Fund Column -->
@@ -20,29 +20,54 @@
 
     <ng-container matColumnDef="ltp">
         <th mat-header-cell *matHeaderCellDef> LTP </th>
-        <td mat-cell *matCellDef="let element"> {{element.ltp}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.ltp | number}} </td>
     </ng-container>
     <ng-container matColumnDef="currentval">
         <th mat-header-cell *matHeaderCellDef> CurrentVal </th>
-        <td mat-cell *matCellDef="let element"> {{element.currentval}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.currentval | number:'1.2-2'}} </td>
     </ng-container>
     
     <ng-container matColumnDef="netchg">
         <th mat-header-cell *matHeaderCellDef> NET CHG </th>
-        <td mat-cell *matCellDef="let element" [style.color]="isPositive(element.netchg)?'green':'red'"> {{element.netchg}} </td>
+        <td mat-cell *matCellDef="let element" [style.color]="isPositive(element.netchg)?'green':'red'"> {{element.netchg/100 | percent:'1.2'}} </td>
     </ng-container>
     <ng-container matColumnDef="daychg">
         <th mat-header-cell *matHeaderCellDef> DAY CHG </th>
-        <td mat-cell *matCellDef="let element" [style.color]="isPositive(element.daychg)?'green':'red'"> {{element.daychg}} </td>
+        <td mat-cell *matCellDef="let element" [style.color]="isPositive(element.daychg)?'green':'red'"> {{element.daychg/100 | percent:'1.2'}} </td>
     </ng-container>
 
     <ng-container matColumnDef="pandl">
         <th mat-header-cell *matHeaderCellDef> P&L </th>
         <td mat-cell *matCellDef="let element" [style.color]="isPositive(element.pandl)?'green':'red'"> {{element.pandl}} </td>
     </ng-container>
+
+    <ng-container matColumnDef="btn">
+        <th mat-header-cell *matHeaderCellDef> BUY / SELL </th>
+        <td mat-cell *matCellDef="let element"> <app-buy-sell-panel class="btnbs"></app-buy-sell-panel></td>
+    </ng-container>
+
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
+<div class="row">
+    <div>
+        <!-- <h1>{{totalInvestment | number:'1.2-2' }}</h1> -->
+        <h1>{{arr2[0] | number}}<span>{{'.'+arr2[1] + '0'}}</span></h1>
+        <p>Total Investment</p>
+    </div>
+    <div>
+        <!-- <h1>{{currentVal | number:'1.2-2'}}</h1> -->
+        <h1>{{arr1[0] | number}}<span *ngIf="arr1[1]">{{'.'+arr1[1] + '0'}}</span><span *ngIf="!arr1[1]">{{'.00'}}</span></h1>
+        <p>Current Value</p>
+    </div>
+    <div>
+        <!-- <h1 [style.color]="isPositive(netpl)?'green':'red'">{{netpl | number:'1.2-2'}}</h1> -->
+        <h1 [style.color]="isPositive(netpl)?'green':'red'">{{arr[0] | number}}<span>{{'.'+arr[1] + '0'}}</span></h1>
+        <p>P&L</p>
+    </div>
+    
+</div>
 
 <!-- <table>
     <thead>

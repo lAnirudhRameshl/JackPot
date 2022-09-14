@@ -1,5 +1,8 @@
+
+import { TradePopupComponent } from './components/organisms/trade-popup/trade-popup.component';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';;
+import { TradeHistoryPageComponent } from './components/pages/trade-history-page/trade-history-page.component'; 
 import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
 import { TradePageComponent } from './components/pages/trade-page/trade-page.component';
 import { ProfileEditPageComponent } from './components/pages/profile-edit-page/profile-edit-page.component';
@@ -12,6 +15,7 @@ import { LoginFormComponent } from './components/organisms/login-form/login-form
 const routes: Routes = [
 
   { path: 'trade', component: TradePageComponent },
+  { path: 'aad', component: TradePopupComponent },
 
   {
     path: 'profile',
@@ -32,7 +36,9 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginFormComponent
-  }
+  },
+  { path: 'trade-history', component: TradeHistoryPageComponent }
+
 ];
 
 @NgModule({

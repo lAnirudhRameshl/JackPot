@@ -1,0 +1,27 @@
+<!--<form class="search-bar">
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-grid-list cols="2" rowHeight="1.3em">
+      <mat-grid-tile ><input matInput placeholder="Search" name="fund" [(ngModel)]="fund"> </mat-grid-tile>
+      <mat-grid-tile 
+        >
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="search" (click)="onSearch()"
+          ></mat-icon>
+        
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-form-field>
+</form>-->
+<mat-form-field appearance="outline">
+  <input
+    type="text"
+    (change)="callParent(searchText.value)"
+    #searchText
+    matInput
+    [(ngModel)]="assetSearch"
+    placeholder="e.g: AAPL"
+  />
+  <mat-icon matSuffix id="icon" aria-label="Example home icon">search</mat-icon>
+</mat-form-field>

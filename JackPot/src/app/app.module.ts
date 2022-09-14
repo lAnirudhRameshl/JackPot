@@ -18,7 +18,14 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 
 import { AppComponent } from './app.component';
-import { TradeOptionsComponent } from './components/molecules/trade-options/trade-options.component';
+import { ThistoryHoldingsComponent } from './components/molecules/thistory-holdings/thistory-holdings.component';
+import { DropdownComponent } from './components/molecules/dropdown/dropdown.component';
+import { SearchBarComponent } from './components/molecules/search-bar/search-bar.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { DownloadComponent } from './components/molecules/download/download.component';
+import { ThistoryTableComponent } from './components/organisms/thistory-table/thistory-table.component';
+import { TradeHistoryPageComponent } from './components/pages/trade-history-page/trade-history-page.component';
+import { TableOptionsComponent } from './components/organisms/table-options/table-options.component';
 import { TabsComponent } from './components/organisms/tabs/tabs.component';
 import { MarketMoversTableComponent } from './components/molecules/market-movers-table/market-movers-table.component';
 import { HeaderComponent } from './components/atoms/header/header.component';
@@ -33,18 +40,28 @@ import { ProfilePageComponent } from './components/pages/profile-page/profile-pa
 import { MarginSummaryComponent } from './components/organisms/margin-summary/margin-summary.component';
 import { AssetCardComponent } from './components/organisms/asset-card/asset-card.component';
 import { TradePageComponent } from './components/pages/trade-page/trade-page.component';
+
+import { TradePopupComponent } from './components/organisms/trade-popup/trade-popup.component';
+
 import { ProfileEditContentComponent } from './components/organisms/profile-edit-content/profile-edit-content.component';
 import { ProfileEditPageComponent } from './components/pages/profile-edit-page/profile-edit-page.component';
 import { PorfolioComponent } from './components/pages/porfolio/porfolio.component';
 import { PortfolioTableComponent } from './components/molecules/portfolio-table/portfolio-table.component';
 import { RegisterFormComponent } from './components/organisms/register-form/register-form.component';
-import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { LoginFormComponent } from './components/organisms/login-form/login-form.component';
+import { TradeOptionsComponent } from './components/molecules/trade-options/trade-options.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TradeOptionsComponent,
+    ThistoryHoldingsComponent,
+    DropdownComponent,
+    SearchBarComponent,
+    DownloadComponent,
+    ThistoryTableComponent,
+    TradeHistoryPageComponent,
+    TableOptionsComponent,
     TabsComponent,
     MarketMoversTableComponent,
     ButtonTradeComponent,
@@ -52,6 +69,7 @@ import { LoginFormComponent } from './components/organisms/login-form/login-form
     ProfileDetailComponent,
     ProfileContentComponent,
     ProfilePageComponent,
+    TradeOptionsComponent,
     HeaderComponent,
     FooterComponent,
     NavBarLinkComponent,
@@ -61,6 +79,7 @@ import { LoginFormComponent } from './components/organisms/login-form/login-form
     MarginSummaryComponent,
     AssetCardComponent,
     TradePageComponent,
+    TradePopupComponent,
     ProfileEditContentComponent,
     ProfileEditPageComponent,
     PorfolioComponent,
@@ -72,26 +91,29 @@ import { LoginFormComponent } from './components/organisms/login-form/login-form
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule,
-    FormsModule,
     HttpClientModule,
     MatSelectModule,
     MatInputModule,
+    MatIconModule,
+    MatGridListModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatTableModule,
+    FormsModule,
+    HttpClientModule,
+
     MatButtonModule,
     MatTabsModule,
-    MatTableModule,
-    MatButtonModule,
+
     MatToolbarModule,
-    MatIconModule,
+
     MatCardModule,
     MatChipsModule,
     MatSliderModule,
     MatDatepickerModule,
-    MatMomentDateModule
+    MatMomentDateModule,
   ],
-  providers: [
-    {provide: MAT_DATE_LOCALE, useValue: 'en'}
-  ],
+  providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
