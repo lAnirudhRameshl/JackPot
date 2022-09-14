@@ -1,0 +1,61 @@
+label {
+    font-weight: bold;
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+.trade-options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    column-gap: 7%;
+    font-family: 'Montserrat';
+}
+
+.dropdown {
+    flex-grow: 2;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+.dropdown mat-form-field {
+    flex-grow: 1;
+}
+
+mat-form-field {
+    height: 50%;
+}
+
+.search {
+    flex-grow: 3;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+.search mat-form-field {
+    flex-grow: 1;
+    margin: 0 5px;
+}
+
+::ng-deep .mat-form-field-wrapper {
+    padding: 0;
+}
+
+button {
+    background-color: #2573BB;
+    color: white;
+    padding: 0.2rem 0;
+    width: 13%;
+    font-family: 'Montserrat' !important;
+}
+
+.mat-select {
+    font-family: 'Montserrat' !important;
+}
+
+.mat-input-element {
+    font-family: 'Montserrat' !important;
+}

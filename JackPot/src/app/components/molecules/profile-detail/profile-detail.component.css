@@ -1,0 +1,9 @@
+.profile-detail {
+    font-family: 'Montserrat';
+    font-size: 20px;
+}
+
+.profile-detail span {
+    font-weight: bold;
+    font-family: 'Montserrat';
+}

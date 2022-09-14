@@ -1,0 +1,30 @@
+<div class="margin-summary">
+  <p>
+    <mat-toolbar color="primary">
+      <button
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button icon"
+        (click)="refreshMargin()"
+      >
+        <mat-icon>refresh</mat-icon>
+      </button>
+      <span
+        >&nbsp;&nbsp;Margin Available:
+        <span class="dollar"> $ {{ this.marginAvail }} </span>
+        &nbsp;&nbsp;&nbsp;&nbsp; Margin Utilized:
+        <span class="dollar"> $ {{ this.marginUtil }}</span>
+      </span>
+
+      <span class="example-spacer"></span>
+
+      <button
+        mat-icon-button
+        aria-label="add money icon-button with card icon"
+        (click)="refreshMargin()"
+      >
+        <mat-icon>add_card</mat-icon>
+      </button>
+    </mat-toolbar>
+  </p>
+</div>

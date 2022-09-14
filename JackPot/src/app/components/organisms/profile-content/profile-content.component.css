@@ -1,0 +1,31 @@
+.page-head {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem 1rem;
+}
+
+.page-heading {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.expanded  {
+    flex-grow: 1;
+}
+
+button {
+    height: 24px;
+    width: 24px;
+}
+
+.mat-icon {
+    color: black;
+    font-size: 20px;
+    height: 24px;
+    width: 24px;
+}
+
+.page-content {
+    padding: 0.5rem 1rem;
+}
