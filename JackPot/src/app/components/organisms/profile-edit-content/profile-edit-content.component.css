@@ -1,0 +1,67 @@
+.profile-edit {
+    padding: 0.5rem 1rem;
+    font-family: 'Montserrat' !important;
+}
+
+.page-head {
+    display: flex;
+    flex-direction: row;
+}
+
+.page-heading {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.expanded  {
+    flex-grow: 1;
+}
+
+.page-heading {
+    font-family: 'Montserrat' !important;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+button {
+    background-color: #2573BB;
+    color: white;
+    font-family: 'Montserrat' !important;
+    font-weight: bold;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+label {
+    width: 15%;
+}
+
+mat-form-field {
+    flex-grow: 1;
+}
+
+mat-slider {
+    width: 70%;
+    margin-right: 5%;
+}
+
+::ng-deep .mat-accent .mat-slider-track-fill {
+    background-color: black !important;
+}
+
+::ng-deep .mat-slider-thumb-label {
+    background-color: #243A73 !important;
+}
+
+::ng-deep .mat-slider-thumb-label-text {
+    color: white !important;
+}
+
+::ng-deep .mat-slider-thumb {
+    background-color: #243A73 !important;
+}

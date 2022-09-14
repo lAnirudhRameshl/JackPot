@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
@@ -10,7 +11,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { AppRoutingModule } from './app-routing.module';
+import { MatSliderModule } from '@angular/material/slider'
+import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
 
 import { AppComponent } from './app.component';
 import { TradeOptionsComponent } from './components/molecules/trade-options/trade-options.component';
@@ -26,13 +29,11 @@ import { ProfileDetailComponent } from './components/molecules/profile-detail/pr
 import { ProfileContentComponent } from './components/organisms/profile-content/profile-content.component';
 import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
 import { MarginSummaryComponent } from './components/organisms/margin-summary/margin-summary.component';
-
 import { AssetCardComponent } from './components/organisms/asset-card/asset-card.component';
-import {MatCardModule} from '@angular/material/card';
-import {MatChipsModule} from '@angular/material/chips';
 import { TradePageComponent } from './components/pages/trade-page/trade-page.component';
+import { ProfileEditContentComponent } from './components/organisms/profile-edit-content/profile-edit-content.component';
+import { ProfileEditPageComponent } from './components/pages/profile-edit-page/profile-edit-page.component';
 import { PorfolioComponent } from './components/pages/porfolio/porfolio.component';
-
 import { PortfolioTableComponent } from './components/molecules/portfolio-table/portfolio-table.component';
 
 
@@ -47,7 +48,6 @@ import { PortfolioTableComponent } from './components/molecules/portfolio-table/
     ProfileDetailComponent,
     ProfileContentComponent,
     ProfilePageComponent,
-
     HeaderComponent,
     FooterComponent,
     NavBarLinkComponent,
@@ -57,15 +57,15 @@ import { PortfolioTableComponent } from './components/molecules/portfolio-table/
     MarginSummaryComponent,
     AssetCardComponent,
     TradePageComponent,
+    ProfileEditContentComponent,
+    ProfileEditPageComponent,
     PorfolioComponent,
     PortfolioTableComponent
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
@@ -78,8 +78,8 @@ import { PortfolioTableComponent } from './components/molecules/portfolio-table/
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
-    MatChipsModule
-
+    MatChipsModule,
+    MatSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent],
