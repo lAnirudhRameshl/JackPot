@@ -31,6 +31,10 @@ import { AssetCardComponent } from './components/organisms/asset-card/asset-card
 import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
 import { TradePageComponent } from './components/pages/trade-page/trade-page.component';
+import { PorfolioComponent } from './components/pages/porfolio/porfolio.component';
+
+import { PortfolioTableComponent } from './components/molecules/portfolio-table/portfolio-table.component';
+
 
 @NgModule({
   declarations: [
@@ -52,7 +56,9 @@ import { TradePageComponent } from './components/pages/trade-page/trade-page.com
     BuySellPanelComponent,
     MarginSummaryComponent,
     AssetCardComponent,
-    TradePageComponent
+    TradePageComponent,
+    PorfolioComponent,
+    PortfolioTableComponent
 
   ],
   imports: [
