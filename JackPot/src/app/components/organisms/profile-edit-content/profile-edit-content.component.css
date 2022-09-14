@@ -43,6 +43,7 @@ label {
 
 mat-form-field {
     flex-grow: 1;
+    font-family: 'Montserrat' !important;
 }
 
 mat-slider {

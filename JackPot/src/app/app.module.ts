@@ -11,9 +11,10 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { MatSliderModule } from '@angular/material/slider'
-import {MatCardModule} from '@angular/material/card';
-import {MatChipsModule} from '@angular/material/chips';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import { AppComponent } from './app.component';
 import { TradeOptionsComponent } from './components/molecules/trade-options/trade-options.component';
@@ -35,7 +36,8 @@ import { ProfileEditContentComponent } from './components/organisms/profile-edit
 import { ProfileEditPageComponent } from './components/pages/profile-edit-page/profile-edit-page.component';
 import { PorfolioComponent } from './components/pages/porfolio/porfolio.component';
 import { PortfolioTableComponent } from './components/molecules/portfolio-table/portfolio-table.component';
-
+import { RegisterFormComponent } from './components/organisms/register-form/register-form.component';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,8 @@ import { PortfolioTableComponent } from './components/molecules/portfolio-table/
     ProfileEditContentComponent,
     ProfileEditPageComponent,
     PorfolioComponent,
-    PortfolioTableComponent
+    PortfolioTableComponent,
+    RegisterFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,9 +82,13 @@ import { PortfolioTableComponent } from './components/molecules/portfolio-table/
     MatIconModule,
     MatCardModule,
     MatChipsModule,
-    MatSliderModule
+    MatSliderModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'en'}
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

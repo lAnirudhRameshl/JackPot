@@ -1,0 +1,65 @@
+<div class="register-form">
+  <h2 class="form-heading">Register</h2>
+  <form [formGroup]="registerForm">
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <mat-placeholder>First Name</mat-placeholder>
+      <input type="text" matInput formControlName="firstName" />
+      <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <mat-placeholder>Last Name</mat-placeholder>
+      <input type="text" matInput formControlName="lastName" />
+      <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <mat-placeholder>Email</mat-placeholder>
+      <input type="email" matInput formControlName="email" />
+      <mat-icon matSuffix>mail</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <mat-placeholder>Password</mat-placeholder>
+      <input [type]="showPassword?'text':'password'" matInput formControlName="password" />
+      <mat-icon matSuffix (click)="toggleShowPassword()">{{
+        showPassword ? "visibility" : "visibility_off"
+      }}</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Confirm Pasword</mat-label>
+      <mat-placeholder>Confirm Password</mat-placeholder>
+      <input [type]="showConfirmPassword?'text':'password'" matInput formControlName="confirmPassword" />
+      <mat-icon matSuffix (click)="toggleShowConfirmPassword()">{{
+        showConfirmPassword ? "visibility" : "visibility_off"
+      }}</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Date of Birth</mat-label>
+      <mat-placeholder>Date of Birth</mat-placeholder>
+      <input
+        type="date"
+        matInput
+        formControlName="dateOfBirth"
+        [matDatepicker]="picker"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Phone Number</mat-label>
+      <mat-placeholder>Phone Number</mat-placeholder>
+      <input type="text" matInput formControlName="phoneNumber" />
+      <mat-icon matSuffix>call</mat-icon>
+    </mat-form-field>
+    <p>Investment risk - {{ riskType() }}</p>
+    <mat-slider
+      formControlName="investmentRisk"
+      thumbLabel
+      step="1"
+      min="1"
+      max="5"
+    ></mat-slider>
+  </form>
+</div>
