@@ -53,6 +53,8 @@ import { LoginFormComponent } from './components/organisms/login-form/login-form
 import { TradeOptionsComponent } from './components/molecules/trade-options/trade-options.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TableHeaderComponent } from './components/molecules/table-header/table-header.component';
+import { NotFoundComponent } from './components/pages/not-found/not-found.component';
+
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
@@ -87,9 +89,13 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ProfileEditPageComponent,
     PorfolioComponent,
     PortfolioTableComponent,
+
+    NotFoundComponent,
+
     RegisterFormComponent,
     LoginFormComponent,
     TableHeaderComponent
+
   ],
   imports: [
     BrowserModule,
@@ -115,7 +121,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatChipsModule,
     MatSliderModule,
     MatDatepickerModule,
-    MatMomentDateModule,
+    MatMomentDateModule
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en' }],
   bootstrap: [AppComponent],

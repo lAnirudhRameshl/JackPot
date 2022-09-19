@@ -7,13 +7,14 @@ import { ProfilePageComponent } from './components/pages/profile-page/profile-pa
 import { TradePageComponent } from './components/pages/trade-page/trade-page.component';
 import { ProfileEditPageComponent } from './components/pages/profile-edit-page/profile-edit-page.component';
 import { PorfolioComponent } from './components/pages/porfolio/porfolio.component';
+import { NotFoundComponent } from './components/pages/not-found/not-found.component';
 import { RegisterFormComponent } from './components/organisms/register-form/register-form.component';
 import { LoginFormComponent } from './components/organisms/login-form/login-form.component';
 
 //Let's add temporary routes with our names here for testing and not change app.component as it'll be easier to merge etc
 
 const routes: Routes = [
-
+  { path: '',redirectTo:'portfolio',pathMatch:'full'},
   { path: 'trade', component: TradePageComponent },
 
   {
@@ -28,6 +29,7 @@ const routes: Routes = [
     path:'portfolio',
     component: PorfolioComponent
   },
+  
   {
     path: 'register',
     component: RegisterFormComponent
@@ -36,7 +38,11 @@ const routes: Routes = [
     path: 'login',
     component: LoginFormComponent
   },
-  { path: 'trade-history', component: TradeHistoryPageComponent }
+  { path: 'trade-history', component: TradeHistoryPageComponent },
+  {
+    path:'**',
+    component: NotFoundComponent
+  },
 
 ];
 
