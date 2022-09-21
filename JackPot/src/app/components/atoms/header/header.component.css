@@ -2,7 +2,10 @@
     /* height:50px; */
     background-color: #243A73;
     color: #FFF;
-    box-sizing: content-box;
+    box-sizing: border-box;
+    margin-left: 0;
+  margin-right: 0;
+  overflow: hidden;
 }
 .header>p{
     font-family: 'Montserrat';

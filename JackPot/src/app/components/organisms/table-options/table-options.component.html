@@ -9,5 +9,6 @@
   <app-thistory-holdings></app-thistory-holdings>
   <app-dropdown></app-dropdown>
   <app-search-bar (childEmit)="search($event)"></app-search-bar>
-  <app-download></app-download>
+  <app-download (childDownload)="download($event)"></app-download>
 </div>
+
