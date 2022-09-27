@@ -14,9 +14,9 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email: [null, [Validators.required]],
+      email: [null, [Validators.required, Validators.email, Validators.pattern("^[a-z0-9]+@[a-z]+\.(com|in)$")]],
       password: [null, [Validators.required]]
-    })
+    });
   }
 
   toggleShowPassword() {
@@ -24,7 +24,14 @@ export class LoginFormComponent implements OnInit {
   }
 
   getEmailErrorMessage() {
-    return 'Please enter the email';
+    let email = this.loginForm.get('email');
+    let errorMessage = "";
+    if(email?.hasError('required')) {
+      errorMessage = "Please enter the mail"
+    } else if(email?.hasError('email') || email?.hasError('pattern')) {
+      errorMessage = "Please enter a valid email"
+    }
+    return errorMessage;
   }
 
   getPasswordErrorMessage() {
