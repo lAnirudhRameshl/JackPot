@@ -24,7 +24,7 @@ export const CUSTOM_FORMATS = {
 
 class CrossFieldErrorMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-    return control!.touched! && form!.invalid!;
+    return control!.touched! && form!.hasError('match');
   }
 }
 
@@ -148,7 +148,7 @@ export class RegisterFormComponent implements OnInit {
     let errorMessage = '';
     if (confirmPassword?.hasError('required')) {
       errorMessage = 'Please re-enter the password to confirm';
-    } else {
+    } else if(this.registerForm.hasError('match')) {
       errorMessage = 'Password and confirm password do not match';
     }
     return errorMessage;

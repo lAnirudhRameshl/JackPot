@@ -74,11 +74,10 @@
       <mat-error
         *ngIf="
           registerForm.get('confirmPassword')?.touched &&
-          registerForm.get('confirmPassword')?.invalid
+          (registerForm.get('confirmPassword')?.invalid  || registerForm.hasError('match'))
         "
-        >{{ getConfirmPasswordErrorMessage() }}</mat-error
-      >
-      <mat-error *ngIf="registerForm.hasError('match')">Password and confirm password do not match</mat-error>
+        >{{ getConfirmPasswordErrorMessage() }}</mat-error>
+      <!-- <mat-error *ngIf="registerForm.hasError('match')">Password and confirm password do not match</mat-error> -->
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Date of Birth</mat-label>
