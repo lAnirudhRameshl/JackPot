@@ -5,11 +5,12 @@ mat-icon:hover{
     color:#999;
 }
 
-mat-form-field{
-    width: 20em;
-    
+.search-bar{
+    display: flex;
+    flex-direction: row;
+    flex-grow: 3;
 }
 
-.search-bar{
-    margin-top: 0.5em;
+.search-bar mat-form-field{
+    flex-grow: 1;
 }

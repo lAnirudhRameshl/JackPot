@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ThistoryTableComponent } from '../thistory-table/thistory-table.component';
 
 @Component({
   selector: 'app-table-options',
@@ -8,11 +9,14 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class TableOptionsComponent implements OnInit {
 
   @Output() childEmit = new EventEmitter();
+  @Output() childDownload = new EventEmitter();
+ 
 
   searchText="";
   constructor() { }
 
   ngOnInit(): void {
+  
   }
 
   search(e:any){
@@ -25,4 +29,8 @@ export class TableOptionsComponent implements OnInit {
     this.childEmit.emit(data);
   }
 
+  download(e:any){
+    this.childDownload.emit(e);
+  }
+  
 }

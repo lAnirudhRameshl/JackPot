@@ -1,8 +1,10 @@
 .dropdown{
     font: Montserrat;
-  
+    display: flex;
+    flex-direction: row;
+    flex-grow: 3;
 }
 
-mat-form-field{
-    width: 24em;
+.dropdown mat-form-field{
+    flex-grow: 1;
 }

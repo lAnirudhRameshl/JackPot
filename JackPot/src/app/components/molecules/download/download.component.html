@@ -2,11 +2,8 @@
   rel="stylesheet"
   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
 />
-<div class="download" (click)="onDownload()">
-  <mat-grid-list cols="2" rowHeight="1em">
-    <mat-grid-tile>Download</mat-grid-tile>
-    <mat-grid-tile>
-      <span class="material-symbols-outlined"> cloud_download </span>
-    </mat-grid-tile>
-  </mat-grid-list>
+
+<div class="download" (click)="onClicked(download_status)">
+  <label>Download</label>
+  <span class="material-symbols-outlined"> cloud_download </span>
 </div>

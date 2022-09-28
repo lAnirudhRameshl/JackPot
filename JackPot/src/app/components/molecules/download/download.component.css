@@ -1,16 +1,22 @@
-mat-grid-list {
-  width: 11em;
+.download{
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  align-items: center;
+  column-gap: 0;
+
+}
+
+label {
+  flex-grow: 1;
   font: Montserrat;
   font-size: 17px;
   font-weight: bold;
+  text-align: right;
+  
 }
-
 .download:hover {
   color: rgb(23, 63, 194);
-}
-
-::ng-deep div.mat-grid-tile-content{
-  justify-content: left !important;
 }
 
 .material-symbols-outlined {

@@ -24,10 +24,14 @@
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
-    "moment": "^2.29.4",
+    "angular5-csv": "^0.2.11",
     "bootstrap": "^4.6.2",
+    "file-saver": "^2.0.5",
+    "mat-table-exporter": "^10.2.4",
+    "moment": "^2.29.4",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
+    "xlsx": "^0.18.5",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

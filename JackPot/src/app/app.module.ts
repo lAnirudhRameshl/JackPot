@@ -56,6 +56,8 @@ import { TableHeaderComponent } from './components/molecules/table-header/table-
 import { NotFoundComponent } from './components/pages/not-found/not-found.component';
 
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatTableExporterModule } from 'mat-table-exporter';
+import {MatSortModule} from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -109,8 +111,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     FormsModule,
     ReactiveFormsModule,
     MatTableModule,
-    FormsModule,
-    HttpClientModule,
+
+
     MatDialogModule,
     MatButtonModule,
     MatTabsModule,
@@ -121,7 +123,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatChipsModule,
     MatSliderModule,
     MatDatepickerModule,
-    MatMomentDateModule
+    MatMomentDateModule,
+    MatTableExporterModule,
+    MatSortModule
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en' }],
   bootstrap: [AppComponent],
