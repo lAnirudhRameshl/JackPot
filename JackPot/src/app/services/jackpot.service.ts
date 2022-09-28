@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MarketMover } from '../models/market-movers.model';
+import { Portfolio } from '../models/portfolio.model';
+import { ITrade } from '../models/trade';
 
 @Injectable({
   providedIn: 'root'
@@ -22,5 +24,14 @@ export class JackpotService {
 
   getLoserMarketMovers(): Observable<MarketMover[]> {
     return this.http.get<MarketMover[]>(`${this.BASE_URL}/losers-market-movers.json`);
+  }
+
+  getPortfolioData():Observable<Portfolio[]>{
+    console.log("Inside Function...");
+    return this.http.get<Portfolio[]>('../../assets/data/holdings.json');
+  }
+
+  getTrades(): Observable<ITrade[]>{
+    return this.http.get<ITrade[]>('../assets/data/thistory.json');
   }
 }

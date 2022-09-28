@@ -16,7 +16,7 @@ export class ButtonTradeComponent implements OnInit {
   bs_style = {};
 
   ngOnInit(): void {
-    if (this.buysell.toUpperCase() == 'BUY') {
+    if (this.buysell.toUpperCase() == 'BUY') {  
       this.bs_style = { 'background-color': '#44bd32', color: 'white' };
       this.buttonText = 'BUY';
     } else {

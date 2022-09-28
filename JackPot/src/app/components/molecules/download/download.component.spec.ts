@@ -20,4 +20,14 @@ describe('DownloadComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('onClicked', () => {
+    it('should emit the boolean value it was called with', () => {
+      let childDownloadSpy = spyOn(component.childDownload, 'emit');
+
+      component.onClicked(true);
+
+      expect(childDownloadSpy).toHaveBeenCalledOnceWith(true);
+    })
+  })
 });
