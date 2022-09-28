@@ -3,8 +3,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatTableExporterDirective } from 'mat-table-exporter';
 import { ITrade } from 'src/app/models/trade';
 import { ExportService } from 'src/app/services/export.service';
-import { TradeDataService } from 'src/app/services/trade-data.service';
 import {MatSort, Sort} from '@angular/material/sort';
+import { JackpotService } from 'src/app/services/jackpot.service';
 
 @Component({
   selector: 'app-thistory-table',
@@ -22,7 +22,7 @@ export class ThistoryTableComponent implements OnInit {
   
   displayedColumns: string[] = ['fund','units','price','account', 'loss_profit','date', 'type'];
   
-  constructor(private tradeDataService: TradeDataService,private exportService: ExportService) {
+  constructor(private jackpotService: JackpotService, private exportService: ExportService) {
 
    }
    
@@ -33,7 +33,7 @@ export class ThistoryTableComponent implements OnInit {
 
   getAllStocks()
   {
-  this.tradeDataService.getTrades().subscribe((data)=>
+  this.jackpotService.getTrades().subscribe((data)=>
     {
       this.trades=data;
       this.dataSource = new MatTableDataSource(this.trades);

@@ -60,7 +60,7 @@ export class ProfileEditContentComponent implements OnInit {
     } else {
       labelText = 'Very high risk';
     }
-    return labelText
+    return labelText;
   }
 
 }

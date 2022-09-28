@@ -13,7 +13,7 @@ export class MarketMoversTableComponent implements OnInit {
 
   displayedColumns: string[] = ['name', 'lastPrice', 'priceChange', 'volume']
 
-  constructor(private jackpotService: JackpotService) {}
+  constructor() {}
 
   ngOnInit(): void {}
 }

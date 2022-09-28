@@ -8,9 +8,8 @@ describe('SearchBarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SearchBarComponent ]
-    })
-    .compileComponents();
+      declarations: [SearchBarComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SearchBarComponent);
     component = fixture.componentInstance;
@@ -19,5 +18,15 @@ describe('SearchBarComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('callParent function', () => {
+    it('should emit the entered data', () => {
+      let childEmitSpy = spyOn(component.childEmit, 'emit');
+
+      component.callParent('data');
+
+      expect(childEmitSpy).toHaveBeenCalledOnceWith('data');
+    });
   });
 });

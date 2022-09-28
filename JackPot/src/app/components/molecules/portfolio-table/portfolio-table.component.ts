@@ -1,6 +1,7 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Portfolio } from 'src/app/models/portfolio.model';
+import { JackpotService } from 'src/app/services/jackpot.service';
 import { PortfolioDataService } from 'src/app/services/portfolio-data.service';
 
 @Component({
@@ -23,7 +24,7 @@ export class PortfolioTableComponent implements OnInit {
   arr2:any[]=[];
   
   displayedColumns: string[] = ['fund','units','avgcost','ltp','currentval','netchg','daychg','pandl','btn'];
-  constructor(private ds:PortfolioDataService) { }
+  constructor(private ds: JackpotService) { }
 
   search(e:any){
     console.log("Insie parent..fuction search called..");
@@ -49,8 +50,6 @@ export class PortfolioTableComponent implements OnInit {
       this.arr1 = this.currentVal.toString().split('.');
       this.arr2 = this.totalInvestment.toString().split('.');
     }
-    
-  
   }
 
   isPositive(num:number):boolean{

@@ -23,7 +23,10 @@ export const CUSTOM_FORMATS = {
 };
 
 class CrossFieldErrorMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+  isErrorState(
+    control: FormControl | null,
+    form: FormGroupDirective | NgForm | null
+  ): boolean {
     return control!.touched! && form!.hasError('match');
   }
 }
@@ -44,7 +47,6 @@ export class RegisterFormComponent implements OnInit {
     const password = control.get('password');
     const confirmPassword = control.get('confirmPassword');
 
-
     return password &&
       confirmPassword &&
       password.value != confirmPassword.value
@@ -55,34 +57,44 @@ export class RegisterFormComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
-    this.registerForm = this.formBuilder.group({
-      firstName: [null, [Validators.required]],
-      lastName: [null, [Validators.required]],
-      email: [null, [Validators.required, Validators.email]],
-      password: [
-        null,
-        [
-          Validators.required,
-          Validators.minLength(6),
-          Validators.pattern(
-            '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{6,}$'
-          ),
+    this.registerForm = this.formBuilder.group(
+      {
+        firstName: [null, [Validators.required]],
+        lastName: [null, [Validators.required]],
+        email: [
+          null,
+          [
+            Validators.required,
+            Validators.email,
+            Validators.pattern('^[a-z0-9]+@[a-z]+.(com|in)$'),
+          ],
         ],
-      ],
-      confirmPassword: [null, [Validators.required]],
-      dateOfBirth: [null, [Validators.required]],
-      phoneNumber: [
-        null,
-        [
-          Validators.required,
-          Validators.minLength(10),
-          Validators.maxLength(10),
+        password: [
+          null,
+          [
+            Validators.required,
+            Validators.minLength(6),
+            Validators.pattern(
+              '^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{6,}$'
+            ),
+          ],
         ],
-      ],
-      investmentRisk: [1, Validators.required],
-    }, {
-      validator: this.confirmPasswordValidator
-    });
+        confirmPassword: [null, [Validators.required]],
+        dateOfBirth: [null, [Validators.required]],
+        phoneNumber: [
+          null,
+          [
+            Validators.required,
+            Validators.minLength(10),
+            Validators.maxLength(10),
+          ],
+        ],
+        investmentRisk: [1, Validators.required],
+      },
+      {
+        validator: this.confirmPasswordValidator,
+      }
+    );
   }
 
   toggleShowPassword() {
@@ -123,7 +135,7 @@ export class RegisterFormComponent implements OnInit {
     let errorMessage = '';
     if (email?.hasError('required')) {
       errorMessage = 'Please enter the email';
-    } else if (email?.hasError('email')) {
+    } else if (email?.hasError('email') || email?.hasError('pattern')) {
       errorMessage = 'Please enter a valid email';
     }
     return errorMessage;
@@ -148,7 +160,7 @@ export class RegisterFormComponent implements OnInit {
     let errorMessage = '';
     if (confirmPassword?.hasError('required')) {
       errorMessage = 'Please re-enter the password to confirm';
-    } else if(this.registerForm.hasError('match')) {
+    } else if (this.registerForm.hasError('match')) {
       errorMessage = 'Password and confirm password do not match';
     }
     return errorMessage;

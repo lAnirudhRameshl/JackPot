@@ -20,4 +20,14 @@ describe('TableHeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  describe('callParent function', () => {
+    it('should emit the entered data', () => {
+      let childEmitSpy = spyOn(component.childEmit, 'emit');
+
+      component.callParent('data');
+
+      expect(childEmitSpy).toHaveBeenCalledOnceWith('data');
+    });
+  });
 });
