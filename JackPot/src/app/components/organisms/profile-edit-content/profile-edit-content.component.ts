@@ -39,10 +39,6 @@ export class ProfileEditContentComponent implements OnInit {
     return this.profileEditForm.get('investmentRisk')?.value;
   }
 
-  set investmentRisk(investmentRisk: number) {
-    this.profileEditForm.get('investmentRisk')?.setValue(investmentRisk)
-  }
-
   editProfile() {
 
   }

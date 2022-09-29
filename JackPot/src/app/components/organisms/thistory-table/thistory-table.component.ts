@@ -2,7 +2,6 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatTableExporterDirective } from 'mat-table-exporter';
 import { ITrade } from 'src/app/models/trade';
-import { ExportService } from 'src/app/services/export.service';
 import {MatSort, Sort} from '@angular/material/sort';
 import { JackpotService } from 'src/app/services/jackpot.service';
 
@@ -22,7 +21,7 @@ export class ThistoryTableComponent implements OnInit {
   
   displayedColumns: string[] = ['fund','units','price','account', 'loss_profit','date', 'type'];
   
-  constructor(private jackpotService: JackpotService, private exportService: ExportService) {
+  constructor(private jackpotService: JackpotService) {
 
    }
    
