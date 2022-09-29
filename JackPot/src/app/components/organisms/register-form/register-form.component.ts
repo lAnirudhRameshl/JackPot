@@ -179,12 +179,12 @@ export class RegisterFormComponent implements OnInit {
     let phoneNumber = this.registerForm.get('phoneNumber');
     let errorMessage = '';
     if (phoneNumber?.hasError('required')) {
-      return 'Please enter the phone number';
+      errorMessage = 'Please enter the phone number';
     } else if (
       phoneNumber?.hasError('minlength') ||
       phoneNumber?.hasError('maxlength')
     ) {
-      return 'Invalid number';
+      errorMessage = 'Invalid number';
     }
     return errorMessage;
   }
