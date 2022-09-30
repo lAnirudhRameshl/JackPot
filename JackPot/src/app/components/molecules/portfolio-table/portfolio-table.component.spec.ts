@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { utc } from 'moment';
-import { Observable, of } from 'rxjs';
+import { of } from 'rxjs';
 import { Portfolio } from 'src/app/models/portfolio.model';
 import { JackpotService } from 'src/app/services/jackpot.service';
 
@@ -54,6 +53,24 @@ describe('PortfolioTableComponent', () => {
     expect(component.totalInvestment).toBeGreaterThan(0);
     expect(component.dataSource).not.toBeNull();
   });
+
+  describe('cal function', () => {
+    it('should set arr, arr1 and arr2 attributes', () => {
+      component.netpl = 12.2;
+      component.currentVal = 15.5;
+      component.totalInvestment = 100.3;
+      component.arr = component.arr1 = component.arr2 = [];
+
+      component.cal();
+
+      expect(component.arr.length).toEqual(2);
+      expect(component.arr[0]).toEqual('12');
+      expect(component.arr1.length).toEqual(2);
+      expect(component.arr1[0]).toEqual('15');
+      expect(component.arr2.length).toEqual(2);
+      expect(component.arr2[0]).toEqual('100');
+    })
+  })
 
   describe('search function', () => {
     it('should set dataSource.filter to the given text', () => {
