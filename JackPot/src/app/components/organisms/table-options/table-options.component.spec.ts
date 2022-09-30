@@ -32,21 +32,21 @@ describe('TableOptionsComponent', () => {
 
   describe('callParent', () => {
     it('should emit the given data using childDownload', () => {
-      let childDownloadSpy = spyOn(component.childDownload, 'emit');
+      let childEmitSpy = spyOn(component.childEmit, 'emit');
 
       component.callParent('data');
 
-      expect(childDownloadSpy).toHaveBeenCalledOnceWith('data');
+      expect(childEmitSpy).toHaveBeenCalledOnceWith('data');
     });
   });
 
   describe('download function', () => {
     it('should emit the given data using childEmit', () => {
-      let childEmitSpy = spyOn(component.childEmit, 'emit');
+      let childDownloadSpy = spyOn(component.childDownload, 'emit');
 
       component.download('data');
 
-      expect(childEmitSpy).toHaveBeenCalledOnceWith('data');
+      expect(childDownloadSpy).toHaveBeenCalledOnceWith('data');
     });
   });
 });
