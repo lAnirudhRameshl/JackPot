@@ -12,7 +12,7 @@ public class DataSource {
 
     public static Connection getConnection() throws SQLException {
         if(connection == null){
-            ResourceBundle resourceBundle = ResourceBundle.getBundle("db.properties");
+            ResourceBundle resourceBundle = ResourceBundle.getBundle("db");
             String url = resourceBundle.getString("db.url");
             String username=resourceBundle.getString("db.username");
             String psswd=resourceBundle.getString("db.password");
