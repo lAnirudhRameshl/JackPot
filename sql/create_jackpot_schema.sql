@@ -38,9 +38,9 @@ CREATE TABLE trade_history (
     user_id NUMBER,
     asset_class_id NUMBER,
     PRIMARY KEY (trade_history_id),
-    FOREIGN KEY (account_type_id) REFERENCES account_type(account_type_id),
-    FOREIGN KEY (user_id) REFERENCES user_detail(user_id),
-    FOREIGN KEY (asset_class_id) REFERENCES asset_class(asset_class_id)
+    FOREIGN KEY (account_type_id) REFERENCES account_type(account_type_id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES user_detail(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (asset_class_id) REFERENCES asset_class(asset_class_id) ON DELETE CASCADE
 );
 
 CREATE TABLE portfolio (
@@ -57,18 +57,18 @@ CREATE TABLE portfolio (
     user_id NUMBER,
     asset_class_id NUMBER,
     PRIMARY KEY (portfolio_id),
-    FOREIGN KEY (account_type_id) REFERENCES account_type(account_type_id),
-    FOREIGN KEY (user_id) REFERENCES user_detail(user_id),
-    FOREIGN KEY (asset_class_id) REFERENCES asset_class(asset_class_id)
+    FOREIGN KEY (account_type_id) REFERENCES account_type(account_type_id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES user_detail(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (asset_class_id) REFERENCES asset_class(asset_class_id) ON DELETE CASCADE
 );
 
 CREATE TABLE user_account (
-    user_account_id NUMBER GENERATED ALWAYS as IDENTITY(START with 1 INCREMENT by 1),
+    user_account_id VARCHAR(16),
     margin_available NUMBER,
     margin_used NUMBER,
     account_type_id NUMBER,
     user_id NUMBER,
     PRIMARY KEY (user_account_id),
-    FOREIGN KEY (account_type_id) REFERENCES account_type(account_type_id),
-    FOREIGN KEY (user_id) REFERENCES user_detail(user_id)
+    FOREIGN KEY (account_type_id) REFERENCES account_type(account_type_id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES user_detail(user_id) ON DELETE CASCADE
 );
