@@ -1,6 +1,6 @@
 package com.fidelity.model;
 
-public enum AcctType {
+public enum AccountType {
 //    Brokerage, 401k, IRAs, Roth IRAs, HSAs
     BROKERAGE(1,"Brokerage"),
     IRA(2,"IRA"),
@@ -9,14 +9,14 @@ public enum AcctType {
     private int acctID;
     private String acctType;
 
-    private AcctType(int acctID, String acctType) {
+    private AccountType(int acctID, String acctType) {
         this.acctID = acctID;
         this.acctType = acctType;
     }
-    public static AcctType of(int code){
-        for(AcctType acctType1:values()){
-            if(acctType1.acctID == code){
-                return acctType1;
+    public static AccountType of(int code){
+        for(AccountType accountType1 :values()){
+            if(accountType1.acctID == code){
+                return accountType1;
             }
         }
         throw new IllegalArgumentException("Unknown account type");

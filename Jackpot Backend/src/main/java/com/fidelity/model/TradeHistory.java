@@ -7,21 +7,21 @@ import java.sql.Timestamp;
 public class TradeHistory {
     private Integer TradeHistoryID;
     private String fundName;
-    private Double quantity;//1 th->1user ;
+    private BigDecimal quantity;
     private BigDecimal price;
-    private AcctType accountTypeID;
+    private AccountType accountType;
     private Timestamp transactionDate;
     private User user;
     private AssetClass assetClass;
 
     public TradeHistory(){}
 
-    public TradeHistory(Integer tradeHistoryID, String fundName, Double quantity, BigDecimal price, AcctType accountTypeID, Timestamp transactionDate, User user, AssetClass assetClass) {
+    public TradeHistory(Integer tradeHistoryID, String fundName, BigDecimal quantity, BigDecimal price, AccountType accountType, Timestamp transactionDate, User user, AssetClass assetClass) {
         TradeHistoryID = tradeHistoryID;
         this.fundName = fundName;
         this.quantity = quantity;
         this.price = price;
-        this.accountTypeID = accountTypeID;
+        this.accountType = accountType;
         this.transactionDate = transactionDate;
         this.user = user;
         this.assetClass = assetClass;
@@ -43,11 +43,11 @@ public class TradeHistory {
         this.fundName = fundName;
     }
 
-    public Double getQuantity() {
+    public BigDecimal getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Double quantity) {
+    public void setQuantity(BigDecimal quantity) {
         this.quantity = quantity;
     }
 
@@ -59,12 +59,12 @@ public class TradeHistory {
         this.price = price;
     }
 
-    public AcctType getAccountTypeID() {
-        return accountTypeID;
+    public AccountType getAccountType() {
+        return accountType;
     }
 
-    public void setAccountTypeID(AcctType accountTypeID) {
-        this.accountTypeID = accountTypeID;
+    public void setAccountType(AccountType accountTypeID) {
+        this.accountType = accountTypeID;
     }
 
     public Timestamp getTransactionDate() {
