@@ -10,9 +10,8 @@ public class DataSource {
 
     private DataSource() {}
 
-    public static Connection getConnection() throws SQLException, ClassNotFoundException {
+    public static Connection getConnection() throws SQLException {
         if(connection == null){
-            Class.forName("oracle.jdbc.driver.OracleDriver");
             ResourceBundle resourceBundle = ResourceBundle.getBundle("db");
             String url = resourceBundle.getString("db.url");
             String username=resourceBundle.getString("db.username");

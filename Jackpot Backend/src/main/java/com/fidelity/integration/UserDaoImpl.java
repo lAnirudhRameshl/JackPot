@@ -17,9 +17,6 @@ public class UserDaoImpl implements UserDao{
         } catch (SQLException e) {
             e.printStackTrace();
             throw new DatabaseException("Could not establish connection to database");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            throw new DatabaseException("Could not find driver");
         }
     }
 
