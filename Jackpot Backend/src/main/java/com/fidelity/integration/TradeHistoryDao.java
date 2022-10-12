@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface TradeHistoryDao {
     List<TradeHistory> getTradeHistory() throws SQLException;
-    void insertTrade(TradeHistory t);
+    void insertTrade(TradeHistory tradeHistory);
     void deleteTradeById(int id);
 }

@@ -1,5 +1,8 @@
 package com.fidelity.integration;
 
+import com.fidelity.exception.DatabaseException;
+import com.fidelity.model.AccountType;
+import com.fidelity.model.AssetClass;
 import com.fidelity.model.TradeHistory;
 
 import java.math.BigDecimal;
@@ -7,6 +10,7 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 public class TradeHistoryDaoImpl implements TradeHistoryDao{
@@ -35,22 +39,77 @@ public class TradeHistoryDaoImpl implements TradeHistoryDao{
 			    th.transaction_date
 		""";
 
-
-                Connection conn = datasource.getConnection();
-                PreparedStatement stmt = conn.prepareStatement(sql);
+        try (Connection conn = datasource.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
             ResultSet rs = stmt.executeQuery();
-            List<TradeHistory> tradinghistories = handleResults(rs);
-            return tradinghistories;
+            List<TradeHistory> tradeHistories = handleResults(rs);
+            return tradeHistories;
+        }
+        catch (SQLException e) {
+            String msg = "Cannot execute query";
 
+            throw new DatabaseException(msg);
+        }
     }
 
+    private List<TradeHistory> handleResults(ResultSet rs) throws SQLException {
+        List<TradeHistory> tradehistories = new ArrayList<>();
+        while (rs.next()) {
+            int tradeHistoryId = rs.getInt("trade_history_id");
+            String fundName = rs.getString("fund_name");
+            BigDecimal quantity = rs.getBigDecimal("quantity");
+            BigDecimal price = rs.getBigDecimal("price");
+            Timestamp transactionDate = rs.getTimestamp("transaction_date");
+            int accountId = rs.getInt("account_type_id");
+            int assetId = rs.getInt("asset_class_id");
+            int userId = rs.getInt("user_id");
 
+            AccountType accountType = AccountType.of(accountId);
+            AssetClass assetClass = AssetClass.of(assetId);
 
+            TradeHistory tradeHistory = new TradeHistory(tradeHistoryId, fundName, quantity, price,  accountType,transactionDate, userId, assetClass);
+            tradehistories.add(tradeHistory);
+        }
+        return tradehistories;
+    }
 
+    public void insertTrade(TradeHistory tradeHistory) {
+        String sql = """
+			INSERT INTO trade_history (
+			    fund_name,
+			    quantity,
+			    price,
+			    transaction_date,
+			    account_type_id,
+			    user_id,
+			    asset_class_id
+			) VALUES (
+			    ?,
+			    ?,
+			    ?,
+			    ?,
+			    ?,
+			    ?
+			)
+		""";
 
-
-    public void insertTrade(TradeHistory t) {
-
+        Objects.requireNonNull(tradeHistory);
+        try (Connection conn = datasource.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, tradeHistory.getFundName());
+            stmt.setBigDecimal(2, tradeHistory.getQuantity());
+            stmt.setBigDecimal(3, tradeHistory.getPrice());
+            stmt.setTimestamp(4, tradeHistory.getTransactionDate());
+            AccountType accountType  = tradeHistory.getAccountType();
+            stmt.setInt(5, accountType.getAcctID());
+            stmt.setInt(6, tradeHistory.getUserId());
+            AssetClass assetClass = tradeHistory.getAssetClass();
+            stmt.setInt(7, assetClass.getAssetID());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            String msg = "Cannot execute insertClient for " + tradeHistory;
+            throw new DatabaseException(msg);
+        }
     }
 
     public void deleteTradeById(int id) {
