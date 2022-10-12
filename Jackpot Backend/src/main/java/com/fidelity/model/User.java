@@ -11,6 +11,10 @@ public class User {
     private Integer investmentRisk;
     private String phoneNumber;
 
+    public User() {
+
+    }
+
     public User(Integer userID, String firstName, String lastName, String email, String password, Integer investmentRisk, String phoneNumber) {
         this.userID = userID;
         this.firstName = firstName;
