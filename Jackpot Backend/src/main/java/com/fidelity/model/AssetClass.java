@@ -23,5 +23,11 @@ public enum AssetClass {
         throw new IllegalArgumentException("Unknown asset type");
     }
 
+    public int getAssetID() {
+        return assetID;
+    }
 
+    public void setAssetID(int assetID) {
+        this.assetID = assetID;
+    }
 }
