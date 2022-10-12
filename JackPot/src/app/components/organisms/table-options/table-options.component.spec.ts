@@ -8,9 +8,8 @@ describe('TableOptionsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TableOptionsComponent ]
-    })
-    .compileComponents();
+      declarations: [TableOptionsComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(TableOptionsComponent);
     component = fixture.componentInstance;
@@ -19,5 +18,35 @@ describe('TableOptionsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('search function', () => {
+    it('should call callParent function with entered value', () => {
+      let callParentSpy = spyOn(component, 'callParent');
+
+      component.search('search');
+
+      expect(callParentSpy).toHaveBeenCalledOnceWith('search');
+    });
+  });
+
+  describe('callParent', () => {
+    it('should emit the given data using childDownload', () => {
+      let childEmitSpy = spyOn(component.childEmit, 'emit');
+
+      component.callParent('data');
+
+      expect(childEmitSpy).toHaveBeenCalledOnceWith('data');
+    });
+  });
+
+  describe('download function', () => {
+    it('should emit the given data using childEmit', () => {
+      let childDownloadSpy = spyOn(component.childDownload, 'emit');
+
+      component.download('data');
+
+      expect(childDownloadSpy).toHaveBeenCalledOnceWith('data');
+    });
   });
 });

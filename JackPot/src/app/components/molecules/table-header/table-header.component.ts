@@ -26,7 +26,4 @@ export class TableHeaderComponent implements OnInit {
   }
 
 }
-function output() {
-  throw new Error('Function not implemented.');
-}
 
