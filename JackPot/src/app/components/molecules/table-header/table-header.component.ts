@@ -10,7 +10,9 @@ import { ASSET_TYPES } from 'src/app/constants/asset-types';
 export class TableHeaderComponent implements OnInit {
 
   @Input() text?:string;
-  @Output() childEmit = new EventEmitter();
+  @Output() searchEvent = new EventEmitter();
+  @Output() downloadEvent = new EventEmitter();
+  @Output() dropdownEvent = new EventEmitter();
 
   assetTypes: string[] = ASSET_TYPES;
   selectedAssetType: string = this.assetTypes[0];
@@ -20,10 +22,18 @@ export class TableHeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  callParent(data:string){
+
+  searchAsset(data:string){
     console.log("Parent component called.."+ data);
-    this.childEmit.emit(data);
+    this.searchEvent.emit(data);
   }
 
+  downloadData() {
+    this.downloadEvent.emit();
+  }
+
+  changeAssetClass(assetClass: String) {
+    this.dropdownEvent.emit(assetClass)
+  }
 }
 

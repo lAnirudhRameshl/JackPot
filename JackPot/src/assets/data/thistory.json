@@ -1,28 +1,28 @@
 [
     {
         "fund" : "NASDAQ",
-        "units" : 10,
+        "quantity" : 10,
         "price" : 1163.57,
         "account" : "401K",
         "date" : "2022-12-20 08:00"
     },
     {
         "fund" : "NIKKEI",
-        "units" : -5.89,
+        "quantity" : -5.89,
         "price" : 272818.62,
         "account" : "401K",
         "date" : "2021-12-20 05:00"
     },
     {
         "fund" : "SHANGHAI",
-        "units" : 2.78,
+        "quantity" : 2.78,
         "price" : 3237.54,
         "account" : "401K",
         "date" : "2021-17-20 06:30"
     },
     {
         "fund" : "DAX",
-        "units" : -11.25,
+        "quantity" : -11.25,
         "price" : 13156.60,
         "account" : "401K",
         "date" : "2022-12-20 07:00"

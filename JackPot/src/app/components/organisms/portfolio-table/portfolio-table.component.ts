@@ -9,7 +9,7 @@ import { JackpotService } from 'src/app/services/jackpot.service';
   styleUrls: ['./portfolio-table.component.css'],
 })
 export class PortfolioTableComponent implements OnInit {
-  data: Portfolio[] = [];
+  data!: Portfolio[];
   searchText = '';
   dataSource!: MatTableDataSource<Portfolio>;
 
@@ -38,6 +38,10 @@ export class PortfolioTableComponent implements OnInit {
     console.log('Insie parent..fuction search called..');
     this.searchText = e;
     this.dataSource.filter = e.trim().toLowerCase();
+  }
+
+  download() {
+    console.log("download clicked");
   }
 
   ngOnInit(): void {

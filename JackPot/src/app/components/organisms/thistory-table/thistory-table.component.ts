@@ -19,7 +19,7 @@ export class ThistoryTableComponent implements OnInit {
   @ViewChild("exporter") exporter! : MatTableExporterDirective;
   @ViewChild('empTbSort') empTbSort = new MatSort();
   
-  displayedColumns: string[] = ['fund','units','price','account', 'loss_profit','date', 'type'];
+  displayedColumns: string[] = ['fund','quantity','price','account', 'loss_profit','date', 'type'];
   
   constructor(private jackpotService: JackpotService) {
 

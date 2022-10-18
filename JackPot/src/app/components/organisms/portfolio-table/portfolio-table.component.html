@@ -1,7 +1,7 @@
-<app-table-header  text="Holdings" (childEmit)="search($event)"></app-table-header>
+<app-table-header text="Holdings ({{data.length}})" (searchEvent)="search($event)" (downloadEvent)="download()"></app-table-header>
+
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-    <!-- Fund Column -->
     <ng-container matColumnDef="fund">
         <th mat-header-cell *matHeaderCellDef> Fund </th>
         <td mat-cell *matCellDef="let element"> {{element.fund}} </td>
@@ -50,24 +50,7 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 
-<div class="row">
-    <div>
-        <!-- <h1>{{totalInvestment | number:'1.2-2' }}</h1> -->
-        <h1>{{arr2[0] | number}}<span>{{'.'+arr2[1] + '0'}}</span></h1>
-        <p>Total Investment</p>
-    </div>
-    <div>
-        <!-- <h1>{{currentVal | number:'1.2-2'}}</h1> -->
-        <h1>{{arr1[0] | number}}<span *ngIf="arr1[1]">{{'.'+arr1[1] + '0'}}</span><span *ngIf="!arr1[1]">{{'.00'}}</span></h1>
-        <p>Current Value</p>
-    </div>
-    <div>
-        <!-- <h1 [style.color]="isPositive(netpl)?'green':'red'">{{netpl | number:'1.2-2'}}</h1> -->
-        <h1 [style.color]="isPositive(netpl)?'green':'red'">{{arr[0] | number}}<span>{{'.'+arr[1] + '0'}}</span></h1>
-        <p>P&L</p>
-    </div>
-    
-</div>
+<app-portfolio-summary [totalInvestment]="totalInvestment" [currentVal]="currentVal" [netPl]="netpl"></app-portfolio-summary>
 
 <!-- <table>
     <thead>
