@@ -15,6 +15,7 @@ export class ThistoryTableComponent implements OnInit {
   trades: ITrade[]=[];
   dataSource!: MatTableDataSource<ITrade>;
   searchText="";
+  countRows=0;
 
   @ViewChild("exporter") exporter! : MatTableExporterDirective;
   @ViewChild('empTbSort') empTbSort = new MatSort();
@@ -27,7 +28,7 @@ export class ThistoryTableComponent implements OnInit {
    
   ngOnInit(): void {
     this.getAllStocks();
-    
+  
   }
 
   getAllStocks()
@@ -52,12 +53,28 @@ export class ThistoryTableComponent implements OnInit {
     this.searchText = e;
     this.dataSource.filter = e.trim().toLowerCase();
     this.dataSource.sort = this.empTbSort;
+    this.countRows = this.dataSource.filteredData.length;
 
   }
 
   myDownload(e:any){
     console.log("download from table");
     this.exporter.exportTable('csv',{fileName:'jackpot'})
+  }
+
+  myAsset(e:any){
+    console.log("my asset");
+    this.searchText = e;
+    if(this.searchText!="all"){
+      this.dataSource.filter = e.trim().toLowerCase();
+      this.dataSource.sort = this.empTbSort; 
+      this.countRows = this.dataSource.filteredData.length; 
+    }
+    else{
+      this.getAllStocks();
+      this.countRows = this.dataSource.data.length;
+    }
+    
   }
 
 }

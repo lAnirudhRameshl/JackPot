@@ -112,7 +112,5 @@ public class TradeHistoryDaoImpl implements TradeHistoryDao{
         }
     }
 
-    public void deleteTradeById(int id) {
 
-    }
 }

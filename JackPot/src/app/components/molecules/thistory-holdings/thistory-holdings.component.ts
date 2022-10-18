@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ITrade } from 'src/app/models/trade';
 import { JackpotService } from 'src/app/services/jackpot.service';
 
@@ -11,7 +11,8 @@ export class ThistoryHoldingsComponent implements OnInit {
 
   trades: ITrade[]=[];
   total: number =0;
-  
+  @Input() count: number = 0;
+
   constructor(private jackpotService : JackpotService) { }
 
   ngOnInit(): void {
@@ -19,9 +20,11 @@ export class ThistoryHoldingsComponent implements OnInit {
   }
 
   getTotal(){
+    
     this.jackpotService.getTrades().subscribe((response)=>
     {
       this.total=response.length;
+      this.count = this.total;
     })
   }
 

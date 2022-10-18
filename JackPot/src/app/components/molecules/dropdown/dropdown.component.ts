@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-dropdown',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DropdownComponent implements OnInit {
 
+  @Output() childAsset = new EventEmitter();
+  
   asset_classes = [
     {value: 'all', viewValue: 'All stocks'},
     {value: 'main', viewValue: 'Main index'},
@@ -21,6 +23,11 @@ export class DropdownComponent implements OnInit {
 
   ngOnInit(): void {
     
+  }
+
+  callParent(){
+    console.log("Dropdown.."+ this.selected);
+    this.childAsset.emit(this.selected);
   }
 
 }

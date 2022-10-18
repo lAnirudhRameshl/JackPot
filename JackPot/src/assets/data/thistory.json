@@ -4,27 +4,31 @@
         "units" : 10,
         "price" : 1163.57,
         "account" : "401K",
-        "date" : "2022-12-20 08:00"
+        "date" : "2022-12-20 08:00",
+        "asset" : "main"
     },
     {
         "fund" : "NIKKEI",
         "units" : -5.89,
         "price" : 272818.62,
         "account" : "401K",
-        "date" : "2021-12-20 05:00"
+        "date" : "2021-12-20 05:00",
+        "asset" : "main"
     },
     {
         "fund" : "SHANGHAI",
         "units" : 2.78,
         "price" : 3237.54,
         "account" : "401K",
-        "date" : "2021-17-20 06:30"
+        "date" : "2021-17-20 06:30",
+        "asset" : "scap"
     },
     {
         "fund" : "DAX",
         "units" : -11.25,
         "price" : 13156.60,
         "account" : "401K",
-        "date" : "2022-12-20 07:00"
+        "date" : "2022-12-20 07:00",
+        "asset" : "scap"
     }
 ]

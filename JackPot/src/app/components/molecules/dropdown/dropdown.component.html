@@ -1,7 +1,7 @@
 <div class="dropdown">
     <mat-form-field appearance="outline">
         <mat-label>Asset Class</mat-label>
-        <mat-select [(value)]="selected">
+        <mat-select [(value)]="selected" (selectionChange)="callParent()">
           <mat-option *ngFor="let asset_class of asset_classes" [value]="asset_class.value">
             {{ asset_class.viewValue }}
           </mat-option>

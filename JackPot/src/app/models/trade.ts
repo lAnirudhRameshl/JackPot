@@ -3,5 +3,6 @@ export interface ITrade{
     units: number; 
     price: number;
     account: string;    
-    date: Date;          
+    date: Date; 
+    asset: string;         
 }

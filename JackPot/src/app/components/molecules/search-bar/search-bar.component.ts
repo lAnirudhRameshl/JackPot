@@ -17,10 +17,6 @@ export class SearchBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  /*onSearch(){
-    console.log(this.fund);
-  }*/
-
   callParent(data:string){
     console.log("Parent component called.."+ data);
     this.childEmit.emit(data);

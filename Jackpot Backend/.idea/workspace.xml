@@ -5,34 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e383b37b-a168-491d-90d2-ae90da1e6d40" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fidelity/exception/DatabaseException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fidelity/integration/UserDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fidelity/App.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fidelity/exception/DatabaseException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fidelity/integration/AccountDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fidelity/integration/DataSource.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fidelity/integration/PortfolioDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fidelity/integration/TradeDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fidelity/integration/TradeHistoryDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fidelity/integration/UserDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fidelity/integration/UserDaoImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fidelity/model/AccountType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fidelity/model/AssetClass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fidelity/model/Portfolio.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fidelity/model/TradeHistory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fidelity/model/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fidelity/model/UserAccount.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/models/trade.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../JackPot/src/app/models/trade.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/assets/data/thistory.json" beforeDir="false" afterPath="$PROJECT_DIR$/../JackPot/src/assets/data/thistory.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fidelity/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fidelity/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fidelity/integration/DataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fidelity/integration/DataSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fidelity/integration/TradeHistoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fidelity/integration/TradeHistoryDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fidelity/integration/TradeHistoryDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fidelity/integration/TradeHistoryDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fidelity/integration/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fidelity/integration/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fidelity/model/AssetClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fidelity/model/AssetClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fidelity/model/TradeHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fidelity/model/TradeHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fidelity/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fidelity/model/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

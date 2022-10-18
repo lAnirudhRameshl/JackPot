@@ -6,8 +6,8 @@
 </mat-grid-list>-->
 
 <div class="table-options">
-  <app-thistory-holdings></app-thistory-holdings>
-  <app-dropdown></app-dropdown>
+  <app-thistory-holdings [count]="count"></app-thistory-holdings>
+  <app-dropdown (childAsset)="asset($event)"></app-dropdown>
   <app-search-bar (childEmit)="search($event)"></app-search-bar>
   <app-download (childDownload)="download($event)"></app-download>
 </div>

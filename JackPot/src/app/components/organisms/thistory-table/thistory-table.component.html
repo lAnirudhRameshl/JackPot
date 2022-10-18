@@ -1,10 +1,11 @@
-<app-table-options (childEmit)="search($event)" (childDownload)="myDownload($event)"></app-table-options>
+<app-table-options (childEmit)="search($event)" (childDownload)="myDownload($event)" (childAsset)="myAsset($event)" [count]="countRows"></app-table-options>
 
 <table mat-table matTableExporter [dataSource]="dataSource" #exporter="matTableExporter" matSort #empTbSort="matSort"  class="mat-elevation-z8" >
-  <!-- Fund Column --><ng-container matColumnDef="fund">
+  <ng-container matColumnDef="fund">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Fund</th>
 
-    <td mat-cell *matCellDef="let element">{{ element.fund }}</td>
+    <td mat-cell *matCellDef
+    ="let element">{{ element.fund }}</td>
   </ng-container>
   <ng-container matColumnDef="units">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Quantity</th>
