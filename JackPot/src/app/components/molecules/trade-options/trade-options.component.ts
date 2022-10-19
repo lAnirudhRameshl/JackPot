@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ASSET_TYPES } from 'src/app/constants/asset-types';
 
 @Component({
@@ -11,10 +11,24 @@ export class TradeOptionsComponent implements OnInit {
   assetTypes: string[] = ASSET_TYPES;
   selectedAssetType: string = this.assetTypes[0];
   assetSearch = "";
+  
+  @Output()
+  assetTypeChangeEvent: EventEmitter<string> = new EventEmitter();
+  
+  @Output()
+  searchAssetEvent: EventEmitter<string> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  assetTypeChange(assetType: String) {
+    this.assetTypeChangeEvent.emit(assetType.toString());
+  }
+
+  searchAsset(assetTicker: string) {
+    this.searchAssetEvent.emit(assetTicker);
   }
 
 }

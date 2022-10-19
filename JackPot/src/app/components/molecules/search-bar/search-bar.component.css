@@ -1,16 +1,20 @@
-mat-icon{
-    transform: scale(0.8);
-}
-mat-icon:hover{ 
-    color:#999;
-}
-
-.search-bar{
-    display: flex;
-    flex-direction: row;
-    flex-grow: 3;
-}
-
-.search-bar mat-form-field{
+:host {
     flex-grow: 1;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+input {
+    font-family: 'Montserrat';
+}
+
+::ng-deep .mat-form-field-infix{
+    display: flex !important;
+    padding: 0;
+}
+
+::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 0em;
 }

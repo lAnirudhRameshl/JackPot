@@ -1,25 +1,11 @@
 <div class="trade-options">
   <div class="dropdown">
     <label>Asset class: </label>
-    <mat-form-field appearance="outline">
-      <mat-select id="trade-options" [(ngModel)]="selectedAssetType">
-        <mat-option [value]="assetType" *ngFor="let assetType of assetTypes">
-          {{ assetType }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+    <app-dropdown (dropdownChangeEvent)="assetTypeChange($event)" [dropdownValues]="assetTypes"></app-dropdown>
   </div>
   <div class="search">
-    <label>Asset name: </label>
-    <mat-form-field appearance="outline">
-      <input
-        id="trade-ip"
-        type="text"
-        matInput
-        [(ngModel)]="assetSearch"
-        placeholder="Search for asset by symbol"
-      />
-    </mat-form-field>
+    <label>Asset Ticker: </label>
+    <app-search-bar (searchAssetEvent)="searchAsset($event)"></app-search-bar>
     <button mat-button>Search</button>
   </div>
 </div>

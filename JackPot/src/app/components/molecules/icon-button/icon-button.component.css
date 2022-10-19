@@ -1,0 +1,20 @@
+.icon-button {
+    display: flex;
+    color: #2885F1;
+}
+
+.icon-button:hover {
+    color: #2573BB;
+}
+
+.download{
+    color: inherit;
+    margin: 0;
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+.mat-icon {
+    color: inherit;
+    margin-left: 5px;
+}

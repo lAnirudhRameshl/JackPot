@@ -27,7 +27,6 @@ export class JackpotService {
   }
 
   getPortfolioData():Observable<Portfolio[]>{
-    console.log("Inside Function...");
     return this.http.get<Portfolio[]>('../../assets/data/holdings.json');
   }
 
