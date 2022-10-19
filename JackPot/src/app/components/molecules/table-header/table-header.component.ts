@@ -24,7 +24,6 @@ export class TableHeaderComponent implements OnInit {
   }
 
   searchAsset(data:string){
-    console.log("Parent component called.."+ data);
     this.searchEvent.emit(data);
   }
 

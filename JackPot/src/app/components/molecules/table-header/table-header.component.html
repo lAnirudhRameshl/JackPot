@@ -11,6 +11,6 @@
     <div>
       <app-search-bar (searchAssetEvent)="searchAsset($event)"></app-search-bar>
     </div>
-    <app-icon-button buttonText="Download" iconName="cloud_download"></app-icon-button>
+    <app-icon-button buttonText="Download" iconName="cloud_download" (buttonActionEvent)="downloadData()"></app-icon-button>
   </div>
 </div>

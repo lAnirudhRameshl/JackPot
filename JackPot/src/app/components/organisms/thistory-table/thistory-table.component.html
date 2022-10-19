@@ -1,4 +1,4 @@
-<app-table-header (searchEvent)="search($event)" (downloadEvent)="myDownload(true)" text="Holdings ({{trades.length}})"></app-table-header>
+<app-table-header (searchEvent)="search($event)" (downloadEvent)="downloadTradeHistory()" (dropdownEvent)="changeAssetType($event)" text="Holdings ({{holdingCount}})"></app-table-header>
 <table mat-table matTableExporter [dataSource]="dataSource" #exporter="matTableExporter" matSort #empTbSort="matSort"  class="mat-elevation-z8" >
   <!-- Fund Column --><ng-container matColumnDef="fund">
     <th mat-header-cell *matHeaderCellDef mat-sort-header>Fund</th>

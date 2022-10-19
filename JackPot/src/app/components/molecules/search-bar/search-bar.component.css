@@ -1,3 +1,11 @@
+:host {
+    flex-grow: 1;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
 input {
     font-family: 'Montserrat';
 }
@@ -8,5 +16,5 @@ input {
 }
 
 ::ng-deep .mat-form-field-wrapper {
-    padding-bottom: 0.5em;
+    padding-bottom: 0em;
 }

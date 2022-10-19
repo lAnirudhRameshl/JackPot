@@ -15,6 +15,7 @@ export class ThistoryTableComponent implements OnInit {
   trades: ITrade[]=[];
   dataSource!: MatTableDataSource<ITrade>;
   searchText="";
+  holdingCount = 0;
 
   @ViewChild("exporter") exporter! : MatTableExporterDirective;
   @ViewChild('empTbSort') empTbSort = new MatSort();
@@ -37,6 +38,7 @@ export class ThistoryTableComponent implements OnInit {
       this.trades=data;
       this.dataSource = new MatTableDataSource(this.trades);
       this.dataSource.sort = this.empTbSort;
+      this.holdingCount = this.trades.length;
     })
     
    }
@@ -55,9 +57,18 @@ export class ThistoryTableComponent implements OnInit {
 
   }
 
-  myDownload(e:any){
+  downloadTradeHistory(){
     console.log("download from table");
-    this.exporter.exportTable('csv',{fileName:'jackpot'})
+    this.exporter.exportTable('csv',{fileName:'jackpot'});
+  }
+
+  changeAssetType(assetType: string) {
+    if(assetType.trim().toLowerCase() != 'all stocks') {
+      this.dataSource.filter = assetType.trim().toUpperCase();
+    } else {
+      this.dataSource.filter = '';
+    }
+    this.holdingCount = this.dataSource.filteredData.length;
   }
 
 }
