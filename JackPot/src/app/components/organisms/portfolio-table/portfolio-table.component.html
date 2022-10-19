@@ -2,7 +2,8 @@
   text="Holdings ({{ holdingCount }})"
   (searchEvent)="search($event)"
   (downloadEvent)="downloadPortfolio()"
-  (dropdownEvent)="assetClassChange($event)"
+  (assetTypeEvent)="assetClassChange($event.toString())"
+  (accountEvent)="accountTypeChange($event.toString())"
 ></app-table-header>
 
 <table

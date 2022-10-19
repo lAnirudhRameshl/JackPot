@@ -4,5 +4,5 @@ export interface ITrade{
     price: number;
     account: string;    
     date: Date;     
-    asset: string;     
+    asset: string;    
 }

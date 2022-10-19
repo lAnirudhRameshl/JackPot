@@ -32,6 +32,12 @@ export class PortfolioTableComponent implements OnInit {
     'pandl',
     'btn',
   ];
+
+  filterValues = {
+    accountType: '',
+    assetClass: ''
+  }
+
   constructor(private ds: JackpotService) {}
 
   search(e: any) {
@@ -48,6 +54,7 @@ export class PortfolioTableComponent implements OnInit {
       this.data = data;
       this.dataSource = new MatTableDataSource(this.data);
       this.holdingCount = this.data.length;
+      this.dataSource.filterPredicate = this.customFilterPredicate;
       this.generatePortfolioSummary(this.data);
     });
   }
@@ -68,13 +75,38 @@ export class PortfolioTableComponent implements OnInit {
   }
 
   assetClassChange(assetClass: string) {
-    if(assetClass.trim().toLowerCase() != 'all stocks') {
-      this.dataSource.filter = assetClass.trim().toUpperCase();
-      this.generatePortfolioSummary(this.dataSource.filteredData);
+    if (assetClass.trim().toLowerCase() != 'all stocks') {
+      this.filterValues['assetClass'] = assetClass.trim().toUpperCase();
     } else {
-      this.dataSource.filter = '';
-      this.generatePortfolioSummary(this.dataSource.filteredData);
+      this.filterValues['assetClass'] = '';
     }
+    this.applyFilter();
+  }
+
+  accountTypeChange(accountType: string) {
+    if (accountType.trim().toLowerCase() != 'all accounts') {
+      this.filterValues['accountType'] = accountType.trim().toUpperCase();
+    } else {
+      this.filterValues['accountType'] = '';
+    }
+    this.applyFilter();
+  }
+
+  applyFilter() {
+    this.dataSource.filter = JSON.stringify(this.filterValues);
     this.holdingCount = this.dataSource.filteredData.length;
+    this.generatePortfolioSummary(this.dataSource.filteredData);
+  }
+
+  customFilterPredicate(data: Portfolio, filter: string) {
+    let filterJson: {accountType: string, assetClass: string} = JSON.parse(filter);
+
+    if(filterJson['assetClass'] == '' && filterJson['accountType'] == '') return true;
+
+    else if(filterJson['assetClass'] == '' && filterJson['accountType'] != '') return data.account == filterJson['accountType'];
+
+    else if(filterJson['assetClass'] != '' && filterJson['accountType'] == '') return data.asset == filterJson['assetClass'];
+
+    else return (data.asset == filterJson['assetClass'] && data.account == filterJson['accountType'])
   }
 }
