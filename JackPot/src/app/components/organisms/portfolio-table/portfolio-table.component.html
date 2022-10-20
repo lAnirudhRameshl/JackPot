@@ -82,6 +82,9 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
+<div class="no-data-found" *ngIf="holdingCount == 0">
+  No data found
+</div>
 <app-portfolio-summary
   [totalInvestment]="totalInvestment"
   [currentVal]="currentVal"
