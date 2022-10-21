@@ -34,6 +34,24 @@ public class Portfolio {
         this.assetClass = assetClass;
     }
 
+    @Override
+    public String toString() {
+        return "Portfolio{" +
+                "portfolioID=" + portfolioID +
+                ", fundName='" + fundName + '\'' +
+                ", quantity=" + quantity +
+                ", avgCost=" + avgCost +
+                ", LTP=" + LTP +
+                ", currentValue=" + currentValue +
+                ", netChange=" + netChange +
+                ", dayChange=" + dayChange +
+                ", profitLoss=" + profitLoss +
+                ", accountType=" + accountType +
+                ", user=" + user +
+                ", assetClass=" + assetClass +
+                '}';
+    }
+
     public Integer getPortfolioID() {
         return portfolioID;
     }

@@ -38,6 +38,7 @@ class CrossFieldErrorMatcher implements ErrorStateMatcher {
   providers: [{ provide: MAT_DATE_FORMATS, useValue: CUSTOM_FORMATS }],
 })
 export class RegisterFormComponent implements OnInit {
+  isRegistered: boolean = false;
   registerForm!: FormGroup;
   showPassword: boolean = false;
   showConfirmPassword: boolean = false;
@@ -97,6 +98,9 @@ export class RegisterFormComponent implements OnInit {
     );
   }
 
+  onClickHandler(){
+    this.isRegistered = true;
+  }
   toggleShowPassword() {
     this.showPassword = !this.showPassword;
   }

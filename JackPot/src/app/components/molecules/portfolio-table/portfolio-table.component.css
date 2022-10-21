@@ -1,17 +1,31 @@
+.card{
+    width: 30%;
+}
+.tab{
+    width: 80%;
+    align-items: center;
+}
 table{
     padding: 10px;
     width:100%;
 }
 table.mat-table{
     font-size: 16px;
-    font-family:'Montserrat';
+    /* font-family:'Montserrat'; */
     
+}
+.mat-form-field-wrapper {
+    padding-bottom: 0em;
 }
 .mat-header-cell {
     font-size: 16px;
     font-weight: bold;
     color: black;
     font-family:'Montserrat';
+}
+::ng-deep .mat-form-field-wrapper{
+    display: flex !important;
+    padding: 0 !important;
 }
 .btnbs{
     display: flex;
@@ -44,7 +58,7 @@ td.mat-cell:last-of-type{
     padding: 0.5rem 1rem;
     margin-top: 1.5rem;
     display:flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 h1{
     margin:0;

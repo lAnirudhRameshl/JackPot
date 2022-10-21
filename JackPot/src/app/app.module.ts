@@ -58,6 +58,8 @@ import { NotFoundComponent } from './components/pages/not-found/not-found.compon
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatTableExporterModule } from 'mat-table-exporter';
 import {MatSortModule} from '@angular/material/sort';
+import { HomeComponent } from './components/pages/home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -96,7 +98,8 @@ import {MatSortModule} from '@angular/material/sort';
 
     RegisterFormComponent,
     LoginFormComponent,
-    TableHeaderComponent
+    TableHeaderComponent,
+    HomeComponent
 
   ],
   imports: [

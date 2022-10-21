@@ -8,9 +8,13 @@ a{
     font-weight:700;
     color: #000000;
 }
-a:active{
-    color: #7C3E66;
-}
 a:hover{
     color:#682a52;
 }
+a:focus{
+    color: #7C3E66;
+}
+a:active{
+    color: #7C3E66;
+}
+

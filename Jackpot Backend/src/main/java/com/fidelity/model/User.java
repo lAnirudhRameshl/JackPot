@@ -25,6 +25,19 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "userID=" + userID +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", investmentRisk=" + investmentRisk +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
+    }
+
     public Integer getUserID() {
         return userID;
     }

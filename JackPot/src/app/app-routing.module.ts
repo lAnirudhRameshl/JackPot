@@ -10,11 +10,13 @@ import { PorfolioComponent } from './components/pages/porfolio/porfolio.componen
 import { NotFoundComponent } from './components/pages/not-found/not-found.component';
 import { RegisterFormComponent } from './components/organisms/register-form/register-form.component';
 import { LoginFormComponent } from './components/organisms/login-form/login-form.component';
+import { HomeComponent } from './components/pages/home/home.component';
 
 //Let's add temporary routes with our names here for testing and not change app.component as it'll be easier to merge etc
 
 const routes: Routes = [
-  { path: '',redirectTo:'portfolio',pathMatch:'full'},
+  { path: '',redirectTo:'home',pathMatch:'full'},
+  { path: 'home', component: HomeComponent},
   { path: 'trade', component: TradePageComponent },
 
   {
