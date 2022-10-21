@@ -122,7 +122,8 @@ import { TradeContentComponent } from './components/organisms/trade-content/trad
     MatDatepickerModule,
     MatMomentDateModule,
     MatTableExporterModule,
-    MatSortModule
+    MatSortModule,
+    
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en' }],
   bootstrap: [AppComponent],

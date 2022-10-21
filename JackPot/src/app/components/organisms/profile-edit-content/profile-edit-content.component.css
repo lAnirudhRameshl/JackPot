@@ -42,17 +42,19 @@ button {
     align-items: center;
 }
 
+
 label {
     width: 15%;
 }
 
 mat-form-field {
-    flex-grow: 1;
+    /* flex-grow: 1; */
     font-family: 'Montserrat' !important;
+    width: 50%;
 }
 
 mat-slider {
-    width: 70%;
+    width: 50%;
     margin-right: 5%;
 }
 
@@ -70,4 +72,8 @@ mat-slider {
 
 ::ng-deep .mat-slider-thumb {
     background-color: #243A73 !important;
+}
+
+.container {
+    background-color: #243A73;
 }
