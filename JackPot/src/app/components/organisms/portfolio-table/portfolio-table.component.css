@@ -28,3 +28,10 @@ table.mat-table {
 td.mat-cell:last-of-type {
   padding: 0;
 }
+
+.no-data-found {
+  padding: 1rem;
+  text-align: center;
+  color: red;
+  font-size: 1rem;
+}

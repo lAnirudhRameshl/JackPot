@@ -8,10 +8,11 @@
   display: flex;
   align-items: center;
   justify-items: center;
+  column-gap: 1rem;
 }
 
 h1 {
-  margin-right: 1rem;
+  margin-bottom: 0;
   font-family: "Montserrat";
   font-weight: 600;
 }

@@ -6,6 +6,11 @@
       [dropdownValues]="assetTypes"
       (dropdownChangeEvent)="changeAssetClass($event)"
     ></app-dropdown>
+    <app-dropdown
+      [dropdownLabel]="'Account type'"
+      [dropdownValues]="accountTypes"
+      (dropdownChangeEvent)="changeAccountType($event)"
+    ></app-dropdown>
   </div>
   <div class="col">
     <div>

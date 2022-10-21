@@ -13,3 +13,10 @@ table.mat-table{
     color: black;
     font-family:'Montserrat';
 }
+
+.no-data-found {
+    padding: 1rem;
+    text-align: center;
+    color: red;
+    font-size: 1rem;
+  }

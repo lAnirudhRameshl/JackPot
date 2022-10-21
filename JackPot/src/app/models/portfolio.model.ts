@@ -8,6 +8,7 @@ export class Portfolio{
         public pandl : number,
         public netchg:string,
         public daychg:string,
-        public asset: string
+        public asset: string,
+        public account: string
     ){}
 }

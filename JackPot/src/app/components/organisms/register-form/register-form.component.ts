@@ -11,7 +11,10 @@ import {
   Validators,
 } from '@angular/forms';
 import { ErrorStateMatcher, MAT_DATE_FORMATS } from '@angular/material/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import * as moment from 'moment';
+import { UserService } from 'src/app/services/user.service';
 
 export const CUSTOM_FORMATS = {
   parse: {
@@ -54,7 +57,7 @@ export class RegisterFormComponent implements OnInit {
       : null;
   };
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router, private snackbar: MatSnackBar) {}
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group(
@@ -187,5 +190,19 @@ export class RegisterFormComponent implements OnInit {
       errorMessage = 'Invalid number';
     }
     return errorMessage;
+  }
+
+  register() {
+    if(this.registerForm.valid){
+      this.userService.register().subscribe({
+        next: (response) => {
+          this.snackbar.open("Account created successfully", "OK", {duration: 3000});
+          this.router.navigateByUrl('/login');
+        },
+        error: (errorResponse) => {
+          
+        }
+      })
+    }
   }
 }
