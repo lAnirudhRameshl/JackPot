@@ -54,6 +54,7 @@ import { NotFoundComponent } from './components/pages/not-found/not-found.compon
 import { PortfolioSummaryComponent } from './components/molecules/portfolio-summary/portfolio-summary.component';
 import { SearchBarComponent } from './components/molecules/search-bar/search-bar.component';
 import { IconButtonComponent } from './components/molecules/icon-button/icon-button.component';
+import { HomeComponent } from './components/pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -90,6 +91,7 @@ import { IconButtonComponent } from './components/molecules/icon-button/icon-but
     PortfolioSummaryComponent,
     SearchBarComponent,
     IconButtonComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
