@@ -55,6 +55,7 @@ import { PortfolioSummaryComponent } from './components/molecules/portfolio-summ
 import { SearchBarComponent } from './components/molecules/search-bar/search-bar.component';
 import { IconButtonComponent } from './components/molecules/icon-button/icon-button.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -114,7 +115,8 @@ import { IconButtonComponent } from './components/molecules/icon-button/icon-but
     MatDatepickerModule,
     MatMomentDateModule,
     MatTableExporterModule,
-    MatSortModule
+    MatSortModule,
+    
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en' }],
   bootstrap: [AppComponent],
