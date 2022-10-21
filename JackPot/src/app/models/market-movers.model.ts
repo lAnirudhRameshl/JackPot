@@ -3,4 +3,7 @@ export interface MarketMover {
     last: number;
     change: number;
     volume: number;
+    company: string;
+    index: string;
+    sector: string;
 }

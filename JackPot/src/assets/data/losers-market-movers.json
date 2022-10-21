@@ -3,42 +3,63 @@
         "name": "MOS",
         "last": 52.44,
         "change": -6.76,
-        "volume": 9.92
+        "volume": 9.92,
+        "company": "Mosaic Company (The)",
+        "index": "NASDAQ",
+        "sector": "Industrials"
     },
     {
         "name": "AMGN",
         "last": 237.62,
         "change": -4.07,
-        "volume": 6.28
+        "volume": 6.28,
+        "company": "Amgen Inc.",
+        "index": "NASDAQ",
+        "sector": "Health Care"
     },
     {
         "name": "CF",
         "last": 99.48,
         "change": -4.05,
-        "volume": 4.04
+        "volume": 4.04,
+        "company": "CF Industries Holdings, Inc.",
+        "index": "NASDAQ",
+        "sector": "Industrials"
     },
     {
         "name": "SIVB",
         "last": 406.15,
         "change": -3.98,
-        "volume": 1.03
+        "volume": 1.03,
+        "company": "SVB Financial Group",
+        "index": "NASDAQ",
+        "sector": "Finance"
     },
     {
         "name": "ADM",
         "last": 88.21,
         "change": -3.56,
-        "volume": 4.31
+        "volume": 4.31,
+        "company": "Archer-Daniels-Midland Company",
+        "index": "NASDAQ",
+        "sector": "N/A"
     },
     {
         "name": "SGEN",
         "last": 150.10,
         "change": -3.45,
-        "volume": 966.73
+        "volume": 966.73,
+        "company": "Seagen Inc.",
+        "index": "NASDAQ",
+        "sector": "Health Care"
     },
     {
         "name": "KR",
         "last": 50.54,
         "change": -2.70,
-        "volume": 9.37
+        "volume": 9.37,
+        "company": "Kroger Company (The)",
+        "index": "NASDAQ",
+        "sector": "Food Chains"
     }
 ]

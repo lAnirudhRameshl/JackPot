@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MarketMover } from 'src/app/models/market-movers.model';
 import { JackpotService } from 'src/app/services/jackpot.service';
 
@@ -11,9 +11,16 @@ export class MarketMoversTableComponent implements OnInit {
   @Input()
   marketMovers: MarketMover[] = [];
 
+  @Output()
+  marketMoverAssetClickEvent: EventEmitter<MarketMover> = new EventEmitter();
+
   displayedColumns: string[] = ['name', 'lastPrice', 'priceChange', 'volume']
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  onMarketMoverRowClick(row: MarketMover) {
+    this.marketMoverAssetClickEvent.emit(row);
+  }
 }
