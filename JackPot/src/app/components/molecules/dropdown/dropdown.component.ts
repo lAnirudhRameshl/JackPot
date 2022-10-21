@@ -27,4 +27,9 @@ export class DropdownComponent implements OnInit {
     this.dropdownChangeEvent.emit(this.selected);
   }
 
+  // callParent(){
+  //   console.log("Dropdown.."+ this.selected);
+  //   this.childAsset.emit(this.selected);
+  // }
+
 }

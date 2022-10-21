@@ -14,6 +14,22 @@ public enum AssetClass {
         this.assetName = assetName;
     }
 
+    public int getAssetID() {
+        return assetID;
+    }
+
+    public void setAssetID(int assetID) {
+        this.assetID = assetID;
+    }
+
+    public String getAssetName() {
+        return assetName;
+    }
+
+    public void setAssetName(String assetName) {
+        this.assetName = assetName;
+    }
+
     public static AssetClass of(int code){
         for(AssetClass acctType1:values()){
             if(acctType1.assetID == code){
