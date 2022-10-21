@@ -11,19 +11,20 @@ public class TradeHistory {
     private BigDecimal price;
     private AccountType accountType;
     private Timestamp transactionDate;
-    private User user;
+
+    int userId;
     private AssetClass assetClass;
 
     public TradeHistory(){}
 
-    public TradeHistory(Integer tradeHistoryID, String fundName, BigDecimal quantity, BigDecimal price, AccountType accountType, Timestamp transactionDate, User user, AssetClass assetClass) {
+    public TradeHistory(Integer tradeHistoryID, String fundName, BigDecimal quantity, BigDecimal price, AccountType accountType, Timestamp transactionDate, int userId, AssetClass assetClass) {
         TradeHistoryID = tradeHistoryID;
         this.fundName = fundName;
         this.quantity = quantity;
         this.price = price;
         this.accountType = accountType;
         this.transactionDate = transactionDate;
-        this.user = user;
+        this.userId = userId;
         this.assetClass = assetClass;
     }
 
@@ -75,12 +76,12 @@ public class TradeHistory {
         this.transactionDate = transactionDate;
     }
 
-    public User getUser() {
-        return user;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public AssetClass getAssetClass() {
@@ -89,5 +90,19 @@ public class TradeHistory {
 
     public void setAssetClass(AssetClass assetClass) {
         this.assetClass = assetClass;
+    }
+
+    @Override
+    public String toString() {
+        return "TradeHistory{" +
+                "TradeHistoryID=" + TradeHistoryID +
+                ", fundName='" + fundName + '\'' +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                ", accountType=" + accountType +
+                ", transactionDate=" + transactionDate +
+                ", userId=" + userId +
+                ", assetClass=" + assetClass +
+                '}';
     }
 }
