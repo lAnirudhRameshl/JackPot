@@ -32,6 +32,7 @@ export class ThistoryTableComponent implements OnInit {
   filterValues = {
     assetClass: '',
     accountType: '',
+    searchFilter: '',
   };
 
   constructor(private jackpotService: JackpotService) {}
@@ -58,9 +59,9 @@ export class ThistoryTableComponent implements OnInit {
 
   search(e: any) {
     console.log('Insie parent..fuction search called..');
-    this.searchText = e;
-    this.dataSource.filter = e.trim().toLowerCase();
+    this.filterValues['searchFilter'] = e.trim().toLowerCase();
     this.dataSource.sort = this.empTbSort;
+    this.applyFilter();
   }
 
   downloadTradeHistory() {
@@ -92,10 +93,29 @@ export class ThistoryTableComponent implements OnInit {
   }
 
   customFilterPredicate(data: ITrade, filter: string) {
-    let filterJson: {accountType: string, assetClass: string} = JSON.parse(filter);
+    let filterJson: {
+      accountType: string;
+      assetClass: string;
+      searchFilter: string;
+    } = JSON.parse(filter);
 
-    if(data.asset.includes(filterJson['assetClass']) && data.account.includes(filterJson['accountType'])) return true;
-
-    return false
+    if (filterJson['assetClass'] == '' && filterJson['accountType'] == '')
+      return data.fund.toLowerCase().indexOf(filterJson['searchFilter']) == 0;
+    else if (filterJson['assetClass'] == '' && filterJson['accountType'] != '')
+      return (
+        data.account == filterJson['accountType'] &&
+        data.fund.toLowerCase().indexOf(filterJson['searchFilter']) == 0
+      );
+    else if (filterJson['assetClass'] != '' && filterJson['accountType'] == '')
+      return (
+        data.asset == filterJson['assetClass'] &&
+        data.fund.toLowerCase().indexOf(filterJson['searchFilter']) == 0
+      );
+    else
+      return (
+        data.asset == filterJson['assetClass'] &&
+        data.account == filterJson['accountType'] &&
+        data.fund.toLowerCase().indexOf(filterJson['searchFilter']) == 0
+      );
   }
 }
