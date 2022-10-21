@@ -2,16 +2,19 @@
   <mat-tab label="Most active">
     <app-market-movers-table
       [marketMovers]="mostActiveMarketMovers"
+      (marketMoverAssetClickEvent)="marketMoverChangeAsset($event)"
     ></app-market-movers-table>
   </mat-tab>
   <mat-tab label="Gainers %">
     <app-market-movers-table
       [marketMovers]="gainerMarketMovers"
+      (marketMoverAssetClickEvent)="marketMoverChangeAsset($event)"
     ></app-market-movers-table>
   </mat-tab>
   <mat-tab label="Losers %">
     <app-market-movers-table
       [marketMovers]="loserMarketMovers"
+      (marketMoverAssetClickEvent)="marketMoverChangeAsset($event)"
     ></app-market-movers-table>
   </mat-tab>
 </mat-tab-group>

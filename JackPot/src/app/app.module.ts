@@ -55,6 +55,9 @@ import { PortfolioSummaryComponent } from './components/molecules/portfolio-summ
 import { SearchBarComponent } from './components/molecules/search-bar/search-bar.component';
 import { IconButtonComponent } from './components/molecules/icon-button/icon-button.component';
 
+import { HomeComponent } from './components/pages/home/home.component';
+
+import { TradeContentComponent } from './components/organisms/trade-content/trade-content.component';
 
 @NgModule({
   declarations: [
@@ -91,6 +94,10 @@ import { IconButtonComponent } from './components/molecules/icon-button/icon-but
     PortfolioSummaryComponent,
     SearchBarComponent,
     IconButtonComponent,
+
+    HomeComponent,
+
+    TradeContentComponent
   ],
   imports: [
     BrowserModule,
