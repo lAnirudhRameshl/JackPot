@@ -1,0 +1,18 @@
+:host {
+    flex-grow: 1;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 0.5rem;
+    justify-content: space-between;
+}
+
+app-asset-card {
+    width: 40%;
+}
+
+app-tabs {
+    width: 50%;
+}

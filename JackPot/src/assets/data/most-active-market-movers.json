@@ -3,42 +3,66 @@
         "name": "AAPL",
         "last": 163.43,
         "change": 3.85,
-        "volume": 102.85
+        "volume": 102.85,
+        "company": "Apple INC",
+        "index": "NASDAQ",
+        "sector": "Technology"
+
     },
     {
         "name": "AMD",
         "last": 84.64,
         "change": -0.95,
-        "volume": 71.6
+        "volume": 71.6,
+        "company": "Advanced Micro Devices, Inc.",
+        "index": "NASDAQ",
+        "sector": "Information Technology"
+
+        
     },
     {
         "name": "AMZN",
         "last": 136.45,
         "change": 2.39,
-        "volume": 50.95
+        "volume": 50.95,
+        "company": "Amazon.com, Inc.",
+        "index": "NASDAQ",
+        "sector": "Consumer Discretionary"
     },
     {
         "name": "NVDA",
         "last": 145.05,
         "change": 0.82,
-        "volume": 48.17
+        "volume": 48.17,
+        "company": "NVIDIA Corporation",
+        "index": "NASDAQ",
+        "sector": "Technology"
     },
     {
         "name": "TSLA",
         "last": 304.42,
         "change": 1.58,
-        "volume": 48.16
+        "volume": 48.16,
+        "company": "Tesla, Inc.",
+        "index": "NASDAQ",
+        "sector": "Consumer Discretionary"
     },
     {
         "name": "META",
         "last": 168.96,
         "change": -0.11,
-        "volume": 23.13
+        "volume": 23.13,
+        "company": "Meta Platforms Inc",
+        "index": "NASDAQ",
+        "sector": "Technology"
     },
     {
         "name": "MSFT",
         "last": 266.65,
         "change": 0.83,
-        "volume": 17.73
+        "volume": 17.73,
+        "company": "Microsoft Corporation",
+        "index": "NASDAQ",
+        "sector": "Technology"
     }
 ]
