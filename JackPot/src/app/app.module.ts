@@ -54,6 +54,9 @@ import { NotFoundComponent } from './components/pages/not-found/not-found.compon
 import { PortfolioSummaryComponent } from './components/molecules/portfolio-summary/portfolio-summary.component';
 import { SearchBarComponent } from './components/molecules/search-bar/search-bar.component';
 import { IconButtonComponent } from './components/molecules/icon-button/icon-button.component';
+
+import { HomeComponent } from './components/pages/home/home.component';
+
 import { TradeContentComponent } from './components/organisms/trade-content/trade-content.component';
 
 @NgModule({
@@ -91,7 +94,10 @@ import { TradeContentComponent } from './components/organisms/trade-content/trad
     PortfolioSummaryComponent,
     SearchBarComponent,
     IconButtonComponent,
-    TradeContentComponent,
+
+    HomeComponent,
+
+    TradeContentComponent
   ],
   imports: [
     BrowserModule,
@@ -116,7 +122,8 @@ import { TradeContentComponent } from './components/organisms/trade-content/trad
     MatDatepickerModule,
     MatMomentDateModule,
     MatTableExporterModule,
-    MatSortModule
+    MatSortModule,
+    
   ],
   providers: [{ provide: MAT_DATE_LOCALE, useValue: 'en' }],
   bootstrap: [AppComponent],
