@@ -3,42 +3,63 @@
         "name": "LCID",
         "last": 16.55,
         "change": 9.75,
-        "volume": 24.13
+        "volume": 24.13,
+        "company": "Lucid Group, Inc.",
+        "index": "NASDAQ",
+        "sector": "Consumer Discretionary"
     },
     {
         "name": "SPLK",
         "last": 99.64,
         "change": 5.50,
-        "volume": 2.99
+        "volume": 2.99,
+        "company": "Splunk Inc.",
+        "index": "NASDAQ",
+        "sector": "Technology"
     },
     {
         "name": "APA",
         "last": 40.00,
         "change": 5.01,
-        "volume": 9.00
+        "volume": 9.00,
+        "company": "APA Corporation",
+        "index": "NASDAQ",
+        "sector": "Energy"
     },
     {
         "name": "FTNT",
         "last": 55.84,
         "change": 4.20,
-        "volume": 7.37
+        "volume": 7.37,
+        "company": "Fortinet, Inc.",
+        "index": "NASDAQ",
+        "sector": "Technology"
     },
     {
         "name": "GILD",
         "last": 68.01,
         "change": 4.18,
-        "volume": 18.77
+        "volume": 18.77,
+        "company": "Gilead Sciences, Inc.",
+        "index": "NASDAQ",
+        "sector": "Health Care"
     },
     {
         "name": "ZBH",
         "last": 119.27,
         "change": 4.17,
-        "volume": 2.37
+        "volume": 2.37,
+        "company": "Zimmer Biomet Holdings, Inc.",
+        "index": "NASDAQ",
+        "sector": "Health Care"
     },
     {
         "name": "DXC",
         "last": 28.36,
         "change": 5.98,
-        "volume": 4.27
+        "volume": 4.27,
+        "company": "DXC Technology Company",
+        "index": "NASDAQ",
+        "sector": "Technology"
     }
 ]
