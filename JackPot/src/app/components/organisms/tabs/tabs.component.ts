@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { MarketMover } from 'src/app/models/market-movers.model';
 import { JackpotService } from 'src/app/services/jackpot.service';
 
@@ -11,6 +11,8 @@ export class TabsComponent implements OnInit {
   mostActiveMarketMovers: MarketMover[] = [];
   gainerMarketMovers: MarketMover[] = [];
   loserMarketMovers: MarketMover[] = [];
+  
+  @Output() marketMoverChangeAssetEvent: EventEmitter<MarketMover> = new EventEmitter();
 
   constructor(private jackpotService: JackpotService) {}
 
@@ -24,6 +26,7 @@ export class TabsComponent implements OnInit {
     this.jackpotService.getMostActiveMarketMovers().subscribe({
       next: (mostActiveMarketMovers: MarketMover[]) => {
         this.mostActiveMarketMovers = mostActiveMarketMovers;
+        this.marketMoverChangeAssetEvent.emit(mostActiveMarketMovers[0]);
       },
     });
   }
@@ -42,5 +45,9 @@ export class TabsComponent implements OnInit {
         this.loserMarketMovers = loserMarketMovers;
       },
     });
+  }
+
+  marketMoverChangeAsset(asset: MarketMover) {
+    this.marketMoverChangeAssetEvent.emit(asset);
   }
 }

@@ -1,9 +1,9 @@
 <mat-card class="assets-card">
-  <mat-card-title>{{ "AAPL" }}</mat-card-title>
+  <mat-card-title>{{ asset.name }}</mat-card-title>
   <!-- <mat-card-subtitle>Apple Inc</mat-card-subtitle> -->
   <mat-chip-list aria-label="Dog selection">
     <mat-chip>
-      Apple Inc (NASDAQ) &nbsp;
+      {{asset.company}} ({{asset.index}}) &nbsp;
       <mat-icon
         aria-hidden="false"
         aria-label="stock up"
@@ -16,9 +16,9 @@
   
 
   <mat-card-content>
-    <p><b>Price:  <span class="greenvalue">${{ "158.5" }}</span></b></p>
-    <p><b>Change:  <span class="redvalue">{{ "-0.2%" }}</span></b></p>
-    <p><b>Sector: </b> {{ "Technology" }}</p>
+    <p><b>Price:  <span class="greenvalue">${{ asset.last }}</span></b></p>
+    <p><b>Change:  <span class="redvalue">{{ asset.change }}</span></b></p>
+    <p><b>Sector: </b> {{ asset.sector }}</p>
   </mat-card-content>
   <mat-card-actions>
     <app-buy-sell-panel></app-buy-sell-panel>

@@ -3,22 +3,3 @@
     flex-direction: column;
     flex-grow: 1;
 }
-
-.page-content {
-    flex-grow: 1;
-}
-
-.row {
-    display: flex;
-    flex-direction: row;
-    column-gap: 10%;
-    padding: 1rem 0.5rem;
-}
-
-app-asset-card {
-    flex-grow: 1;
-}
-
-app-tabs {
-    flex-grow: 2;
-}
