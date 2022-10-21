@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e383b37b-a168-491d-90d2-ae90da1e6d40" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/models/trade.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../JackPot/src/app/models/trade.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../JackPot/src/assets/data/thistory.json" beforeDir="false" afterPath="$PROJECT_DIR$/../JackPot/src/assets/data/thistory.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fidelity/integration/TradeHistoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fidelity/integration/TradeHistoryDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fidelity/integration/TradeHistoryDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fidelity/integration/TradeHistoryDaoImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
