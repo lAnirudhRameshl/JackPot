@@ -7,7 +7,9 @@
         "currentval": 1334.50,
         "pandl": 283,
         "netchg": "26.91",
-        "daychg":"0.64"
+        "daychg":"0.64",
+        "asset": "MAIN INDEX STOCKS",
+        "account": "BROKERAGE"
     },
     
     {
@@ -18,7 +20,9 @@
         "currentval": 76,
         "pandl": 21,
         "netchg": "38.18",
-        "daychg":"-0.59"
+        "daychg":"-0.59",
+        "asset": "MAIN INDEX STOCKS",
+        "account": "401K"
     },
     {
         "fund": "ASHOKLEY",
@@ -28,7 +32,9 @@
         "currentval": 3020,
         "pandl": 1064,
         "netchg": "54.40",
-        "daychg":"-0.98"
+        "daychg":"-0.98",
+        "asset": "SMALL CAP COMPANY STOCKS",
+        "account": "BROKERAGE"
     },
     {
         "fund": "GAIL",
@@ -38,7 +44,9 @@
         "currentval": 4370,
         "pandl": 94.50,
         "netchg": "2.21",
-        "daychg":"-1.24"
+        "daychg":"-1.24",
+        "asset": "SMALL CAP COMPANY STOCKS",
+        "account": "IRA"
     },
     {
         "fund": "GLENMARK",
@@ -48,7 +56,9 @@
         "currentval": 4860,
         "pandl": 1316,
         "netchg": "37.13",
-        "daychg":"-1.03"
+        "daychg":"-1.03",
+        "asset": "INTERNATIONAL MARKET STOCKS",
+        "account": "HSA"
     },
     {
         "fund": "HDFCBANK",
@@ -58,7 +68,9 @@
         "currentval": 11219,
         "pandl": 2128.65,
         "netchg": "23.42",
-        "daychg":"1.35"
+        "daychg":"1.35",
+        "asset": "INTERNATIONAL MARKET STOCKS",
+        "account": "401K"
     },
     {
         "fund": "INFY",
@@ -68,7 +80,9 @@
         "currentval": 10389.0,
         "pandl": 3489,
         "netchg": "50.57",
-        "daychg":"2.08"
+        "daychg":"2.08",
+        "asset": "GOVERNMENT BONDS",
+        "account": "ROTH IRA"
     },
     {
         "fund": "ITC",
@@ -78,7 +92,9 @@
         "currentval": 6796,
         "pandl": -6.25,
         "netchg": "-0.09",
-        "daychg":"-0.56"
+        "daychg":"-0.56",
+        "asset": "GOVERNMENT BONDS",
+        "account": "IRA"
     },
     {
         "fund": "LAURUS",
@@ -88,7 +104,9 @@
         "currentval":11340,
         "pandl": -432,
         "netchg": "-3.67",
-        "daychg":"1.91"
+        "daychg":"1.91",
+        "asset": "MAIN INDEX STOCKS",
+        "account": "HSA" 
     },
     {
         "fund": "NCC",
@@ -98,7 +116,9 @@
         "currentval": 5197.50,
         "pandl": 1087.50,
         "netchg": "26.46",
-        "daychg":"-2.20"
+        "daychg":"-2.20",
+        "asset": "CORPORATE BONDS",
+        "account": "ROTH IRA"
     },
     {
         "fund": "SGBAUG28",
@@ -108,6 +128,8 @@
         "currentval": 33397,
         "pandl": -3592,
         "netchg": "-9.71",
-        "daychg":"-0.10"
+        "daychg":"-0.10",
+        "asset": "CORPORATE BONDS",
+        "account": "HSA"
     }
 ]

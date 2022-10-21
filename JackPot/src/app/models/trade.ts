@@ -1,8 +1,8 @@
 export interface ITrade{
     fund: string;
-    units: number; 
+    quantity: number; 
     price: number;
     account: string;    
-    date: Date; 
-    asset: string;         
+    date: Date;     
+    asset: string;    
 }

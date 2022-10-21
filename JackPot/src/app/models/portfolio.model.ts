@@ -7,6 +7,8 @@ export class Portfolio{
         public currentval: number,
         public pandl : number,
         public netchg:string,
-        public daychg:string
+        public daychg:string,
+        public asset: string,
+        public account: string
     ){}
 }

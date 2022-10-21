@@ -7,18 +7,18 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
-  @Output() childEmit = new EventEmitter();
-
-  fund: string="";
-  assetSearch = "";
+  assetSearch: string = "";
+  
+  @Output()
+  searchAssetEvent: EventEmitter<string> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  callParent(data:string){
-    console.log("Parent component called.."+ data);
-    this.childEmit.emit(data);
+  searchAsset(searchText: string) {
+    this.searchAssetEvent.emit(searchText);
   }
+
 }

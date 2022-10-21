@@ -1,13 +1,13 @@
-<div class="search-bar">
 <mat-form-field appearance="outline">
-  <input
-    type="text"
-    (change)="callParent(searchText.value)"
-    #searchText
-    matInput
-    [(ngModel)]="assetSearch"
-    placeholder="e.g: AAPL"
-  />
-  <mat-icon matSuffix id="icon" aria-label="Example home icon">search</mat-icon>
-</mat-form-field>
-</div>
+    <input
+      type="text"
+      (change)="searchAsset(assetSearch)"
+      matInput
+      [(ngModel)]="assetSearch"
+      placeholder="e.g: AAPL"
+      id="searchTxt"
+    />
+    <mat-icon matSuffix id="icon" aria-label="Example home icon"
+      >search</mat-icon
+    >
+  </mat-form-field>

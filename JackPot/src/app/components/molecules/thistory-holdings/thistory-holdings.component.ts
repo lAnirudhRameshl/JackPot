@@ -5,7 +5,7 @@ import { JackpotService } from 'src/app/services/jackpot.service';
 @Component({
   selector: 'app-thistory-holdings',
   templateUrl: './thistory-holdings.component.html',
-  styleUrls: ['./thistory-holdings.component.css']
+  styleUrls: []
 })
 export class ThistoryHoldingsComponent implements OnInit {
 

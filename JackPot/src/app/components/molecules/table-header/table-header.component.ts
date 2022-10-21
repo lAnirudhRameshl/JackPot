@@ -1,5 +1,5 @@
-import { outputAst } from '@angular/compiler';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ACCOUNT_TYPES } from 'src/app/constants/account-types';
 import { ASSET_TYPES } from 'src/app/constants/asset-types';
 
 @Component({
@@ -10,9 +10,13 @@ import { ASSET_TYPES } from 'src/app/constants/asset-types';
 export class TableHeaderComponent implements OnInit {
 
   @Input() text?:string;
-  @Output() childEmit = new EventEmitter();
+  @Output() searchEvent = new EventEmitter();
+  @Output() downloadEvent = new EventEmitter();
+  @Output() assetTypeEvent = new EventEmitter();
+  @Output() accountEvent = new EventEmitter();
 
   assetTypes: string[] = ASSET_TYPES;
+  accountTypes: string[] = ACCOUNT_TYPES;
   selectedAssetType: string = this.assetTypes[0];
   assetSearch = "";
   
@@ -20,10 +24,21 @@ export class TableHeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  callParent(data:string){
-    console.log("Parent component called.."+ data);
-    this.childEmit.emit(data);
+
+  searchAsset(data:string){
+    this.searchEvent.emit(data);
   }
 
+  downloadData() {
+    this.downloadEvent.emit();
+  }
+
+  changeAssetClass(assetClass: String) {
+    this.assetTypeEvent.emit(assetClass)
+  }
+
+  changeAccountType(accountType: String) {
+    this.accountEvent.emit(accountType);
+  }
 }
 

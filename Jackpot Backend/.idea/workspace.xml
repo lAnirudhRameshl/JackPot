@@ -5,6 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e383b37b-a168-491d-90d2-ae90da1e6d40" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../JackPot/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/components/molecules/buy-sell-panel/buy-sell-panel.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../JackPot/src/app/components/molecules/buy-sell-panel/buy-sell-panel.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/components/molecules/download/download.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/components/molecules/download/download.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/components/molecules/download/download.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/components/molecules/download/download.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/components/molecules/portfolio-table/portfolio-table.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../JackPot/src/app/components/molecules/portfolio-table/portfolio-table.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/components/molecules/portfolio-table/portfolio-table.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../JackPot/src/app/components/molecules/portfolio-table/portfolio-table.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/components/molecules/search-bar/search-bar.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/components/molecules/search-bar/search-bar.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/components/molecules/search-bar/search-bar.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/components/molecules/search-bar/search-bar.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/components/molecules/table-header/table-header.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../JackPot/src/app/components/molecules/table-header/table-header.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/components/molecules/table-header/table-header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../JackPot/src/app/components/molecules/table-header/table-header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/components/molecules/table-header/table-header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../JackPot/src/app/components/molecules/table-header/table-header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/components/molecules/thistory-holdings/thistory-holdings.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/components/molecules/thistory-holdings/thistory-holdings.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/components/molecules/thistory-holdings/thistory-holdings.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/components/molecules/thistory-holdings/thistory-holdings.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/components/organisms/table-options/table-options.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/components/organisms/table-options/table-options.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/components/organisms/table-options/table-options.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/components/organisms/table-options/table-options.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JackPot/src/app/components/organisms/thistory-table/thistory-table.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../JackPot/src/app/components/organisms/thistory-table/thistory-table.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +61,11 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+<<<<<<< HEAD
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Associate/Jackpot/Jackpot Backend&quot;
+=======
+    &quot;last_opened_file_path&quot;: &quot;D:/Associate/Documents/Fidelity/JackPot/Jackpot Backend&quot;
+>>>>>>> fc0ab24c39f3f5855d55a7eac7ee8dee1acec716
   }
 }</component>
   <component name="RunManager">
