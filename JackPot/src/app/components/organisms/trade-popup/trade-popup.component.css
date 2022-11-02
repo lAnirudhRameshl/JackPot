@@ -24,7 +24,13 @@ mat-toolbar {
 
 .form-inputs .mat-form-field + .mat-form-field {
   margin-left: 3rem;
+  
 }
+mat-form-field{
+  width: 98% !important;
+}
+
+
 .example-right-align {
   text-align: right;
 }

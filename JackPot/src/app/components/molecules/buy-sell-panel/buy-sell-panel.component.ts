@@ -42,7 +42,7 @@ export class BuySellPanelComponent implements OnInit {
 
 
     const dialogRef = this.dialog.open(TradePopupComponent, {
-      width: '48%',
+      width: '22%',
       data: {isBuy: (btnType.toUpperCase() == 'BUY' ? 'true':'false'), ticker: this.CARD_TICKER},
     });
 
