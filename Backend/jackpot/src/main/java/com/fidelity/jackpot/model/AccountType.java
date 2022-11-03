@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,7 +14,9 @@ public class AccountType {
 //    Brokerage, 401k, IRAs, Roth IRAs, HSAs
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer accountTypeId;
+    @Column(name = "account_type_id")
+    private Long accountTypeId;
 
+    @Column(name= "account_type_name")
     private String accountTypeName;
 }

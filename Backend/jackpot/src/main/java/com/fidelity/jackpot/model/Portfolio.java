@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 public class Portfolio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer portfolioID;
+    private Long portfolioID;
 
     private String fundName;
 
