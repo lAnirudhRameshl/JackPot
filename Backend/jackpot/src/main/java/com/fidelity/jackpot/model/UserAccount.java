@@ -1,5 +1,6 @@
 package com.fidelity.jackpot.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,9 +20,12 @@ public class UserAccount {
 
     BigDecimal marginUsed;
 
+    @OneToOne
+    @JoinColumn(name = "account_type_id", referencedColumnName = "account_type_id")
     AccountType accountType;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
+    @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     User user;
 }

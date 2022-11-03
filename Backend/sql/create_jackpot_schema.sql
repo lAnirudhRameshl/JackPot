@@ -63,7 +63,7 @@ CREATE TABLE portfolio (
 );
 
 CREATE TABLE user_account (
-    user_account_id VARCHAR(16),
+    account_number VARCHAR(16),
     margin_available NUMBER,
     margin_used NUMBER,
     account_type_id NUMBER,
