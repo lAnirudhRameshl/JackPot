@@ -1,86 +1,44 @@
 package com.fidelity.jackpot.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Entity
 @Table(name = "user_detail")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer userID;
+
     private String firstName;
+
     private String lastName;
+
+    @Column(nullable = false, unique = true)
     private String email;
+
     private String password;
+
     private Integer investmentRisk;
+
+    @Column(nullable = false, unique = true)
     private String phoneNumber;
 
-    public User() {
+    @OneToMany(mappedBy = "user", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<UserAccount> accounts;
 
-    }
+    @OneToMany(mappedBy = "user", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Portfolio> portfolios;
 
-    public User(Integer userID, String firstName, String lastName, String email, String password, Integer investmentRisk, String phoneNumber) {
-        this.userID = userID;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-        this.investmentRisk = investmentRisk;
-        this.phoneNumber = phoneNumber;
-    }
+    @OneToMany(mappedBy = "user", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<TradeHistory> tradeHistories;
 
-    public Integer getUserID() {
-        return userID;
-    }
-
-    public void setUserID(Integer userID) {
-        this.userID = userID;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Integer getInvestmentRisk() {
-        return investmentRisk;
-    }
-
-    public void setInvestmentRisk(Integer investmentRisk) {
-        this.investmentRisk = investmentRisk;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
 }

@@ -1,40 +1,23 @@
 package com.fidelity.jackpot.model;
 
-public enum AccountType {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Entity
+public class AccountType {
 //    Brokerage, 401k, IRAs, Roth IRAs, HSAs
-    BROKERAGE(1,"Brokerage"),
-    IRA(2,"IRA"),
-    HSA(3,"HSA");
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer accountTypeId;
 
-    private int acctID;
-    private String acctType;
-
-    private AccountType(int acctID, String acctType) {
-        this.acctID = acctID;
-        this.acctType = acctType;
-    }
-    public static AccountType of(int code){
-        for(AccountType accountType1 :values()){
-            if(accountType1.acctID == code){
-                return accountType1;
-            }
-        }
-        throw new IllegalArgumentException("Unknown account type");
-    }
-
-    public int getAcctID() {
-        return acctID;
-    }
-
-    public void setAcctID(int acctID) {
-        this.acctID = acctID;
-    }
-
-    public String getAcctType() {
-        return acctType;
-    }
-
-    public void setAcctType(String acctType) {
-        this.acctType = acctType;
-    }
+    private String accountTypeName;
 }
