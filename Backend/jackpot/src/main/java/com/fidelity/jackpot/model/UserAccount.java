@@ -19,6 +19,8 @@ public class UserAccount {
 
     BigDecimal marginUsed;
 
+    @OneToOne
+    @JoinColumn(name = "account_type_id", referencedColumnName = "account_type_id")
     AccountType accountType;
 
     @ManyToOne(fetch = FetchType.LAZY)

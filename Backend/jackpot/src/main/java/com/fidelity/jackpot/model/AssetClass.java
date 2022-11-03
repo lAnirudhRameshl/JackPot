@@ -16,6 +16,5 @@ public class AssetClass {
     @Column(name = "asset_class_id")
     private Long assetClassId;
 
-//    @Column(As)
     private String assetClassName;
 }
