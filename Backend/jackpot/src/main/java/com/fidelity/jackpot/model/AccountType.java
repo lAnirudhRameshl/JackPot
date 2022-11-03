@@ -17,6 +17,5 @@ public class AccountType {
     @Column(name = "account_type_id")
     private Long accountTypeId;
 
-    @Column(name= "account_type_name")
     private String accountTypeName;
 }

@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface TradeHistoryRepository extends JpaRepository<TradeHistory,Long> {
-    List<TradeHistory> findByUserId(Long userId);
+    List<TradeHistory> findByUserUserId(Long userId);
 }
