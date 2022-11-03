@@ -1,7 +1,9 @@
 package com.fidelity.jackpot.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -15,7 +17,8 @@ import java.sql.Timestamp;
 public class TradeHistory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long tradeHistoryID;
+    private Long tradeHistoryId;
+
 
     private String fundName;
 
@@ -27,12 +30,15 @@ public class TradeHistory {
 
     @OneToOne
     @JoinColumn(name = "account_type_id", referencedColumnName = "account_type_id")
+
     private AccountType accountType;
 
     @OneToOne
     @JoinColumn(name = "asset_class_id", referencedColumnName = "asset_class_id")
+
     private AssetClass assetClass;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
