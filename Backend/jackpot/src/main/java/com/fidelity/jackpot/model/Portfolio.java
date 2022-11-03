@@ -1,5 +1,6 @@
 package com.fidelity.jackpot.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,7 +15,7 @@ import java.math.BigDecimal;
 public class Portfolio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long portfolioID;
+    private Long portfolioId;
 
     private String fundName;
 
@@ -36,7 +37,8 @@ public class Portfolio {
     @JoinColumn(name = "account_type_id", referencedColumnName = "account_type_id")
     private AccountType accountType;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnore
+    @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
