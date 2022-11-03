@@ -75,7 +75,7 @@
   <ng-container matColumnDef="btn">
     <th mat-header-cell *matHeaderCellDef>BUY / SELL</th>
     <td mat-cell *matCellDef="let element">
-      <app-buy-sell-panel class="btnbs"></app-buy-sell-panel>
+      <app-buy-sell-panel CARD_TICKER="{{element.fund}}" class="btnbs"></app-buy-sell-panel>
     </td>
   </ng-container>
 
