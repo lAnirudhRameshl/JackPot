@@ -18,12 +18,12 @@ public class TradeHistoryService
         return tradeHistoryRepository.findAll();
     }
 
-//    public List<TradeHistory> getTradeHistoryByUserUserId (String fundName){
-//
-//        return tradeHistoryRepository.findByFundName(fundName);
-//
-//    }
-//    public TradeHistory insertTradeHistoryByUserId (Long userId, TradeHistory tradeHistory){
-//        return null;
-//    }
+    public List<TradeHistory> getTradeHistoryByUserUserId (Long userId){
+
+        return tradeHistoryRepository.findByUserUserId(userId);
+
+    }
+    public Integer insertTradeHistoryByUserId (TradeHistoryDto tradeHistoryDto){
+         return tradeHistoryRepository.insertTradeHistoryByUserId(tradeHistoryDto);
+    }
 }

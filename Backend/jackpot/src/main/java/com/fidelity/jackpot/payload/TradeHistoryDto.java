@@ -21,5 +21,10 @@ public class TradeHistoryDto {
 
     private Timestamp transactionDate;
 
+    private Long accountTypeId;
+
+    private Long assetClassId;
+
+    private Long userId;
 
 }
