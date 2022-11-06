@@ -12,9 +12,10 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Data
 @Entity
+@Table(name = "USER_ACCOUNT")
 public class UserAccount {
     @Id
-    String accountNumber;
+    String userAccountId;
 
     BigDecimal marginAvailable;
 

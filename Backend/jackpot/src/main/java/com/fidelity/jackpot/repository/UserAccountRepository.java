@@ -9,8 +9,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public interface UserAccountRepository extends JpaRepository<UserAccount,Long> {
-    List<UserAccount> findByUserUserId (Long userId);
+public interface UserAccountRepository extends JpaRepository<UserAccount,String> {
+    List<UserAccount> findByUser_UserId (Long userId);
+
+
 
     Optional<UserAccount> findByAccountTypeAccountTypeName(String accountTypeName);
 }
