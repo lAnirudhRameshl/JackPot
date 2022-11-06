@@ -2,6 +2,7 @@ package com.fidelity.jackpot.repository;
 
 import com.fidelity.jackpot.model.TradeHistory;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -10,4 +11,5 @@ import java.util.List;
 public interface TradeHistoryRepository extends JpaRepository<TradeHistory,Long> {
     //List<TradeHistory> findByUserUserId(Long userId);
     //List<TradeHistory> findByFundName(String fundName);
+
 }
