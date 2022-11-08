@@ -2,6 +2,7 @@ package com.fidelity.jackpot.controller;
 
 import com.fidelity.jackpot.model.TradeHistory;
 import com.fidelity.jackpot.payload.TradeHistoryDto;
+import com.fidelity.jackpot.payload.TradeHistoryResponse;
 import com.fidelity.jackpot.service.TradeHistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,25 +11,26 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("/trade-history")
+@RequestMapping("/jackpot/api/trade-history")
 @RestController
 public class TradeHistoryController {
 
     @Autowired
     private TradeHistoryService tradeHistoryService;
 
-    @GetMapping
-    public ResponseEntity<List<TradeHistory>> getaALL(){
-        List<TradeHistory> tradeHistories = tradeHistoryService.getAll();
-
-        ResponseEntity<List<TradeHistory>> responseEntity;
-        responseEntity = ResponseEntity.ok(tradeHistories);
-        return responseEntity;
-    }
-
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/{userId}")
-    public List<TradeHistory> getTradeHistoryByUserUserId(@PathVariable Long userId){
-        return tradeHistoryService.getTradeHistoryByUserUserId(userId);
+    public ResponseEntity<List<TradeHistoryResponse>> getTradeHistoryByUserUserId(@PathVariable Long userId){
+        ResponseEntity response = null;
+
+        try {
+            List<TradeHistoryResponse> responseBody = tradeHistoryService.getTradeHistoryByUserUserId(userId);
+            response = new ResponseEntity(responseBody, HttpStatus.OK);
+        } catch (Exception e) {
+            response = new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+        return response;
     }
 
     @PostMapping
