@@ -28,7 +28,7 @@ export class JackpotService {
 
   getPortfolioData():Observable<Portfolio[]>{
     console.log("#### Getting data!");
-    return this.http.get<Portfolio[]>('http://localhost:8080/api/v1/users/81/portfolios');
+    return this.http.get<Portfolio[]>('http://localhost:8080/api/v1/portfolio/user/81');
   }
 
   getTrades(): Observable<ITrade[]>{

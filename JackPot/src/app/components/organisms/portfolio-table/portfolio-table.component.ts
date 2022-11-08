@@ -64,9 +64,9 @@ export class PortfolioTableComponent implements OnInit {
   generatePortfolioSummary(data: Portfolio[]) {
     this.currentVal = this.netpl = this.totalInvestment = 0;
     data.forEach((dt) => {
-      this.currentVal += dt.currentval;
-      this.netpl += dt.pandl;
-      this.totalInvestment += dt.units * dt.avgcost;
+      this.currentVal += dt.currentValue;
+      this.netpl += dt.profitLoss;
+      this.totalInvestment += dt.quantity * dt.avgCost;
     });
   }
 
@@ -103,12 +103,12 @@ export class PortfolioTableComponent implements OnInit {
   customFilterPredicate(data: Portfolio, filter: string) {
     let filterJson: {accountType: string, assetClass: string, searchFilter: string} = JSON.parse(filter);
 
-    if(filterJson['assetClass'] == '' && filterJson['accountType'] == '') return data.fund.toLowerCase().indexOf(filterJson['searchFilter']) == 0;
+    if(filterJson['assetClass'] == '' && filterJson['accountType'] == '') return data.fundName.toLowerCase().indexOf(filterJson['searchFilter']) == 0;
 
-    else if(filterJson['assetClass'] == '' && filterJson['accountType'] != '') return (data.account == filterJson['accountType'] && data.fund.toLowerCase().indexOf(filterJson['searchFilter']) == 0);
+    else if(filterJson['assetClass'] == '' && filterJson['accountType'] != '') return (data.account == filterJson['accountType'] && data.fundName.toLowerCase().indexOf(filterJson['searchFilter']) == 0);
 
-    else if(filterJson['assetClass'] != '' && filterJson['accountType'] == '') return (data.asset == filterJson['assetClass'] && data.fund.toLowerCase().indexOf(filterJson['searchFilter']) == 0);
+    else if(filterJson['assetClass'] != '' && filterJson['accountType'] == '') return (data.asset == filterJson['assetClass'] && data.fundName.toLowerCase().indexOf(filterJson['searchFilter']) == 0);
 
-    else return (data.asset == filterJson['assetClass'] && data.account == filterJson['accountType'] && data.fund.toLowerCase().indexOf(filterJson['searchFilter']) == 0)
+    else return (data.asset == filterJson['assetClass'] && data.account == filterJson['accountType'] && data.fundName.toLowerCase().indexOf(filterJson['searchFilter']) == 0)
   }
 }
