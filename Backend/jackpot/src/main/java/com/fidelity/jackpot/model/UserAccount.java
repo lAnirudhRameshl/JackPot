@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -12,9 +13,10 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Data
 @Entity
+@Table(name = "USER_ACCOUNT")
 public class UserAccount {
     @Id
-    String accountNumber;
+    String userAccountId;
 
     BigDecimal marginAvailable;
 
