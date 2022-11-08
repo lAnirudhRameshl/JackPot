@@ -19,7 +19,6 @@ public class TradeHistory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long tradeHistoryId;
 
-
     private String fundName;
 
     private BigDecimal quantity;

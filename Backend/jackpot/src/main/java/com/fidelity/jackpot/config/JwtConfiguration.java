@@ -9,6 +9,7 @@ import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.*;
+import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;

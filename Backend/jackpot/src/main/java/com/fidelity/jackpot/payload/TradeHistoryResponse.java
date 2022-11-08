@@ -6,26 +6,20 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-import java.util.Date;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class TradeHistoryDto {
-    private Long tradeHistoryId;
-
-    private String fundName;
+public class TradeHistoryResponse {
+    private String fund;
 
     private BigDecimal quantity;
 
     private BigDecimal price;
 
-    private Date transactionDate;
+    private String account;
 
-    private Long accountTypeId;
+    private Timestamp date;
 
-    private Long assetClassId;
-
-    private Long userId;
-
+    private String asset;
 }
