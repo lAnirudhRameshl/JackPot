@@ -45,10 +45,10 @@ public class PortfolioService {
 
     public Portfolio getPortfolioById (Long userId, Long portfolioId){
         User user = userRepository.findById(userId)
-                                  .orElseThrow(()->{throw new ResourceNotFoundException();});
+                                  .orElseThrow(()->{throw new ResourceNotFoundException("User with ID " + userId + " not found");});
 
         Portfolio portfolio = portfolioRepository.findById(portfolioId)
-                                                 .orElseThrow(()->{throw new ResourceNotFoundException();});
+                                                 .orElseThrow(()->{throw new ResourceNotFoundException("Portfolio with ID " + portfolioId + " not found");});
 
         if(!portfolio.getUser().getUserId().equals(user.getUserId())){
             return null;
@@ -59,13 +59,13 @@ public class PortfolioService {
     @Transactional
     public Portfolio insertPortfolio (PortfolioDto portfolio){
         User user = userRepository.findById(portfolio.getUserId())
-                .orElseThrow(()->{throw new ResourceNotFoundException();});
+                .orElseThrow(()->{throw new ResourceNotFoundException("User with ID " + portfolio.getUserId() + " not found");});
 
         AccountType accountType = accountTypeRepository.findById(portfolio.getAccountId())
-                .orElseThrow(()->{throw new ResourceNotFoundException();});
+                .orElseThrow(()->{throw new ResourceNotFoundException("Asset with ID " + portfolio.getAssetId() + " not found");});
 
         AssetClass assetClass = assetClassRepository.findById(portfolio.getAssetId())
-                .orElseThrow(()->{throw new ResourceNotFoundException();});
+                .orElseThrow(()->{throw new ResourceNotFoundException("Account type with ID " + portfolio.getAccountId() + " not found");});
 
 
         Portfolio portfolio1 = new Portfolio();
@@ -87,7 +87,7 @@ public class PortfolioService {
     }
     public Portfolio updatePortfolioById (Long portfolioId, PortfolioDto portfolioDto){
         Portfolio portfolio = portfolioRepository.findById(portfolioId)
-                .orElseThrow(()->{throw new ResourceNotFoundException();});
+                .orElseThrow(()->{throw new ResourceNotFoundException("Portfolio with ID " + portfolioId + " not found");});
 
         if(portfolio.getQuantity().compareTo(new BigDecimal(0))<=0){
             deletePortfolioById(portfolioId);

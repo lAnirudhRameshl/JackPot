@@ -1,10 +1,17 @@
 package com.fidelity.jackpot.service;
 
+import com.fidelity.jackpot.exception.ResourceNotFoundException;
+import com.fidelity.jackpot.exception.UserException;
 import com.fidelity.jackpot.model.User;
+import com.fidelity.jackpot.payload.LoginResponse;
+import com.fidelity.jackpot.payload.SignupRequest;
+import com.fidelity.jackpot.payload.SignupResponse;
 import com.fidelity.jackpot.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -13,19 +20,49 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public List<User> getAllUsers (){
-        return userRepository.findAll();
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    public LoginResponse login(String email, String password) {
+        LoginResponse response = null;
+
+        try {
+            User user = userRepository.findByEmail(email).orElseThrow(() -> new ResourceNotFoundException("Invalid credentials"));
+
+            if(passwordEncoder.matches(password, user.getPassword())) {
+                response = new LoginResponse();
+                response.setUserId(user.getUserId());
+                response.setFirstName(user.getFirstName());
+                response.setLastName(user.getLastName());
+            }
+        } catch (Exception e) {
+            throw new UserException(e.getMessage());
+        }
+
+        return response;
     }
-    public User getByUserId (Long userId){
-        return userRepository.findById(userId).get();
-    }
-    public User addUser (User user){
-        return userRepository.save(user);
-    }
-    public User updateUser (User user,Long userId){
-        return null;
-    }
-    public void deleteUser (Long userId){
-        userRepository.deleteById(userId);
+
+    @Transactional
+    public SignupResponse signup(SignupRequest signupRequest) {
+        SignupResponse response = new SignupResponse();
+
+        User user = new User();
+        user.setFirstName(signupRequest.getFirstName());
+        user.setLastName(signupRequest.getLastName());
+        user.setInvestmentRisk(signupRequest.getInvestmentRisk());
+        user.setEmail(signupRequest.getEmail());
+        user.setPassword(passwordEncoder.encode(signupRequest.getPassword()));
+        user.setPhoneNumber(signupRequest.getPhoneNumber());
+
+        user = userRepository.saveAndFlush(user);
+
+        response.setUserId(user.getUserId());
+        response.setEmail(user.getEmail());
+        response.setFirstName(user.getFirstName());
+        response.setLastName(user.getLastName());
+        response.setPhoneNumber(user.getPhoneNumber());
+        response.setInvestmentRisk(user.getInvestmentRisk());
+
+        return response;
     }
 }
