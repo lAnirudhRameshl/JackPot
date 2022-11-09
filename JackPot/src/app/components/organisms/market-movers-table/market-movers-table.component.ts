@@ -14,7 +14,7 @@ export class MarketMoversTableComponent implements OnInit {
   @Output()
   marketMoverAssetClickEvent: EventEmitter<MarketMover> = new EventEmitter();
 
-  displayedColumns: string[] = ['name', 'lastPrice', 'priceChange', 'volume']
+  displayedColumns: string[] = ['ticker', 'lastPrice', 'priceChange', 'name']
 
   constructor() {}
 

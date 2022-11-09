@@ -31,7 +31,7 @@ public class AccountService  {
          UserAccount UA_from_req = new UserAccount();;
 
         //System.out.println(addAcc.toString());
-        UA_from_req.setUserAccountId(addAcc.getUserAccountId());
+        UA_from_req.setAccountNumber(addAcc.getUserAccountId());
         UA_from_req.setMarginAvailable(addAcc.getMarginAvailable());
         UA_from_req.setMarginUsed(addAcc.getMarginUsed());
 

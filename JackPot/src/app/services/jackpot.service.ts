@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MarketMover } from '../models/market-movers.model';
@@ -10,28 +10,35 @@ import { ITrade } from '../models/trade';
 })
 export class JackpotService {
 
-  private BASE_URL = "../../assets/data";
+  private BASE_URL = "http://localhost:8080/jackpot/api/v1";
 
-  constructor(private http: HttpClient) { }
+  private headers = new HttpHeaders().append('Authorization', `Bearer ${localStorage.getItem('jwt') ?? ""}`);
+
+  constructor(private http: HttpClient) {
+   }
 
   getMostActiveMarketMovers(): Observable<MarketMover[]> {
-    return this.http.get<MarketMover[]>(`${this.BASE_URL}/most-active-market-movers.json`);
+    return this.http.get<MarketMover[]>(`${this.BASE_URL}/trade/market-movers`, { headers: this.headers});
   }
 
   getGainerMarketMovers(): Observable<MarketMover[]> {
-    return this.http.get<MarketMover[]>(`${this.BASE_URL}/gainers-market-movers.json`);
+    return this.http.get<MarketMover[]>(`${this.BASE_URL}/trade/market-gainers`, { headers: this.headers});
   }
 
   getLoserMarketMovers(): Observable<MarketMover[]> {
-    return this.http.get<MarketMover[]>(`${this.BASE_URL}/losers-market-movers.json`);
+    return this.http.get<MarketMover[]>(`${this.BASE_URL}/trade/market-losers`, { headers: this.headers});
   }
 
-  getPortfolioData():Observable<Portfolio[]>{
-    console.log("#### Getting data!");
-    return this.http.get<Portfolio[]>('http://localhost:8080/api/v1/portfolio/user/81');
+  getPortfolioData(userId: string):Observable<Portfolio[]>{
+    // console.log("#### Getting data!");
+    return this.http.get<Portfolio[]>(`${this.BASE_URL}/portfolio/user/${userId}`, { headers: this.headers});
   }
 
-  getTrades(): Observable<ITrade[]>{
-    return this.http.get<ITrade[]>('http://localhost:8080/jackpot/api/trade-history/1');
+  getTrades(userId: string): Observable<ITrade[]>{
+    return this.http.get<ITrade[]>(`${this.BASE_URL}/trade-history/${userId}`, { headers: this.headers});
+  }
+
+  getStockDetails(ticker: string): Observable<MarketMover> {
+    return this.http.get<MarketMover>(`${this.BASE_URL}/trade/${ticker}`, { headers: this.headers});
   }
 }

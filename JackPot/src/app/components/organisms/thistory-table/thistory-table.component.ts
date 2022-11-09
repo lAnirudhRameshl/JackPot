@@ -42,7 +42,8 @@ export class ThistoryTableComponent implements OnInit {
   }
 
   getAllStocks() {
-    this.jackpotService.getTrades().subscribe((data) => {
+    let userId: string = localStorage.getItem('userId') ?? "0"
+    this.jackpotService.getTrades(userId).subscribe((data) => {
       this.trades = data;
       this.dataSource = new MatTableDataSource(this.trades);
       this.dataSource.sort = this.empTbSort;

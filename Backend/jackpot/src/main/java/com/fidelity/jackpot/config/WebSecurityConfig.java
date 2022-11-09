@@ -19,9 +19,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests(configurer ->
                         configurer
                                 .antMatchers(
-                                        "/error",
-                                        "/jackpot/api/login",
-                                        "/jackpot/api/signup"
+                                        "/jackpot/api/v1/login",
+                                        "/jackpot/api/v1/signup"
                                 )
                                 .permitAll()
                                 .anyRequest()
