@@ -11,7 +11,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { ErrorStateMatcher, MAT_DATE_FORMATS } from '@angular/material/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
 import { SignupRequest } from 'src/app/models/signup-request';
@@ -46,6 +46,10 @@ export class RegisterFormComponent implements OnInit {
   showPassword: boolean = false;
   showConfirmPassword: boolean = false;
   errorStateMatcher = new CrossFieldErrorMatcher();
+
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
+  toastMessage:string='';
 
   confirmPasswordValidator: ValidatorFn = (control: AbstractControl) => {
     const password = control.get('password');
@@ -209,9 +213,16 @@ export class RegisterFormComponent implements OnInit {
           this.router.navigateByUrl('/login');
         },
         error: (errorResponse) => {
-          
+          this.toastMessage = `User already exists! `;
+          this.openSnackBar();
         }
       })
     }
+  }
+  openSnackBar() {
+    this.snackbar.open(this.toastMessage, 'Ok', {
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition,
+    });
   }
 }

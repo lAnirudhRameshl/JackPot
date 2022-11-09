@@ -27,8 +27,8 @@
       <br />
 
       <mat-form-field appearance="outline">
-        <mat-label>Account Type</mat-label>
-        <mat-select [(ngModel)]="model.account" name="account">
+        <mat-label>Select Account</mat-label>
+        <mat-select [(value)]="model.account" [(ngModel)]="model.account" name="account">
           <mat-option
             *ngFor="let dropdownValue of accountTypes"
             [value]="dropdownValue"

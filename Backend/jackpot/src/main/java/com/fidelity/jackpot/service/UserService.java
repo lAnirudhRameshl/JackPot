@@ -1,6 +1,7 @@
 package com.fidelity.jackpot.service;
 
 import com.fidelity.jackpot.exception.ResourceNotFoundException;
+import com.fidelity.jackpot.exception.StockException;
 import com.fidelity.jackpot.exception.UserException;
 import com.fidelity.jackpot.model.User;
 import com.fidelity.jackpot.payload.LoginResponse;
@@ -10,6 +11,7 @@ import com.fidelity.jackpot.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ObjectUtils;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -46,23 +48,27 @@ public class UserService {
     public SignupResponse signup(SignupRequest signupRequest) {
         SignupResponse response = new SignupResponse();
 
-        User user = new User();
-        user.setFirstName(signupRequest.getFirstName());
-        user.setLastName(signupRequest.getLastName());
-        user.setInvestmentRisk(signupRequest.getInvestmentRisk());
-        user.setEmail(signupRequest.getEmail());
-        user.setPassword(passwordEncoder.encode(signupRequest.getPassword()));
-        user.setPhoneNumber(signupRequest.getPhoneNumber());
+        if(ObjectUtils.isEmpty(userRepository.findByEmail(signupRequest.getEmail()))){
+            User user = new User();
+            user.setFirstName(signupRequest.getFirstName());
+            user.setLastName(signupRequest.getLastName());
+            user.setInvestmentRisk(signupRequest.getInvestmentRisk());
+            user.setEmail(signupRequest.getEmail());
+            user.setPassword(passwordEncoder.encode(signupRequest.getPassword()));
+            user.setPhoneNumber(signupRequest.getPhoneNumber());
 
-        user = userRepository.saveAndFlush(user);
+            user = userRepository.saveAndFlush(user);
 
-        response.setUserId(user.getUserId());
-        response.setEmail(user.getEmail());
-        response.setFirstName(user.getFirstName());
-        response.setLastName(user.getLastName());
-        response.setPhoneNumber(user.getPhoneNumber());
-        response.setInvestmentRisk(user.getInvestmentRisk());
-
+            response.setUserId(user.getUserId());
+            response.setEmail(user.getEmail());
+            response.setFirstName(user.getFirstName());
+            response.setLastName(user.getLastName());
+            response.setPhoneNumber(user.getPhoneNumber());
+            response.setInvestmentRisk(user.getInvestmentRisk());
+        }
+        else{
+            throw new UserException("User already exists");
+        }
         return response;
     }
 }

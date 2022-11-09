@@ -20,7 +20,7 @@ export class MarginPopupComponent implements OnInit {
   accountTypes: string[] = ['Brokerage', '401k', 'IRA', 'Roth IRA', 'HSA'];
   
   amount:number=0;
-  account:string='NONE';
+  account:string='Brokerage';
   toastMessage:string='';
   model: Margin = {amount: this.amount, account:this.account} ;
   
@@ -34,7 +34,7 @@ export class MarginPopupComponent implements OnInit {
     console.log("margin updated "+ this.model.amount+" "+ this.model.account);
     this.dialogRef.close();
     this.toastMessage = `Margin updated! `;
-        this.openSnackBar();
+    this.openSnackBar();
   }
 
   openSnackBar() {
