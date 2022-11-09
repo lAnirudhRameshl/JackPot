@@ -52,7 +52,8 @@ export class PortfolioTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.ds.getPortfolioData().subscribe((data) => {
+    let userId = localStorage.getItem('userId') ?? "0"
+    this.ds.getPortfolioData(userId).subscribe((data) => {
       this.data = data;
       this.dataSource = new MatTableDataSource(this.data);
       this.holdingCount = this.data.length;

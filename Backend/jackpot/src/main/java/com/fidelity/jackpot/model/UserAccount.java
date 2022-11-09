@@ -16,7 +16,7 @@ import java.math.BigDecimal;
 @Table(name = "USER_ACCOUNT")
 public class UserAccount {
     @Id
-    String userAccountId;
+    String accountNumber;
 
     BigDecimal marginAvailable;
 

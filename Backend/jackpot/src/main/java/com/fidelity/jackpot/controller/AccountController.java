@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
-@RequestMapping("/account")
+@RequestMapping("/jackpot/api/v1/account")
 public class AccountController {
 
     @Autowired

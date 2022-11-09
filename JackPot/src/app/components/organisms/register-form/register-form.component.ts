@@ -14,6 +14,7 @@ import { ErrorStateMatcher, MAT_DATE_FORMATS } from '@angular/material/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
+import { SignupRequest } from 'src/app/models/signup-request';
 import { UserService } from 'src/app/services/user.service';
 
 export const CUSTOM_FORMATS = {
@@ -194,7 +195,15 @@ export class RegisterFormComponent implements OnInit {
 
   register() {
     if(this.registerForm.valid){
-      this.userService.register().subscribe({
+      let signupRequest: SignupRequest = {
+        firstName: this.registerForm.get('firstName')?.value,
+        lastName: this.registerForm.get('lastName')?.value,
+        email: this.registerForm.get('email')?.value,
+        password: this.registerForm.get('password')?.value,
+        phoneNumber: this.registerForm.get('phoneNumber')?.value,
+        investmentRisk: this.registerForm.get('investmentRisk')?.value,
+      }
+      this.userService.register(signupRequest).subscribe({
         next: (response) => {
           this.snackbar.open("Account created successfully", "OK", {duration: 3000});
           this.router.navigateByUrl('/login');

@@ -13,6 +13,7 @@ import java.util.List;
 
 @Repository
 public interface TradeHistoryRepository extends JpaRepository<TradeHistory,Long> {
+
     @Query(
             value = "SELECT * \n" +
                     "     FROM trade_history t JOIN user_detail u\n" +
