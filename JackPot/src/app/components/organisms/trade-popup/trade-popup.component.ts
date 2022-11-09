@@ -13,6 +13,13 @@ export interface ToastData{
   price: number
 
 }
+
+//ACCOUNT TYPE MODAL FROM API
+export interface AccountType{
+  accountTypeId: string,
+  accountTypeName: string
+}
+
 @Component({
   selector: 'app-trade-popup',
   templateUrl: './trade-popup.component.html',
@@ -25,6 +32,20 @@ export class TradePopupComponent implements OnInit {
   ticker: string = 'MSFT';
   action: string = 'SELL';
   orderData: OrderData = {isBuy:'true',ticker:'TSLA'};
+  
+  account_types: string[] = ['Brokerage','401K'];
+
+  
+  selectedValue: string = "1";
+
+  account_types_from_api: AccountType[] = [
+    {accountTypeId: "1",accountTypeName:"Brokerage"},
+    {accountTypeId: "2",accountTypeName:"401K"},
+    {accountTypeId: "3",accountTypeName:"IRA"},
+    {accountTypeId: "4",accountTypeName:"ROTH-IRA"},
+    {accountTypeId: "5",accountTypeName:"HSA"}
+  ]
+
   toastData:any = {};
 
   model: ToastData = {ticker: this.ticker, qty:this.currQty, price: this.currPrice} ;
@@ -47,6 +68,7 @@ export class TradePopupComponent implements OnInit {
 
   executeOrder66() {
     console.log('Bonjour');
+    console.log('Dropdown Selcted=> '+this.selectedValue)
     this.toastData = this.model;
     this.dialogRef.close();
   }
