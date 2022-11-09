@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginRequest } from 'src/app/models/login-request';
+import { LoginResponse } from 'src/app/models/login-response';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -42,9 +44,15 @@ export class LoginFormComponent implements OnInit {
 
   login() {
     if(this.loginForm.valid) {
-      this.userService.login().subscribe({
-        next: (response) => {
+      let loginRequest: LoginRequest = {
+        email: this.loginForm.get('email')?.value,
+        password: this.loginForm.get('password')?.value,
+      }
+      this.userService.login(loginRequest).subscribe({
+        next: (response: LoginResponse) => {
           this.router.navigateByUrl('/portfolio');
+          localStorage.setItem('userId', response.userId.toString());
+          localStorage.setItem('jwt', response.jwt);
         },
         error: (errorResponse) => {
   

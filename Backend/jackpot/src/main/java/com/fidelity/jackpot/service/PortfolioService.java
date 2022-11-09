@@ -6,6 +6,7 @@ import com.fidelity.jackpot.model.AssetClass;
 import com.fidelity.jackpot.model.Portfolio;
 import com.fidelity.jackpot.model.User;
 import com.fidelity.jackpot.payload.PortfolioDto;
+import com.fidelity.jackpot.payload.StockDetailResponse;
 import com.fidelity.jackpot.repository.AccountTypeRepository;
 import com.fidelity.jackpot.repository.AssetClassRepository;
 import com.fidelity.jackpot.repository.PortfolioRepository;
@@ -35,12 +36,32 @@ public class PortfolioService {
     @Autowired
     private AssetClassRepository assetClassRepository;
 
+    @Autowired
+    private TradeService tradeService;
+
+    @Transactional
+    public List<Portfolio> getDynamicPortfolio(List<Portfolio> oldPortfolio) {
+        for(Portfolio portfolio: oldPortfolio) {
+            StockDetailResponse stockDetail = tradeService.getStockDetail(portfolio.getFundName());
+            portfolio.setLTP(BigDecimal.valueOf(stockDetail.getLast()));
+            portfolio.setNetChange(portfolio.getLTP().subtract(portfolio.getAvgCost()));
+            portfolio.setCurrentValue(portfolio.getLTP().multiply(portfolio.getQuantity()));
+            portfolio.setProfitLoss(portfolio.getCurrentValue()
+                    .subtract(portfolio.getAvgCost().multiply(portfolio.getQuantity())));
+            portfolio.setDayChange(BigDecimal.valueOf(stockDetail.getChange()));
+            portfolioRepository.save(portfolio);
+        }
+
+        return oldPortfolio;
+    }
+
     public List<Portfolio> getPortfolio (Long userId){
         User user = userRepository.findById(userId).orElseThrow(()->{
             throw new ResolutionException();
         });
-        return user.getPortfolios();
+//        return user.getPortfolios();
 //        return portfolioRepository.findByUserId(userId);
+        return getDynamicPortfolio(user.getPortfolios());
     }
 
     public Portfolio getPortfolioById (Long userId, Long portfolioId){
@@ -85,6 +106,8 @@ public class PortfolioService {
 
         return portfolioRepository.save(portfolio1);
     }
+
+    @Transactional
     public Portfolio updatePortfolioById (Long portfolioId, PortfolioDto portfolioDto){
         Portfolio portfolio = portfolioRepository.findById(portfolioId)
                 .orElseThrow(()->{throw new ResourceNotFoundException("Portfolio with ID " + portfolioId + " not found");});
@@ -97,6 +120,7 @@ public class PortfolioService {
         return portfolioRepository.save(portfolio);
     }
 
+    @Transactional
     public void deletePortfolioById (Long portfolioId){
         portfolioRepository.deleteById(portfolioId);
     }

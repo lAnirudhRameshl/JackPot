@@ -1,5 +1,6 @@
 package com.fidelity.jackpot.controller;
 
+import com.fidelity.jackpot.exception.StockException;
 import com.fidelity.jackpot.payload.StockDetailResponse;
 import com.fidelity.jackpot.payload.TradeRequest;
 import com.fidelity.jackpot.payload.TradeResponse;
@@ -12,7 +13,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/jackpot/api/trade")
+@RequestMapping("/jackpot/api/v1/trade")
+@CrossOrigin(origins = "http://localhost:4200")
 public class TradeController {
     @Autowired
     private TradeService tradeService;
@@ -78,14 +80,23 @@ public class TradeController {
         ResponseEntity response = null;
 
         try {
-            boolean isTradeComplete = tradeService.completeTrade(tradeRequest.getTicker(), tradeRequest.getQuantity(), tradeRequest.getUserId());
+            boolean isTradeComplete = tradeService.completeTrade(
+                    tradeRequest.getTicker(),
+                    tradeRequest.getQuantity(),
+                    tradeRequest.getUserId(),
+                    tradeRequest.getAccountNumber(),
+                    tradeRequest.getAssetClassId()
+            );
             TradeResponse responseBody = TradeResponse.builder()
                     .ticker(tradeRequest.getTicker())
                     .quantity(tradeRequest.getQuantity())
                     .completed(isTradeComplete)
                     .build();
             response = new ResponseEntity(responseBody, HttpStatus.OK);
-        } catch (Exception e) {
+        } catch (StockException e) {
+            response = new ResponseEntity(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
+        catch (Exception e) {
             response = new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
 

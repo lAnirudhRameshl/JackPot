@@ -1,5 +1,5 @@
 <app-margin-summary></app-margin-summary>
-<app-trade-options></app-trade-options>
+<app-trade-options (searchAssetEvent)="getStockDetails($event)"></app-trade-options>
 <div class="row">
   <app-asset-card [asset]="assetCardDetails"></app-asset-card>
   <app-tabs (marketMoverChangeAssetEvent)="marketMoverAssetChange($event)"></app-tabs>
