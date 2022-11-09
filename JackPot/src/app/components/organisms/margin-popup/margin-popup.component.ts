@@ -53,6 +53,7 @@ export class MarginPopupComponent implements OnInit {
 
   changeAccountType(accountTypeId: String) {
     this.model.accountTypeId = parseInt(accountTypeId.toString());
+
   }
 
   openSnackBar() {
