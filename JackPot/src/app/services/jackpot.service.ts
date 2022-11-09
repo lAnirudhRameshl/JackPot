@@ -32,6 +32,6 @@ export class JackpotService {
   }
 
   getTrades(): Observable<ITrade[]>{
-    return this.http.get<ITrade[]>('http://localhost:8080/jackpot/api/trade-history/1');
+    return this.http.get<ITrade[]>('http://localhost:8080/jackpot/api/v1/trade-history/1');
   }
 }
