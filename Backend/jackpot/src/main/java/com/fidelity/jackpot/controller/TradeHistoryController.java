@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("/jackpot/api/trade-history")
+@RequestMapping("/jackpot/api/v1/trade-history")
 @RestController
 public class TradeHistoryController {
 
