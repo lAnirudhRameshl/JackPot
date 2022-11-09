@@ -11,6 +11,8 @@ export class TradeContentComponent implements OnInit {
 
   assetCardDetails!: MarketMover
 
+  assetTypeId: number = 1;
+
   constructor(private jackpotService: JackpotService) { }
 
   ngOnInit(): void {
@@ -22,6 +24,11 @@ export class TradeContentComponent implements OnInit {
         this.assetCardDetails = response;
       }
     })
+  }
+
+  changeAssetType(assetType: string) {
+    
+    this.assetTypeId = parseInt(assetType);
   }
 
   marketMoverAssetChange(asset: MarketMover) {

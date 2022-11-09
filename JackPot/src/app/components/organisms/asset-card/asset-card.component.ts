@@ -9,11 +9,13 @@ import { MarketMover } from 'src/app/models/market-movers.model';
 export class AssetCardComponent implements OnInit, OnChanges {
 
   @Input() asset!: MarketMover;
+  @Input() assetClassId: number = 1;
 
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.asset = changes['asset'].currentValue;
+    if(changes['asset']) this.asset = changes['asset'].currentValue;
+    if(changes['assetClassId']) this.assetClassId = changes['assetClassId'].currentValue;
   }
 
   ngOnInit(): void {

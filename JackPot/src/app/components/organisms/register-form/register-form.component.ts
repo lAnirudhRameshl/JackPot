@@ -174,15 +174,6 @@ export class RegisterFormComponent implements OnInit {
     return errorMessage;
   }
 
-  getDateOfBirthErrorMessage(): string {
-    let dateOfBirth = this.registerForm.get('dateOfBirth');
-    let errorMessage = '';
-    if (dateOfBirth?.hasError('required')) {
-      errorMessage = 'Please enter the date of birth';
-    }
-    return errorMessage;
-  }
-
   getPhoneNumberErrorMessage(): string {
     let phoneNumber = this.registerForm.get('phoneNumber');
     let errorMessage = '';
