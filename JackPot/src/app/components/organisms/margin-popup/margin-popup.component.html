@@ -19,14 +19,16 @@
           value="0"
           name="MARGIN"
           required
-          [(ngModel)]="model.amount"
+          [(ngModel)]="model.margin"
         />
         <mat-icon matSuffix>credit_card</mat-icon>
       </mat-form-field>
       <br />
       <br />
 
-      <mat-form-field appearance="outline">
+      <app-dropdown [dropdownValues]="data" (dropdownChangeEvent)="changeAccountType($event)"></app-dropdown>
+
+      <!-- <mat-form-field appearance="outline">
         <mat-label>Account Type</mat-label>
         <mat-select [(ngModel)]="model.account" name="account">
           <mat-option
@@ -36,7 +38,7 @@
             {{ dropdownValue }}
           </mat-option>
         </mat-select>
-      </mat-form-field>
+      </mat-form-field> -->
     </form>
     <p></p>
 

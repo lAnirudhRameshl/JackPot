@@ -6,6 +6,7 @@ import com.fidelity.jackpot.model.User;
 import com.fidelity.jackpot.payload.LoginResponse;
 import com.fidelity.jackpot.payload.SignupRequest;
 import com.fidelity.jackpot.payload.SignupResponse;
+import com.fidelity.jackpot.payload.UpdateUserRequest;
 import com.fidelity.jackpot.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -34,6 +35,9 @@ public class UserService {
                 response.setUserId(user.getUserId());
                 response.setFirstName(user.getFirstName());
                 response.setLastName(user.getLastName());
+                response.setEmail(user.getEmail());
+                response.setInvestmentRisk(user.getInvestmentRisk());
+                response.setPhoneNumber(user.getPhoneNumber());
             }
         } catch (Exception e) {
             throw new UserException(e.getMessage());
@@ -64,5 +68,28 @@ public class UserService {
         response.setInvestmentRisk(user.getInvestmentRisk());
 
         return response;
+    }
+
+    @Transactional
+    public LoginResponse updateUser(Long userId, UpdateUserRequest updateUserRequest) {
+        User user = userRepository.findById(userId).orElseThrow(() -> new UserException("User with ID not found"));
+
+        user.setFirstName(updateUserRequest.getFirstName());
+        user.setLastName(updateUserRequest.getLastName());
+        user.setPhoneNumber(updateUserRequest.getPhoneNumber());
+        user.setInvestmentRisk(updateUserRequest.getInvestmentRisk());
+
+        user = userRepository.save(user);
+
+        LoginResponse response = new LoginResponse();
+        response.setUserId(user.getUserId());
+        response.setFirstName(user.getFirstName());
+        response.setLastName(user.getLastName());
+        response.setEmail(user.getEmail());
+        response.setInvestmentRisk(user.getInvestmentRisk());
+        response.setPhoneNumber(user.getPhoneNumber());
+
+        return response;
+
     }
 }

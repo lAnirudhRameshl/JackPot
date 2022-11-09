@@ -20,8 +20,15 @@ nav ul {
 }
 
 
-nav ul li:last-child {
+nav ul div {
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.mat-icon {
+    cursor: pointer;
 }
 
 .icon {

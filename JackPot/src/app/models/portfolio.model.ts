@@ -22,7 +22,7 @@ export class Portfolio{
         public profitLoss : number,
         public netChange:string,
         public dayChange:string,
-        public asset: string,
-        public account: string
+        public assetClass: {assetClassId: number, assetClassName: string} ,
+        public accountType: {accountTypeId: number, accountTypeName: string}
     ){}
 }

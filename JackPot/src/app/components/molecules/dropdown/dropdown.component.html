@@ -1,8 +1,8 @@
 <div class="dropdown">
     <mat-form-field appearance="outline">
         <mat-select [(value)]="selected" (selectionChange)="dropdownChanged()">
-          <mat-option *ngFor="let dropdownValue of dropdownValues" [value]="dropdownValue">
-            {{ dropdownValue }}
+          <mat-option *ngFor="let dropdownValue of dropdownValues" [value]="dropdownValue.value.toString()">
+            {{ dropdownValue.option }}
           </mat-option>
         </mat-select>
       </mat-form-field>

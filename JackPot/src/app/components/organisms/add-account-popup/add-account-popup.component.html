@@ -1,0 +1,67 @@
+<div class="popup">
+  <mat-toolbar>
+    <button mat-icon-button class="first-icon">
+      <mat-icon> add_card </mat-icon>
+    </button>
+    <span class="title"> Add Account </span>
+  </mat-toolbar>
+
+  <div class="form-inputs">
+    <form #orderForm="ngForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Account number</mat-label>
+        <input
+          matInput
+          type="text"
+          name="accountNumber"
+          required
+          [(ngModel)]="model.accountNumber"
+        />
+        <mat-icon matSuffix>credit_card</mat-icon>
+      </mat-form-field>
+
+      <br />
+      <br />
+
+      <mat-form-field appearance="outline">
+        <mat-label>Initial Margin</mat-label>
+        <input
+          matInput
+          placeholder="0"
+          type="number"
+          min="0"
+          value="0"
+          name="margin"
+          required
+          [(ngModel)]="model.marginAvailable"
+        />
+        <mat-icon matSuffix>credit_card</mat-icon>
+      </mat-form-field>
+      <br />
+      <br />
+
+      <app-dropdown
+        [dropdownValues]="data"
+        (dropdownChangeEvent)="changeAccountType($event)"
+      ></app-dropdown>
+
+      <!-- <mat-form-field appearance="outline">
+          <mat-label>Account Type</mat-label>
+          <mat-select [(ngModel)]="model.account" name="account">
+            <mat-option
+              *ngFor="let dropdownValue of accountTypes"
+              [value]="dropdownValue"
+            >
+              {{ dropdownValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field> -->
+    </form>
+    <p></p>
+
+    <app-button-trade
+      [buysell]="'ADD'"
+      (btnClick)="addAccount()"
+    ></app-button-trade>
+  </div>
+</div>

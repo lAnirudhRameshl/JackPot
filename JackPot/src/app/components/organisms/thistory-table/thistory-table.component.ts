@@ -104,18 +104,18 @@ export class ThistoryTableComponent implements OnInit {
       return data.fund.toLowerCase().indexOf(filterJson['searchFilter']) == 0;
     else if (filterJson['assetClass'] == '' && filterJson['accountType'] != '')
       return (
-        data.account == filterJson['accountType'] &&
+        data.account.toUpperCase() == filterJson['accountType'] &&
         data.fund.toLowerCase().indexOf(filterJson['searchFilter']) == 0
       );
     else if (filterJson['assetClass'] != '' && filterJson['accountType'] == '')
       return (
-        data.asset == filterJson['assetClass'] &&
+        data.asset.toUpperCase() == filterJson['assetClass'] &&
         data.fund.toLowerCase().indexOf(filterJson['searchFilter']) == 0
       );
     else
       return (
-        data.asset == filterJson['assetClass'] &&
-        data.account == filterJson['accountType'] &&
+        data.asset.toUpperCase() == filterJson['assetClass'] &&
+        data.account.toUpperCase() == filterJson['accountType'] &&
         data.fund.toLowerCase().indexOf(filterJson['searchFilter']) == 0
       );
   }

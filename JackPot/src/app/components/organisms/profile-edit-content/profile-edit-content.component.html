@@ -4,7 +4,7 @@
         <h2 class="page-heading">Profile Edit</h2>
         <div class="expanded"></div>
         <a routerLink="/profile-edit">
-            <button mat-raised-button>
+            <button mat-raised-button (click)="editProfile()">
                 Edit
             </button>
         </a>
@@ -25,13 +25,7 @@
       <div class="form-control">
         <label>Email: </label>
         <mat-form-field appearance="outline">
-          <input type="email" matInput formControlName="email" />
-        </mat-form-field>
-      </div>
-      <div class="form-control">
-        <label>Date of birth: </label>
-        <mat-form-field appearance="outline">
-          <input type="date" matInput formControlName="dateOfBirth" />
+          <input type="email" matInput formControlName="email"/>
         </mat-form-field>
       </div>
       <div class="form-control">

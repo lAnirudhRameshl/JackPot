@@ -84,7 +84,7 @@ public class TradeController {
                     tradeRequest.getTicker(),
                     tradeRequest.getQuantity(),
                     tradeRequest.getUserId(),
-                    tradeRequest.getAccountNumber(),
+                    tradeRequest.getAccountTypeId(),
                     tradeRequest.getAssetClassId()
             );
             TradeResponse responseBody = TradeResponse.builder()
