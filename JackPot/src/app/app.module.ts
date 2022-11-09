@@ -61,6 +61,9 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { TradeContentComponent } from './components/organisms/trade-content/trade-content.component';
 import { MarginPopupComponent } from './components/organisms/margin-popup/margin-popup.component';
 
+import { ChartsComponent } from './components/atoms/charts/charts.component';
+import { Chart2Component } from './components/atoms/chart2/chart2.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -100,7 +103,9 @@ import { MarginPopupComponent } from './components/organisms/margin-popup/margin
     HomeComponent,
 
     TradeContentComponent,
-      MarginPopupComponent
+      MarginPopupComponent,
+      ChartsComponent,
+      Chart2Component
   ],
   imports: [
     BrowserModule,
