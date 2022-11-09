@@ -73,4 +73,6 @@ export class TradePopupComponent implements OnInit {
     this.toastData = this.model;
     this.dialogRef.close();
   }
+
+  
 }

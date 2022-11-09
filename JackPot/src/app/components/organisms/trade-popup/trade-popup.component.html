@@ -68,7 +68,7 @@
 
     <app-button-trade
       [buysell]="this.isBuyOrder ? 'BUY' : 'SELL'"
-      [mat-dialog-close]="this.toastData"
+      [mat-dialog-close]="model"
       (btnClick)="executeOrder66()"
     ></app-button-trade>
   </div>
