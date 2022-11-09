@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { MarketMover } from '../models/market-movers.model';
 import { Portfolio } from '../models/portfolio.model';
 import { ITrade } from '../models/trade';
+import { UserAccount } from '../models/user-account.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,12 @@ export class JackpotService {
 
   constructor(private http: HttpClient) {
    }
+
+  //Get Trading accounts for user by id 
+  getUserAccountByUserId(userId: string): Observable<UserAccount[]> {
+    return this.http.get<UserAccount[]>(`${this.BASE_URL}/account/${userId}`, { headers: this.headers});
+  }
+
 
   getMostActiveMarketMovers(): Observable<MarketMover[]> {
     return this.http.get<MarketMover[]>(`${this.BASE_URL}/trade/market-movers`, { headers: this.headers});

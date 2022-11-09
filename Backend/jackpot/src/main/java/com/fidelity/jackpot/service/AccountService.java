@@ -8,12 +8,14 @@ import com.fidelity.jackpot.payload.UpdateAccountRequest;
 import com.fidelity.jackpot.repository.UserAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
 @Service
+
 public class AccountService  {
 
     @Autowired
