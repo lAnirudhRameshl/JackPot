@@ -68,7 +68,9 @@ CREATE TABLE user_account (
     margin_used NUMBER,
     account_type_id NUMBER,
     user_id NUMBER,
-    PRIMARY KEY (user_account_id),
+    PRIMARY KEY (account_number),
     FOREIGN KEY (account_type_id) REFERENCES account_type(account_type_id) ON DELETE CASCADE,
     FOREIGN KEY (user_id) REFERENCES user_detail(user_id) ON DELETE CASCADE
 );
+
+commit;

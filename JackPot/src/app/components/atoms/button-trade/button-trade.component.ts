@@ -19,9 +19,13 @@ export class ButtonTradeComponent implements OnInit {
     if (this.buysell.toUpperCase() == 'BUY') {  
       this.bs_style = { 'background-color': '#44bd32', color: 'white' };
       this.buttonText = 'BUY';
-    } else {
+    } else if(this.buysell.toUpperCase() == 'SELL'){
       this.bs_style = { 'background-color': '#e84118', color: 'white' };
       this.buttonText = 'SELL';
+    }
+    else{
+      this.bs_style = { 'background-color': '#1cada4', color: 'white' };
+      this.buttonText = 'ADD';
     }
   }
 

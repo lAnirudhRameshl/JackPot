@@ -42,7 +42,7 @@ export class BuySellPanelComponent implements OnInit {
 
 
     const dialogRef = this.dialog.open(TradePopupComponent, {
-      width: '22%',
+      width: '32%',
       data: {isBuy: (btnType.toUpperCase() == 'BUY' ? 'true':'false'), ticker: this.CARD_TICKER},
     });
 
@@ -51,9 +51,10 @@ export class BuySellPanelComponent implements OnInit {
       if(result){
 
         this.returnFromDialog = result;
-        console.log(result); 
+        console.log("RES FROM POPUP: "+result); 
+        
   
-        this.toastMessage = `${btnType.toUpperCase()} ${this.returnFromDialog.ticker} x ${this.returnFromDialog.qty} @ ${this.returnFromDialog.price == 0 ? 'MARKET':"$"+this.returnFromDialog.price} Executed! `;
+        this.toastMessage = `${btnType.toUpperCase()} in ACC#${this.returnFromDialog.account_id}  ${this.returnFromDialog.ticker} x ${this.returnFromDialog.qty} @ ${this.returnFromDialog.price == 0 ? 'MARKET':"$"+this.returnFromDialog.price} Executed! `;
         this.openSnackBar();
       }
     });

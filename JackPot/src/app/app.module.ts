@@ -22,6 +22,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatTableExporterModule } from 'mat-table-exporter';
 import {MatSortModule} from '@angular/material/sort';
 
+
 import { AppComponent } from './app.component';
 import { DropdownComponent } from './components/molecules/dropdown/dropdown.component';
 import { ThistoryTableComponent } from './components/organisms/thistory-table/thistory-table.component';
@@ -58,6 +59,7 @@ import { IconButtonComponent } from './components/molecules/icon-button/icon-but
 import { HomeComponent } from './components/pages/home/home.component';
 
 import { TradeContentComponent } from './components/organisms/trade-content/trade-content.component';
+import { MarginPopupComponent } from './components/organisms/margin-popup/margin-popup.component';
 
 import { ChartsComponent } from './components/atoms/charts/charts.component';
 import { Chart2Component } from './components/atoms/chart2/chart2.component';
@@ -101,6 +103,7 @@ import { Chart2Component } from './components/atoms/chart2/chart2.component';
     HomeComponent,
 
     TradeContentComponent,
+      MarginPopupComponent,
       ChartsComponent,
       Chart2Component
   ],

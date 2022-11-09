@@ -10,7 +10,7 @@ import javax.sound.sampled.Port;
 import java.util.List;
 
 
-@RequestMapping("/api/v1/portfolio")
+@RequestMapping("jackpot/api/v1/portfolio")
 @RestController
 public class PortfolioController {
 

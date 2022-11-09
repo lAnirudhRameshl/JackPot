@@ -25,7 +25,7 @@ export class TabsComponent implements OnInit {
   getMostActiveMarketMovers() {
     this.jackpotService.getMostActiveMarketMovers().subscribe({
       next: (mostActiveMarketMovers: MarketMover[]) => {
-        this.mostActiveMarketMovers = mostActiveMarketMovers;
+        this.mostActiveMarketMovers = mostActiveMarketMovers.slice(0, 8);
         this.marketMoverChangeAssetEvent.emit(mostActiveMarketMovers[0]);
       },
     });
@@ -34,7 +34,7 @@ export class TabsComponent implements OnInit {
   getGainerMarketMovers() {
     this.jackpotService.getGainerMarketMovers().subscribe({
       next: (gainerMarketMovers: MarketMover[]) => {
-        this.gainerMarketMovers = gainerMarketMovers;
+        this.gainerMarketMovers = gainerMarketMovers.slice(0, 8);
       },
     });
   }
@@ -42,7 +42,7 @@ export class TabsComponent implements OnInit {
   getLoserMarketMovers() {
     this.jackpotService.getLoserMarketMovers().subscribe({
       next: (loserMarketMovers: MarketMover[]) => {
-        this.loserMarketMovers = loserMarketMovers;
+        this.loserMarketMovers = loserMarketMovers.slice(0, 8);
       },
     });
   }

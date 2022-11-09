@@ -13,6 +13,38 @@
 
   <div class="form-inputs">
     <form #orderForm="ngForm">
+
+      <!-- <mat-form-field appearance="outline">
+        <mat-label>Price</mat-label>
+        <mat-icon matPrefix>attach_money</mat-icon>
+        <input
+          matInput
+          placeholder="0"
+          type="number"
+          name="PRICE"
+          value="0"
+          min="0"
+          required
+          [(ngModel)]="model.price"
+        />
+        <mat-hint>Enter Price 0 For Market Order</mat-hint>
+
+      </mat-form-field> -->
+      <!-- <app-dropdown [dropdownValues]='this.account_types'></app-dropdown> -->
+
+      <mat-form-field appearance="outline">
+        <mat-label>Select Account</mat-label>
+        <mat-select [(ngModel)]="model.account_id" [(value)]="selectedValue" name="accountid">
+          <mat-option *ngFor="let acc of account_types_from_api" [value]="acc.accountTypeId">
+            {{acc.accountTypeName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+      <br>
+      <br>
+
       <mat-form-field appearance="outline">
         <mat-label>Quantity</mat-label>
         <input
@@ -28,30 +60,15 @@
         <mat-icon matSuffix>shopping_cart</mat-icon>
         <mat-hint>Desired Trade Quantity</mat-hint>
       </mat-form-field>
-      <br>
-      <br>
 
-      <mat-form-field appearance="outline">
-        <mat-label>Price</mat-label>
-        <mat-icon matPrefix>attach_money</mat-icon>
-        <input
-          matInput
-          placeholder="0"
-          type="number"
-          name="PRICE"
-          value="0"
-          min="0"
-          required
-          [(ngModel)]="model.price"
-        />
-        <mat-hint>Enter Price 0 For Market Order</mat-hint>
-      </mat-form-field>
+      
+      
     </form>
     <p></p>
 
     <app-button-trade
       [buysell]="this.isBuyOrder ? 'BUY' : 'SELL'"
-      [mat-dialog-close]="this.toastData"
+      [mat-dialog-close]="model"
       (btnClick)="executeOrder66()"
     ></app-button-trade>
   </div>
