@@ -1,0 +1,48 @@
+<div class="popup">
+  <mat-toolbar>
+    <button mat-icon-button class="first-icon">
+      <mat-icon>payment</mat-icon>
+    </button>
+    <span class="title"> Add Margin </span>
+
+  </mat-toolbar>
+
+  <div class="form-inputs">
+    <form #orderForm="ngForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Margin</mat-label>
+        <input
+          matInput
+          placeholder="0"
+          type="number"
+          min="0"
+          value="0"
+          name="MARGIN"
+          required
+          [(ngModel)]="model.amount"
+        />
+        <mat-icon matSuffix>credit_card</mat-icon>
+      </mat-form-field>
+      <br />
+      <br />
+
+      <mat-form-field appearance="outline">
+        <mat-label>Account Type</mat-label>
+        <mat-select [(ngModel)]="model.account" name="account">
+          <mat-option
+            *ngFor="let dropdownValue of accountTypes"
+            [value]="dropdownValue"
+          >
+            {{ dropdownValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+    <p></p>
+
+    <app-button-trade
+      [buysell]="'ADD'"
+      (btnClick)="addMargin()"
+    ></app-button-trade>
+  </div>
+</div>

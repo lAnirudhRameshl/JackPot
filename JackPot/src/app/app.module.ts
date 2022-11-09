@@ -58,6 +58,7 @@ import { IconButtonComponent } from './components/molecules/icon-button/icon-but
 import { HomeComponent } from './components/pages/home/home.component';
 
 import { TradeContentComponent } from './components/organisms/trade-content/trade-content.component';
+import { MarginPopupComponent } from './components/organisms/margin-popup/margin-popup.component';
 
 @NgModule({
   declarations: [
@@ -97,7 +98,8 @@ import { TradeContentComponent } from './components/organisms/trade-content/trad
 
     HomeComponent,
 
-    TradeContentComponent
+    TradeContentComponent,
+      MarginPopupComponent
   ],
   imports: [
     BrowserModule,
