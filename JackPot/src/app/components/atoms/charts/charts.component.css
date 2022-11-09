@@ -1,0 +1,15 @@
+#myChart,#myChart2{
+    width: 200px !important;
+    height: 200px !important;
+    
+}
+#myChart{
+    margin-right: 20px;
+}
+#myChart2{
+    margin-left:20px;
+}
+#doughnut{
+    display: flex;
+    justify-content: space-around;
+}

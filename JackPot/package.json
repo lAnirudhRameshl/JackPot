@@ -26,6 +26,7 @@
     "@angular/router": "^14.1.0",
     "angular5-csv": "^0.2.11",
     "bootstrap": "^4.6.2",
+    "chart.js": "^3.9.1",
     "file-saver": "^2.0.5",
     "mat-table-exporter": "^10.2.4",
     "moment": "^2.29.4",

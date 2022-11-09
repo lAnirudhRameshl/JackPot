@@ -59,6 +59,9 @@ import { HomeComponent } from './components/pages/home/home.component';
 
 import { TradeContentComponent } from './components/organisms/trade-content/trade-content.component';
 
+import { ChartsComponent } from './components/atoms/charts/charts.component';
+import { Chart2Component } from './components/atoms/chart2/chart2.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -97,7 +100,9 @@ import { TradeContentComponent } from './components/organisms/trade-content/trad
 
     HomeComponent,
 
-    TradeContentComponent
+    TradeContentComponent,
+      ChartsComponent,
+      Chart2Component
   ],
   imports: [
     BrowserModule,
