@@ -10,7 +10,8 @@ export interface OrderData {
 export interface ToastData{
   ticker: string,
   qty: number,
-  price: number
+  price: number,
+  account_id:string
 
 }
 
@@ -48,7 +49,7 @@ export class TradePopupComponent implements OnInit {
 
   toastData:any = {};
 
-  model: ToastData = {ticker: this.ticker, qty:this.currQty, price: this.currPrice} ;
+  model: ToastData = {ticker: this.ticker, qty:this.currQty, price: this.currPrice, account_id: this.selectedValue} ;
 
 
   constructor(public dialogRef: MatDialogRef<TradePopupComponent>,@Inject(MAT_DIALOG_DATA) public data: OrderData) {}
@@ -58,7 +59,7 @@ export class TradePopupComponent implements OnInit {
     this.orderData = this.data;
     this.ticker = this.orderData.ticker;
     this.isBuyOrder = (this.orderData.isBuy.toLowerCase() == 'true') ? true:false;
-    this.model={ticker: this.ticker, qty:this.currQty, price: this.currPrice}
+    this.model={ticker: this.ticker, qty:this.currQty, price: this.currPrice,account_id: this.selectedValue}
     if (this.isBuyOrder) {
       this.action = 'BUY';
     } else {
@@ -68,7 +69,7 @@ export class TradePopupComponent implements OnInit {
 
   executeOrder66() {
     console.log('Bonjour');
-    console.log('Dropdown Selcted=> '+this.selectedValue)
+    console.log('Dropdown Selcted=> '+this.model.account_id)
     this.toastData = this.model;
     this.dialogRef.close();
   }
