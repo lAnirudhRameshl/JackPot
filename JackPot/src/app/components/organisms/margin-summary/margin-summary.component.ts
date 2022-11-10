@@ -24,16 +24,7 @@ export class MarginSummaryComponent implements OnInit {
   constructor(public dialog: MatDialog,private jackpotService: JackpotService) { }
 
 
-  ngOnInit(): void {
-    this.refreshMargin();
-
-  marginAvail:number = 3570;
-  marginUtil:number = 420;
-
   accountTypeDropdown: DropdownModel[] = [];
-  
-
-  constructor(public dialog: MatDialog, private jackpotService: JackpotService) { }
 
 
   ngOnInit(): void {
@@ -47,6 +38,7 @@ export class MarginSummaryComponent implements OnInit {
         });
       }
     });
+    this.refreshMargin();
 
   }
 

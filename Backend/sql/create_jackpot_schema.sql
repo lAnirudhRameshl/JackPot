@@ -13,6 +13,7 @@ CREATE TABLE user_detail (
     password CHAR(256),
     investment_risk NUMBER,
     phone_number CHAR(10),
+    date_of_birth DATE,
     PRIMARY KEY (user_id)
 );
 

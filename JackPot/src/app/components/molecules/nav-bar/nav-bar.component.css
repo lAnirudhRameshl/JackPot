@@ -1,5 +1,5 @@
 nav {
-    background-color: #A5BECC;
+    background-color: #07A0C3;
     padding: 0.5rem 1rem;
    
 }
@@ -7,6 +7,7 @@ nav {
 li {
     display: inline-block;
     margin-top: 5px;
+    color: white;
 }
 
 nav ul {
@@ -29,6 +30,11 @@ nav ul div {
 
 .mat-icon {
     cursor: pointer;
+    color: white;
+}
+
+.mat-icon:hover {
+    color: #FFF1D0;
 }
 
 .icon {

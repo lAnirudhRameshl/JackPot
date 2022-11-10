@@ -9,11 +9,11 @@
       >
         <mat-icon>refresh</mat-icon>
       </button>
-      <span
+      <span style="font-weight: 700;"
         >&nbsp;&nbsp;Margin Available:
-        <span class="dollar"> $ {{ this.marginAvail }} </span>
+        <span class="dollar"> $ {{ this.marginAvail | number: '1.2' }} </span>
         &nbsp;&nbsp;&nbsp;&nbsp; Margin Utilized:
-        <span class="dollar"> $ {{ this.marginUtil }}</span>
+        <span class="dollar"> $ {{ this.marginUtil | number: '1.2'}}</span>
       </span>
 
       <span class="example-spacer"></span>

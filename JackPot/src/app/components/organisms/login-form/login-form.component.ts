@@ -1,5 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { LoginRequest } from 'src/app/models/login-request';
 import { LoginResponse } from 'src/app/models/login-response';
@@ -14,7 +16,7 @@ export class LoginFormComponent implements OnInit {
   loginForm!: FormGroup;
   showPassword: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router, private snackbar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -55,8 +57,8 @@ export class LoginFormComponent implements OnInit {
           localStorage.setItem('jwt', response.jwt);
           localStorage.setItem('userDetails', JSON.stringify(response));
         },
-        error: (errorResponse) => {
-  
+        error: (errorResponse: HttpErrorResponse) => {
+          this.snackbar.open(errorResponse.error, "OK", {duration: 3000});
         }
       })
     }

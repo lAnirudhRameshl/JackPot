@@ -3,12 +3,12 @@
 }
 
 .dollar {
-  font-weight: lighter;
+  font-weight: 500;
 }
 
 .mat-toolbar.mat-primary {
   /* background: #007bff; */
-  background-color: #1abc9c;
+  background-color: #89CFF0;
   color: #fff;
   padding: 0.5rem 1rem;
   align-items: center;
@@ -23,4 +23,9 @@ button {
 .mat-icon {
   display: flex;
   align-items: center;
+  color: #002D62;
+}
+
+span {
+  color: #002D62;
 }

@@ -7,6 +7,7 @@
 .page-heading {
   font-family: "Montserrat";
   font-weight: 700;
+  margin-top: 1.5rem;
 }
 
 h2.page-heading {
@@ -46,7 +47,7 @@ button {
   margin-right: auto;
   margin-top: 3rem;
   margin-bottom: 3rem;
-  background-image: linear-gradient(lightblue, rgb(171, 171, 207));
+  border: 1px solid #ededed;
   border-radius: 2%;
 }
 
@@ -64,7 +65,7 @@ table {
   background-color: inherit;
   width: 100%;
   font-family: "Montserrat" !important;
-  margin-bottom: 10px;
+  margin-bottom: 1.5rem;
   border-top: 1px solid rgba(0,0,0,.12);
   border-left: 1px solid rgba(0,0,0,.12);
 }
