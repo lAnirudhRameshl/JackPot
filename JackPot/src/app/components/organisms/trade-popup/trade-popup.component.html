@@ -4,7 +4,7 @@
       <mat-icon> sell </mat-icon>
     </button>
     <span>
-      {{ this.action }} {{ this.ticker }} &nbsp; x &nbsp; {{ model.qty }} Qty
+      {{ this.action }} {{ this.ticker }} &nbsp; x &nbsp; {{ model.quantity }} Qty
     </span>
     <!-- <span> &nbsp; ${{'293.25'}} </span> -->
 
@@ -32,14 +32,16 @@
       </mat-form-field> -->
       <!-- <app-dropdown [dropdownValues]='this.account_types'></app-dropdown> -->
 
-      <mat-form-field appearance="outline">
+      <!-- <mat-form-field appearance="outline">
         <mat-label>Select Account</mat-label>
         <mat-select [(ngModel)]="model.account_id" [(value)]="selectedValue" name="accountid">
           <mat-option *ngFor="let acc of account_types_from_api" [value]="acc.accountTypeId">
             {{acc.accountTypeName}}
           </mat-option>
         </mat-select>
-      </mat-form-field>
+      </mat-form-field> -->
+
+      <app-dropdown [dropdownValues]="data.accountDropdown" (dropdownChangeEvent)="changeAccountType($event)"></app-dropdown>
 
 
       <br>
@@ -55,7 +57,7 @@
           value="1"
           name="QTY"
           required
-          [(ngModel)]="model.qty"
+          [(ngModel)]="model.quantity"
         />
         <mat-icon matSuffix>shopping_cart</mat-icon>
         <mat-hint>Desired Trade Quantity</mat-hint>
@@ -68,7 +70,6 @@
 
     <app-button-trade
       [buysell]="this.isBuyOrder ? 'BUY' : 'SELL'"
-      [mat-dialog-close]="model"
       (btnClick)="executeOrder66()"
     ></app-button-trade>
   </div>

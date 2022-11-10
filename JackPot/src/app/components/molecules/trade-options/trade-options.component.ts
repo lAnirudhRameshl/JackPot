@@ -1,5 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ASSET_TYPES } from 'src/app/constants/asset-types';
+import { AssetClassResponse } from 'src/app/models/asset-class-response';
+import { DropdownModel } from 'src/app/models/dropdown-model';
+import { JackpotService } from 'src/app/services/jackpot.service';
 
 @Component({
   selector: 'app-trade-options',
@@ -8,8 +11,11 @@ import { ASSET_TYPES } from 'src/app/constants/asset-types';
 })
 export class TradeOptionsComponent implements OnInit {
 
-  assetTypes: string[] = ASSET_TYPES;
-  selectedAssetType: string = this.assetTypes[0];
+  assetTypes: DropdownModel[] = [{
+    option: "Loading data...",
+    value: 0
+  }];
+  selectedAssetType: string = this.assetTypes[0].value.toString();
   assetSearch = "";
   
   @Output()
@@ -18,9 +24,24 @@ export class TradeOptionsComponent implements OnInit {
   @Output()
   searchAssetEvent: EventEmitter<string> = new EventEmitter();
 
-  constructor() { }
+  constructor(private jackpotService: JackpotService) { }
 
   ngOnInit(): void {
+    this.getAssetTypes();
+  }
+
+  getAssetTypes() {
+    this.jackpotService.getAssetClasses().subscribe({
+      next: (response: AssetClassResponse[]) => {
+        this.assetTypes = response.map(assetClass => {
+          return {
+            option: assetClass.assetClassName,
+            value: assetClass.assetClassId
+          }
+        });
+        this.selectedAssetType = this.assetTypes[0].value.toString();
+      }
+    })
   }
 
   assetTypeChange(assetType: String) {

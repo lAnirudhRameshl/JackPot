@@ -1,22 +1,66 @@
-
 <div class="card">
-    
-    <div class="container">
-        <div class="page-head">
-            <h2 class="page-heading">Profile</h2>
-            <div class="expanded"></div>
-            <a routerLink="/profile-edit">
-                <button mat-icon-button>
-                    <mat-icon>edit</mat-icon>
-                </button>
-            </a>
-        </div>
-        <div class="page-content">
-            <app-profile-detail [detailName]="'Name'" [detailValue]="userDetail.firstName + ' ' + userDetail.lastName"></app-profile-detail>
-            <app-profile-detail [detailName]="'Email'" [detailValue]="userDetail.email"></app-profile-detail>
-            <app-profile-detail [detailName]="'Date of Birth'" detailValue="{{userDetail.dateOfBirth | date:'shortDate'}}"></app-profile-detail>
-            <app-profile-detail [detailName]="'Phone number'" [detailValue]="userDetail.phoneNumber"></app-profile-detail>
-            <app-profile-detail [detailName]="'Investment risk (Range 0-5)'" [detailValue]="userDetail.investmentRisk.toString()"></app-profile-detail>
-        </div>
+  <div class="container">
+    <div class="page-head">
+      <h2 class="page-heading">Profile</h2>
+      <div class="expanded"></div>
+      <a routerLink="/profile-edit">
+        <button mat-icon-button>
+          <mat-icon>edit</mat-icon>
+        </button>
+      </a>
+    </div>
+    <div class="page-content">
+      <app-profile-detail
+        [detailName]="'Name'"
+        [detailValue]="userDetail.firstName + ' ' + userDetail.lastName"
+      ></app-profile-detail>
+      <app-profile-detail
+        [detailName]="'Email'"
+        [detailValue]="userDetail.email"
+      ></app-profile-detail>
+      <app-profile-detail
+        [detailName]="'Phone number'"
+        [detailValue]="userDetail.phoneNumber"
+      ></app-profile-detail>
+      <app-profile-detail
+        [detailName]="'Investment risk (Range 0-5)'"
+        [detailValue]="userDetail.investmentRisk.toString()"
+      ></app-profile-detail>
     </div>
   </div>
+  <div class="container">
+    <div class="page-head">
+      <h3 class="page-heading">Accounts</h3>
+      <div class="expanded"></div>
+      <a>
+        <button mat-icon-button (click)="addAccount()">
+          <mat-icon>add_circle</mat-icon>
+        </button>
+      </a>
+    </div>
+    <table mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="accountNumber">
+        <th mat-header-cell *matHeaderCellDef>Account number</th>
+        <td mat-cell *matCellDef="let element">{{ element.accountNumber }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="accountType">
+        <th mat-header-cell *matHeaderCellDef>Account Type</th>
+        <td mat-cell *matCellDef="let element">{{ element.accountType.accountTypeName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="marginAvailable">
+        <th mat-header-cell *matHeaderCellDef>Margin Available</th>
+        <td mat-cell *matCellDef="let element">{{ element.marginAvailable }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="marginLeft">
+        <th mat-header-cell *matHeaderCellDef>Margin Spent</th>
+        <td mat-cell *matCellDef="let element">{{ element.marginUsed }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div>
