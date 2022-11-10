@@ -1,6 +1,7 @@
 import { Component, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatTableExporterDirective } from 'mat-table-exporter';
+import { groupBy } from 'rxjs';
 import { Portfolio } from 'src/app/models/portfolio.model';
 import { JackpotService } from 'src/app/services/jackpot.service';
 
@@ -18,6 +19,10 @@ export class PortfolioTableComponent implements OnInit {
   netpl: number = 0;
   currentVal: number = 0;
   holdingCount = 0;
+
+  assetData!: number[];
+  accountData !:number[];
+  
 
   @ViewChild("exporter") exporter! : MatTableExporterDirective;
 
@@ -52,9 +57,22 @@ export class PortfolioTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.assetData = this.accountData = [0,0,0,0,0];
     let userId = localStorage.getItem('userId') ?? "0"
     this.ds.getPortfolioData(userId).subscribe((data) => {
       this.data = data;
+      console.log("####msg for data:");
+      console.log(data);
+      console.log(this.accountData.length);
+      data.forEach(element => {
+        console.log(this.accountData.length);
+        // this.assetData[element.assetClass.assetClassId- 1]++;
+        this.accountData[element.accountType.accountTypeId -1]++;
+      });
+      // console.log(this.assetData);
+      this.accountData = [...this.accountData];
+      console.log(this.accountData);
+      // this.assetData = groupBy(data,"assetClass.assetClassId")
       this.dataSource = new MatTableDataSource(this.data);
       this.holdingCount = this.data.length;
       this.dataSource.filterPredicate = this.customFilterPredicate;

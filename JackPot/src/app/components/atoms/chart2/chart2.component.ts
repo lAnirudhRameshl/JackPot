@@ -11,10 +11,10 @@ export class Chart2Component implements OnInit {
 
   // const labels = Utils.months({count: 7});
   data = {
-    labels: ['Jan','Feb','March','April','May','June','July'],
+    labels: ['June','July','Aug','Sept','Oct','Nov'],
     datasets: [{
       label: 'Profit gained over the months ($)',
-      data: [65, 59, 80, 81, 56, 55, 40],
+      data: [65, 59, 80, 81, 56, 55],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(255, 159, 64, 0.2)',
@@ -22,7 +22,7 @@ export class Chart2Component implements OnInit {
         'rgba(75, 192, 192, 0.2)',
         'rgba(54, 162, 235, 0.2)',
         'rgba(153, 102, 255, 0.2)',
-        'rgba(201, 203, 207, 0.2)'
+        // 'rgba(201, 203, 207, 0.2)'
       ],
       borderColor: [
         'rgb(255, 99, 132)',

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Chart, registerables } from 'node_modules/chart.js';
 
 @Component({
@@ -6,7 +6,14 @@ import { Chart, registerables } from 'node_modules/chart.js';
   templateUrl: './charts.component.html',
   styleUrls: ['./charts.component.css']
 })
-export class ChartsComponent implements OnInit {
+export class ChartsComponent implements OnInit,OnChanges {
+  @Input()
+  assetData!: number[];
+
+  @Input()
+  accountData!:number[];
+
+  myChart2 !: Chart;
 
    data = {
     labels: [
@@ -44,8 +51,8 @@ export class ChartsComponent implements OnInit {
       'HSA'
     ],
     datasets: [{
-      label: 'Asset Distribution',
-      data: [120 ,180, 300,200, 80],
+      label: 'Account Distribution',
+      data: this.accountData,
       backgroundColor: [
         // '#704DC4',
         '#4B852C',
@@ -63,18 +70,41 @@ export class ChartsComponent implements OnInit {
     }]
   };
 
+  
+
+
   constructor() { }
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
+    if(changes["accountData"]){
+      console.log(`####s from chart from onCHanges: ${this.accountData}`);
+      this.accountData = changes["accountData"].currentValue;
+      this.data2.datasets[0].data = this.accountData;
+      // this.myChart2.data = this.data2;
+      this.myChart2.destroy();
+      this.myChart2 = new Chart("myChart2",{
+        type: 'doughnut',
+        data: this.data2,
+      })
+    }
+    
+  }
 
   ngOnInit(): void {
+    console.log(`####s from chart: ${this.accountData}`);
     Chart.register(...registerables);
     var myChart = new Chart("myChart",{
       type: 'doughnut',
       data: this.data,
     })
-    var myChart2 = new Chart("myChart2",{
+
+    this.myChart2 = new Chart("myChart2",{
       type: 'doughnut',
       data: this.data2,
     })
+
+    
+    
   }
 
 }

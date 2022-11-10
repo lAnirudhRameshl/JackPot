@@ -27,14 +27,16 @@ h5{
     color: #424242;
 }
 .registerBtn{
+    margin: 10px;
     margin-top:20px;
+    margin-bottom: 70px;
     font-size: 1.25em;
     padding: 10px 30px;
     background-color:  #243A73;
     border: 1px solid transparent;
     border-radius: 3px;
     color: #FFF;
-    margin-bottom: 70px;
+    font-family: "Montserrat";
 }
 .registerA{
     text-decoration: none;

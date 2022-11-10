@@ -1,3 +1,6 @@
+import { AccountType } from "./account-type.model";
+import { AssetClass } from "./asset-class.model";
+
 export class Portfolio{
     // "portfolioId": 23,
     //     "fundName": "AMZN",
@@ -23,6 +26,8 @@ export class Portfolio{
         public netChange:string,
         public dayChange:string,
         public asset: string,
-        public account: string
+        public account: string,
+        public assetClass: AssetClass,
+        public accountType: AccountType
     ){}
 }
