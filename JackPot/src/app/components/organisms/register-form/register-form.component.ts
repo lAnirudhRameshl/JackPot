@@ -88,7 +88,6 @@ export class RegisterFormComponent implements OnInit {
           ],
         ],
         confirmPassword: [null, [Validators.required]],
-        dateOfBirth: [null, [Validators.required]],
         phoneNumber: [
           null,
           [
@@ -189,6 +188,7 @@ export class RegisterFormComponent implements OnInit {
   }
 
   register() {
+    
     if(this.registerForm.valid){
       let signupRequest: SignupRequest = {
         firstName: this.registerForm.get('firstName')?.value,
@@ -198,6 +198,7 @@ export class RegisterFormComponent implements OnInit {
         phoneNumber: this.registerForm.get('phoneNumber')?.value,
         investmentRisk: this.registerForm.get('investmentRisk')?.value,
       }
+      
       this.userService.register(signupRequest).subscribe({
         next: (response) => {
           this.snackbar.open("Account created successfully", "OK", {duration: 3000});

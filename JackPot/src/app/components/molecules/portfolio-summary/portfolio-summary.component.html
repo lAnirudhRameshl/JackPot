@@ -1,17 +1,17 @@
 <div class="row">
     <div>
         <!-- <h1>{{totalInvestment | number:'1.2-2' }}</h1> -->
-        <h1>{{totalInvestmentSplit[0] | number}}<span>{{'.'+totalInvestmentSplit[1]}}</span></h1>
+        <h1>{{totalInvestmentSplit[0] | currency: 'USD' : 'symbol' : '1.0-0'}}<span>{{'.'+totalInvestmentSplit[1]}}</span></h1>
         <p>Total Investment</p>
     </div>
     <div>
         <!-- <h1>{{currentVal | number:'1.2-2'}}</h1> -->
-        <h1>{{currentValSplit[0] | number}}<span *ngIf="currentValSplit[1]">{{'.'+currentValSplit[1]}}</span></h1>
+        <h1>{{currentValSplit[0] | currency: 'USD' : 'symbol' : '1.0-0'}}<span *ngIf="currentValSplit[1]">{{'.'+currentValSplit[1]}}</span></h1>
         <p>Current Value</p>
     </div>
     <div>
         <!-- <h1 [style.color]="isPositive(netpl)?'green':'red'">{{netpl | number:'1.2-2'}}</h1> -->
-        <h1 [style.color]="netPl > 0?'green':'red'">{{netPlSplit[0] | number}}<span>{{'.'+netPlSplit[1]}}</span></h1>
+        <h1 [style.color]="netPl > 0?'green':'red'">{{netPlSplit[0] | currency: 'USD' : 'symbol' : '1.0-0'}}<span>{{'.'+netPlSplit[1]}}</span></h1>
         <p>P&L</p>
     </div>
 </div>

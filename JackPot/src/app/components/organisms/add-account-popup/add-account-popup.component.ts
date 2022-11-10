@@ -21,7 +21,7 @@ export class AddAccountPopupComponent implements OnInit {
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
 
   accountNumber: string = '';
-  accountTypeId: number = 0;
+  accountTypeId: number = 1;
   marginAvailable: number = 0;
   toastMessage: string = '';
 

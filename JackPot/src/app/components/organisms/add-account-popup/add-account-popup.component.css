@@ -9,7 +9,13 @@
     font-family: Montserrat;
     color: #fff;
     margin-bottom: 2rem;
-    background: #1cada4;
+    background: #89CFF0;
+    color: #002d62;
+    font-weight: 700;
+  }
+
+  mat-icon.mat-icon {
+    color: #002d62;
   }
   
   .title {
