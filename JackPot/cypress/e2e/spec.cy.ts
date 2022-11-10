@@ -26,4 +26,7 @@ describe('My First Test', () => {
 
 
   })
+  it('visit portfolio should redirect to login screen',()=>{
+    cy.visit('')
+  })
 })

@@ -38,7 +38,7 @@
           <div- mat-card-avatar class="image" style="background-color:#FBC02D;">
             <mat-icon style="margin-top: 6px;color:white">show_chart</mat-icon>
           </div->         
-          <mat-card-title [style.color]="isPositive(netpl)?'green':'red'">{{netpl | number:'1.2-2' | currency: 'USD'}}</mat-card-title>
+          <mat-card-title [style.color]="isPositive(netpl)?'green':'red'">{{netpl | number:'1.2-2' }}</mat-card-title>
           <!-- <h1 [style.color]="isPositive(netpl)?'green':'red'">{{netpl | number:'1.2-2'}}</h1> -->
           <mat-card-subtitle>Acquired P&L</mat-card-subtitle>
         </mat-card-header>
