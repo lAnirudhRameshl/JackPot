@@ -8,9 +8,13 @@ import { AssetClassResponse } from '../models/asset-class-response';
 import { MarketMover } from '../models/market-movers.model';
 import { Portfolio } from '../models/portfolio.model';
 import { ITrade } from '../models/trade';
+
+import { UserAccount } from '../models/user-account.model';
+
 import { TradeRequest } from '../models/trade-request';
 import { TradeResponse } from '../models/trade-response';
 import { UpdateMarginRequest } from '../models/update-margin-request';
+
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +27,12 @@ export class JackpotService {
 
   constructor(private http: HttpClient) {
    }
+
+  //Get Trading accounts for user by id 
+  getUserAccountByUserId(userId: string): Observable<UserAccount[]> {
+    return this.http.get<UserAccount[]>(`${this.BASE_URL}/account/${userId}`, { headers: this.headers});
+  }
+
 
   getMostActiveMarketMovers(): Observable<MarketMover[]> {
     return this.http.get<MarketMover[]>(`${this.BASE_URL}/trade/market-movers`, { headers: this.headers});

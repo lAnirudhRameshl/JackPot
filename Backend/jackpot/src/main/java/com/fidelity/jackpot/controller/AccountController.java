@@ -16,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/jackpot/api/v1/account")
+@CrossOrigin(origins = "http://localhost:4200")
 public class AccountController {
 
     @Autowired
