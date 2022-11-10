@@ -25,9 +25,8 @@ export class Portfolio{
         public profitLoss : number,
         public netChange:string,
         public dayChange:string,
-        public asset: string,
-        public account: string,
         public assetClass: AssetClass,
         public accountType: AccountType
+
     ){}
 }

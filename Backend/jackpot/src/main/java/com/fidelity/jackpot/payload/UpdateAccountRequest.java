@@ -9,11 +9,11 @@ import java.math.BigDecimal;
 public class UpdateAccountRequest {
     private String userAccountId;
 
-    private BigDecimal marginAvailable;
-
-    private BigDecimal marginUsed;
+    private BigDecimal margin;
 
     private Long userId;
+
+    private Long accountTypeId;
 }
 
 

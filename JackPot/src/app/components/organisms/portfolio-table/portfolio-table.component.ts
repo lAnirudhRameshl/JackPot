@@ -124,10 +124,10 @@ export class PortfolioTableComponent implements OnInit {
 
     if(filterJson['assetClass'] == '' && filterJson['accountType'] == '') return data.fundName.toLowerCase().indexOf(filterJson['searchFilter']) == 0;
 
-    else if(filterJson['assetClass'] == '' && filterJson['accountType'] != '') return (data.account == filterJson['accountType'] && data.fundName.toLowerCase().indexOf(filterJson['searchFilter']) == 0);
+    else if(filterJson['assetClass'] == '' && filterJson['accountType'] != '') return (data.accountType.accountTypeName.toUpperCase() == filterJson['accountType'] && data.fundName.toLowerCase().indexOf(filterJson['searchFilter']) == 0);
 
-    else if(filterJson['assetClass'] != '' && filterJson['accountType'] == '') return (data.asset == filterJson['assetClass'] && data.fundName.toLowerCase().indexOf(filterJson['searchFilter']) == 0);
+    else if(filterJson['assetClass'] != '' && filterJson['accountType'] == '') return (data.assetClass.assetClassName.toUpperCase() == filterJson['assetClass'] && data.fundName.toLowerCase().indexOf(filterJson['searchFilter']) == 0);
 
-    else return (data.asset == filterJson['assetClass'] && data.account == filterJson['accountType'] && data.fundName.toLowerCase().indexOf(filterJson['searchFilter']) == 0)
+    else return (data.assetClass.assetClassName.toUpperCase() == filterJson['assetClass'] && data.accountType.accountTypeName.toUpperCase() == filterJson['accountType'] && data.fundName.toLowerCase().indexOf(filterJson['searchFilter']) == 0)
   }
 }

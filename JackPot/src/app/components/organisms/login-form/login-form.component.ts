@@ -53,6 +53,7 @@ export class LoginFormComponent implements OnInit {
           this.router.navigateByUrl('/portfolio');
           localStorage.setItem('userId', response.userId.toString());
           localStorage.setItem('jwt', response.jwt);
+          localStorage.setItem('userDetails', JSON.stringify(response));
         },
         error: (errorResponse) => {
   

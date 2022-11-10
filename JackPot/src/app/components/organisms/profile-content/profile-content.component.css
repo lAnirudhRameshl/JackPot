@@ -1,55 +1,94 @@
-
 .page-head {
-    display: flex;
-    flex-direction: row;
-    padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem 1rem;
 }
 
 .page-heading {
-    font-family: 'Montserrat';
-    font-weight: 700;
-    font-size: 30px;
+  font-family: "Montserrat";
+  font-weight: 700;
 }
 
-.expanded  {
-    flex-grow: 1;
+h2.page-heading {
+  font-size: 30px;
+}
+
+h3.page-heading {
+  font-size: 25px;
+}
+
+.expanded {
+  flex-grow: 1;
 }
 
 button {
-    height: 24px;
-    width: 24px;
+  height: 24px;
+  width: 24px;
 }
 
 .mat-icon {
-    color: black;
-    font-size: 20px;
-    height: 24px;
-    width: 24px;
+  color: black;
+  font-size: 20px;
+  height: 24px;
+  width: 24px;
 }
 
 .page-content {
-    padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .card {
-    /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    background-image: linear-gradient(lightblue, rgb(171, 171, 207));
-    border-radius: 2%;
-  }
-  
-  /* On mouse-over, add a deeper shadow */
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
-  /* Add some padding inside the card container */
-  .container {
-    padding: 2px 16px;
-  }
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  background-image: linear-gradient(lightblue, rgb(171, 171, 207));
+  border-radius: 2%;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+
+table {
+  background-color: inherit;
+  width: 100%;
+  font-family: "Montserrat" !important;
+  margin-bottom: 10px;
+  border-top: 1px solid rgba(0,0,0,.12);
+  border-left: 1px solid rgba(0,0,0,.12);
+}
+
+th {
+    font-weight: 900;
+    font-family: "Montserrat" !important;
+    color: black;
+    text-align: center;
+}
+
+.mat-header-cell {
+    text-align: center;
+}
+
+td, th {
+    border-right: 1px solid rgba(0,0,0,.12);
+    text-align: center;
+}
+
+.mat-cell:first-of-type, .mat-header-cell:first-of-type, .mat-cell:last-of-type, .mat-header-cell:last-of-type {
+    padding: 0;
+}
+
+tr {
+    border-left: 1px solid rgba(0,0,0,.12);
+}

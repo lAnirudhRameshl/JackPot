@@ -128,17 +128,15 @@ public class TradeService {
     }
 
     @Transactional
-    public boolean completeTrade(String tickerName, Double quantity, Long userId, String accountNumber, Long assetClassId) {
+    public boolean completeTrade(String tickerName, Double quantity, Long userId, Long accountTypeId, Long assetClassId) {
         boolean isSuccess = false;
 
         try {
-            //TODO: Modify account, portfolio and trade history
             Portfolio portfolio = portfolioRepository.findByFundNameAndUserUserId(tickerName, userId).orElse(null);
+            UserAccount account = userAccountRepository.findByAccountTypeAccountTypeIdAndUserUserId(accountTypeId, userId).orElseThrow(() -> new StockException("Account invalid"));
             StockDetailResponse stockDetail = getStockDetail(tickerName);
-            userAccountRepository.findByAccountNumberAndUserUserId(accountNumber, userId).orElseThrow(() -> new StockException("Account invalid"));
             if(portfolio == null) {
                 if(quantity > 0) {
-                    UserAccount account = userAccountRepository.findById(accountNumber).orElseThrow(() -> new StockException("Account with number does not exist"));
                     BigDecimal amount = BigDecimal.valueOf(quantity * stockDetail.getLast());
                     if(account.getMarginAvailable().compareTo(amount) >= 0) {
                         account.setMarginUsed(amount.add(account.getMarginUsed()));
@@ -175,7 +173,6 @@ public class TradeService {
                     throw new StockException("Short trades not allowed");
                 }
             } else {
-                UserAccount account = userAccountRepository.findById(accountNumber).orElseThrow(() -> new StockException("Account with number does not exist"));
                 BigDecimal amount = BigDecimal.valueOf(quantity * stockDetail.getLast());
                 if(account.getMarginAvailable().compareTo(amount) >= 0) {
                     if(quantity <= 0) {

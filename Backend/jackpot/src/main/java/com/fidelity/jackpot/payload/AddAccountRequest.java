@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 @Data
 
 public class AddAccountRequest {
-    private String userAccountId;
+    private String accountNumber;
 
     private BigDecimal marginAvailable;
 

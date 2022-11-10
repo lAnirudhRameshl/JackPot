@@ -16,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/jackpot/api/v1/account")
+@CrossOrigin(origins = "http://localhost:4200")
 public class AccountController {
 
     @Autowired
@@ -29,6 +30,7 @@ public class AccountController {
     }
 
     @GetMapping("/{userId}")
+    @CrossOrigin(origins = "http://localhost:4200")
     public List<UserAccount> getUserAccountByUserId(@PathVariable Long userId){
         return accountService.getUserAccountByUserId(userId);
 
@@ -36,6 +38,7 @@ public class AccountController {
 
 
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping
     public ResponseEntity<?> addUserAccountByUserId(@RequestBody AddAccountRequest addAcc){
 
@@ -52,6 +55,7 @@ public class AccountController {
 
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PutMapping
     public ResponseEntity<?> updateUserAccountMarginByUserAccountId(@RequestBody UpdateAccountRequest updAcc){
         ResponseEntity response = null;
